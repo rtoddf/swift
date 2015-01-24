@@ -40,9 +40,22 @@ class GameViewController: UITableViewController {
         
         cell.textLabel?.text = game.name
         
+        cell.detailTextLabel?.text = game.character
+        
+        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        
         return cell
     }
-
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "gameSegue" {
+            let ViewController = segue.destinationViewController as UIViewController
+            let indexPath = self.tableView.indexPathForSelectedRow()!
+            let destinationTitle = self.games[indexPath.row].name
+            ViewController.title = destinationTitle
+        }
+    }
 
 }
 

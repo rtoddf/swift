@@ -79,13 +79,13 @@
 		F07742EF1A72D3CC006E8CA0 /* IntermediateTableFive */ = {
 			isa = PBXGroup;
 			children = (
+				F07743121A72D3F0006E8CA0 /* VideoGame.swift */,
 				F07742F21A72D3CD006E8CA0 /* AppDelegate.swift */,
 				F07742F41A72D3CD006E8CA0 /* ViewController.swift */,
 				F07742F61A72D3CD006E8CA0 /* Main.storyboard */,
 				F07742F91A72D3CD006E8CA0 /* Images.xcassets */,
 				F07742FB1A72D3CD006E8CA0 /* LaunchScreen.xib */,
 				F07742F01A72D3CC006E8CA0 /* Supporting Files */,
-				F07743121A72D3F0006E8CA0 /* VideoGame.swift */,
 			);
 			path = IntermediateTableFive;
 			sourceTree = "<group>";
@@ -409,6 +409,7 @@
 				F077430E1A72D3CD006E8CA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F077430F1A72D3CD006E8CA0 /* Build configuration list for PBXNativeTarget "IntermediateTableFiveTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +418,7 @@
 				F07743111A72D3CD006E8CA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
