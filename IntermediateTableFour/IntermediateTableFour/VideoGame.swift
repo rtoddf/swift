@@ -1,8 +1,8 @@
 import Foundation
 
 struct VideoGame {
-    let name: String
-    let character: String
-    let imageName: String
-    let description: String
+    let title: String
+    let mainCharacter: String
+    let leadImage: String
+    let bodyCopy: String
 }
