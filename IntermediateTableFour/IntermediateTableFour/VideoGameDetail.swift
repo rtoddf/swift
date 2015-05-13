@@ -1,101 +1,67 @@
 import Foundation
 import UIKit
 
-
-// per http://www.developerdave.co.uk/2014/10/gradient-backgrounds-swift/
-//extension CAGradientLayer {
-//    
-//    func turquoiseColor() -> CAGradientLayer {
-//        let topColor = UIColor(red: (15/255.0), green: (118/255.0), blue: (128/255.0), alpha: 1)
-//        let bottomColor = UIColor(red: (84/255.0), green: (187/255.0), blue: (187/255.0), alpha: 1)
-//        
-//        let gradientColors: Array <AnyObject> = [topColor.CGColor, bottomColor.CGColor]
-//        let gradientLocations: Array <AnyObject> = [0.0, 1.0]
-//        
-//        let gradientLayer: CAGradientLayer = CAGradientLayer()
-//        gradientLayer.colors = gradientColors
-//        gradientLayer.locations = gradientLocations
-//        
-//        return gradientLayer
-//    }
-//}
-
-class VideoGameDetail: UIViewController {
-//    var gameTitleText = String()
-//    var characterText = String()
-//    var imageText = String()
-//    var descriptionText = String()
+class VideoGameDetail: UIViewController, UIScrollViewDelegate {
     
+    var scrollView: UIScrollView!
     var game : VideoGame?
     
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor.blackColor()
-        
-//        let background = CAGradientLayer().turquoiseColor()
-//        background.frame = self.view.bounds
-//        self.view.layer.insertSublayer(background, atIndex: 0)
-        
-//        let myGradientLayer: CAGradientLayer
-//        myGradientLayer = CAGradientLayer()
-//        myGradientLayer.startPoint = CGPoint(x: 0, y: 0)
-//        myGradientLayer.endPoint = CGPoint(x: 1, y: 1)
-//        let colors: [CGColorRef] = [
-//            UIColor.clearColor().CGColor,
-//            UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).CGColor,
-//            UIColor(red: 1, green: 1, blue: 1, alpha: 0.5).CGColor,
-//            UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).CGColor,
-//            UIColor.clearColor().CGColor ]
-//        myGradientLayer.colors = colors
-//        myGradientLayer.opaque = false
-//        myGradientLayer.locations = [0.0,  0.3, 0.5, 0.7, 1.0]
-//        self.view.layer.addSublayer(myGradientLayer)
-        
+
+        // create UIImageView
         var imageHeight = view.bounds.size.width * 0.66
-        
-        var leadImageView = UIImageView(frame: CGRectMake(0, 65, view.bounds.size.width, imageHeight))
+        var leadImageView = UIImageView(frame: CGRectMake(0, 0, view.bounds.size.width, imageHeight))
         var image = UIImage(named: game!.leadImage)
-        
         leadImageView.image = image
         
-        var title = UILabel(frame: CGRectMake(0, 75, view.bounds.size.width-10, 21))
+        // create title UILabel
+        var title = UILabel(frame: CGRectMake(0, 10, view.bounds.size.width-10, 21))
         title.text = game!.title
         title.font = UIFont(name: "HelveticaNeue-Bold", size: CGFloat(22))
         title.textColor = UIColor.whiteColor()
         title.textAlignment = .Right
         
-        var mainCharacter = UILabel(frame: CGRectMake(0, 100, view.bounds.size.width-10, 21))
+        // create subtitle UILabel
+        var mainCharacter = UILabel(frame: CGRectMake(0, 30, view.bounds.size.width-10, 21))
         mainCharacter.text = game!.mainCharacter
         mainCharacter.font = UIFont(name: "HelveticaNeue-BoldItalic", size: CGFloat(16))
         mainCharacter.textColor = UIColor.whiteColor()
         mainCharacter.textAlignment = .Right
         
-        var bodyCopy = UILabel(frame: CGRectMake(10, imageHeight + 70, view.bounds.size.width-20, 200))
+        // create bodycopy UILabel
+        var bodyCopy = UILabel(frame: CGRectMake(10, imageHeight, view.bounds.size.width-20, 1000))
         bodyCopy.text = game!.bodyCopy
         bodyCopy.font = UIFont(name: "HelveticaNeue", size: CGFloat(16))
         bodyCopy.textColor = UIColor.whiteColor()
         bodyCopy.numberOfLines = 0
         bodyCopy.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        
-        self.view.addSubview(leadImageView)
+        // this!
+        bodyCopy.sizeToFit()
 
-        var gradientLayerView: UIView = UIView(frame: CGRectMake(0, 65, view.bounds.size.width, imageHeight))
+        // create gradient UIView
+        var gradientLayerView: UIView = UIView(frame: CGRectMake(0, 0, view.bounds.size.width, imageHeight))
         var gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = gradientLayerView.bounds
-        
         gradient.colors = [
             UIColor(red: 0, green: 0, blue: 0, alpha: 1).CGColor,
             UIColor.clearColor().CGColor,
             UIColor.clearColor().CGColor,
             UIColor(red: 0, green: 0, blue: 0, alpha: 1).CGColor
         ]
-        
         gradient.locations = [ 0.0, 0.2, 0.8, 1.0]
-        
         gradientLayerView.layer.insertSublayer(gradient, atIndex: 5)
-        self.view.layer.insertSublayer(gradientLayerView.layer, atIndex: 5)
         
-        self.view.addSubview(title)
-        self.view.addSubview(mainCharacter)
-        self.view.addSubview(bodyCopy)
+        self.scrollView = UIScrollView(frame: UIScreen.mainScreen().bounds)
+        self.scrollView.contentSize = CGSize(width: view.bounds.size.width, height: 1200)
+        
+        // add subviews and layers
+        self.scrollView.addSubview(leadImageView)
+        self.scrollView.layer.insertSublayer(gradientLayerView.layer, atIndex: 5)
+        self.scrollView.addSubview(title)
+        self.scrollView.addSubview(mainCharacter)
+        self.scrollView.addSubview(bodyCopy)
+        
+        self.view.addSubview(scrollView)
     }
 }
