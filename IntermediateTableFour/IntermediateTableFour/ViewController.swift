@@ -34,8 +34,14 @@ class GameViewController: UITableViewController {
         return videoGames.count
     }
     
+    
+    private struct Storyboard {
+        static let CellReuseIndentifier = "Game"
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! UITableViewCell
+        
+        var cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CellReuseIndentifier) as! UITableViewCell
         
         var game : VideoGame
         game = videoGames[indexPath.row]
