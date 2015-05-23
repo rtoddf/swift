@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ScrollView01" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f9Q-Yk-AdD">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ij-kS-UxM">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMT-jp-Gwn">
+                                                <rect key="frame" x="8" y="293" width="584" height="931"/>
+                                                <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eget tellus eu dolor aliquet pharetra a vel tellus. Quisque ornare consequat condimentum. In quis erat lacus. Suspendisse et quam porta, sodales massa id, semper metus. Nulla rhoncus, ipsum elementum pretium imperdiet, justo est placerat eros, ut aliquet erat libero quis ex. Etiam lacus lectus, iaculis ac mollis sed, commodo eget tortor. Nam et porta augue, et accumsan risus. Donec luctus vehicula erat, fringilla consequat elit consequat eget. Maecenas rutrum turpis vel felis fringilla eleifend. Duis condimentum est vitae enim vulputate, id semper odio iaculis. Suspendisse potenti. Ut massa augue, varius sed lectus elementum, ullamcorper vestibulum turpis. In ex nisi, ornare id ipsum ut, commodo dignissim diam. Vestibulum nec magna vitae enim elementum aliquam sodales ut velit. Proin rhoncus egestas eros, sed auctor magna aliquet eget. Maecenas vel arcu tortor.
+
+Duis maximus libero elit, id varius ex eleifend ac. Maecenas in vestibulum lorem, non pellentesque massa. Suspendisse leo ligula, condimentum sed lectus a, eleifend auctor leo. Nunc placerat commodo massa vel efficitur. Nullam ultrices ligula at ex mollis dictum. Maecenas blandit dui velit. Etiam lacinia efficitur risus in placerat. Aenean ac molestie sem, non vestibulum quam. Morbi erat urna, mattis a augue molestie, tristique elementum justo. Donec vitae mollis turpis, et viverra ipsum.
+
+Cras fermentum nulla at augue blandit faucibus. In ac mi sit amet libero venenatis ultrices. Fusce sed lorem mi. Proin vel lorem augue. Maecenas sit amet suscipit justo. Integer vel ex sit amet ligula feugiat luctus nec vitae ligula. Aliquam gravida sapien at lacinia faucibus. Vivamus luctus turpis nec nisl faucibus, a interdum mauris auctor. Nunc ornare mi nec lobortis rhoncus. Morbi ex dui, consequat sit amet enim id, aliquam tincidunt lacus. Sed in dignissim velit, at scelerisque ante. Mauris placerat massa eget nibh volutpat sagittis.
+
+Fusce laoreet blandit molestie. Integer eget justo elit. Mauris placerat sapien nibh, tempus condimentum lectus consequat at. Sed sed blandit lacus, sit amet hendrerit massa. In hac habitasse platea dictumst. Aliquam sit amet scelerisque elit, ut mollis lacus. Nulla vulputate eros at ligula maximus, et posuere lacus convallis.
+
+Sed euismod augue eget mauris blandit rhoncus. Quisque in felis quam. Integer pharetra tristique eros eget dictum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla tempus, mi vulputate congue lacinia, metus nisi eleifend tortor, sed blandit sapien eros in quam. Donec euismod, turpis quis aliquet pharetra, nulla nisi molestie sapien, non pulvinar velit purus eu ante. Morbi sit amet nunc at nulla tempor tempus. Nam feugiat neque sit amet justo congue, sit amet suscipit sapien dictum. Pellentesque et porta enim. Donec vitae venenatis nisl. Nulla dapibus odio metus, sagittis volutpat eros iaculis ac. Mauris ullamcorper quam purus, viverra dictum magna vulputate quis.</mutableString>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0bB-l8-A1A">
+                                                <rect key="frame" x="8" y="8" width="584" height="277"/>
+                                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </imageView>
+                                        </subviews>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="2ij-kS-UxM" secondAttribute="trailing" id="1E3-lq-0vo"/>
+                                    <constraint firstItem="2ij-kS-UxM" firstAttribute="leading" secondItem="f9Q-Yk-AdD" secondAttribute="leading" id="BDh-bZ-B9G"/>
+                                    <constraint firstItem="2ij-kS-UxM" firstAttribute="top" secondItem="f9Q-Yk-AdD" secondAttribute="top" id="egX-SG-QRm"/>
+                                    <constraint firstAttribute="bottom" secondItem="2ij-kS-UxM" secondAttribute="bottom" id="g5h-as-sxO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="f9Q-Yk-AdD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="I96-mn-i0P"/>
+                            <constraint firstItem="f9Q-Yk-AdD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="LjA-FJ-yMi"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="f9Q-Yk-AdD" secondAttribute="bottom" id="kkb-ks-Oy4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="f9Q-Yk-AdD" secondAttribute="trailing" constant="-16" id="lUt-VT-8Q4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bodyCopy" destination="RMT-jp-Gwn" id="mL6-LR-Q2R"/>
+                        <outlet property="scroller" destination="2ij-kS-UxM" id="Zj0-5X-qvW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
