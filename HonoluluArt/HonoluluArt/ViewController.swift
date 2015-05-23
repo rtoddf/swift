@@ -1,6 +1,10 @@
 import UIKit
 import MapKit
 
+// http://www.raywenderlich.com/90971/introduction-mapkit-swift-tutorial
+// https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/LocationAwarenessPG/Introduction/Introduction.html#//apple_ref/doc/uid/TP40009497-CH1-SW1
+// http://www.raywenderlich.com/87008/overlay-views-mapkit-swift-tutorial
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!

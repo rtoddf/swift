@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		751317E51B10EE43006C46DE /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751317E41B10EE43006C46DE /* JSON.swift */; };
 		F08BCDE01B0F848900EB5375 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BCDDF1B0F848900EB5375 /* AppDelegate.swift */; };
 		F08BCDE21B0F848900EB5375 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08BCDE11B0F848900EB5375 /* ViewController.swift */; };
 		F08BCDE51B0F848900EB5375 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F08BCDE31B0F848900EB5375 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		751317E41B10EE43006C46DE /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		F08BCDDA1B0F848900EB5375 /* HonoluluArt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HonoluluArt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F08BCDDE1B0F848900EB5375 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F08BCDDF1B0F848900EB5375 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,9 +85,10 @@
 		F08BCDDC1B0F848900EB5375 /* HonoluluArt */ = {
 			isa = PBXGroup;
 			children = (
-				F08BCDE11B0F848900EB5375 /* ViewController.swift */,
 				F08BCE011B0F895E00EB5375 /* Artwork.swift */,
+				751317E41B10EE43006C46DE /* JSON.swift */,
 				F08BCE031B0F8BB100EB5375 /* VCMapView.swift */,
+				F08BCDE11B0F848900EB5375 /* ViewController.swift */,
 				F08BCDE31B0F848900EB5375 /* Main.storyboard */,
 				F08BCDDD1B0F848900EB5375 /* Supporting Files */,
 			);
@@ -223,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F08BCE041B0F8BB100EB5375 /* VCMapView.swift in Sources */,
+				751317E51B10EE43006C46DE /* JSON.swift in Sources */,
 				F08BCDE21B0F848900EB5375 /* ViewController.swift in Sources */,
 				F08BCE021B0F895E00EB5375 /* Artwork.swift in Sources */,
 				F08BCDE01B0F848900EB5375 /* AppDelegate.swift in Sources */,
@@ -421,6 +425,7 @@
 				F08BCDFB1B0F848900EB5375 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F08BCDFC1B0F848900EB5375 /* Build configuration list for PBXNativeTarget "HonoluluArtTests" */ = {
 			isa = XCConfigurationList;
@@ -429,6 +434,7 @@
 				F08BCDFE1B0F848900EB5375 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

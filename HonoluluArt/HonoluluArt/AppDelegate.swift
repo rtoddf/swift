@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  HonoluluArt
-//
-//  Created by Todd Fleeman on 5/22/15.
-//  Copyright (c) 2015 Todd Fleeman. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
