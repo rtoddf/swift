@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F09F595F1B027BB70012A48B /* VideoGameDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09F595E1B027BB70012A48B /* VideoGameDetail.swift */; };
 		F0B343071A729E240066C2CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B343061A729E240066C2CD /* AppDelegate.swift */; };
 		F0B343091A729E240066C2CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B343081A729E240066C2CD /* ViewController.swift */; };
 		F0B3430C1A729E240066C2CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0B3430A1A729E240066C2CD /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F09F595E1B027BB70012A48B /* VideoGameDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoGameDetail.swift; sourceTree = "<group>"; };
 		F0B343011A729E240066C2CD /* IntermediateTableFour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IntermediateTableFour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0B343051A729E240066C2CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0B343061A729E240066C2CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,11 +82,10 @@
 			isa = PBXGroup;
 			children = (
 				F0B343261A72A0F20066C2CD /* VideoGame.swift */,
-				F0B343061A729E240066C2CD /* AppDelegate.swift */,
 				F0B343081A729E240066C2CD /* ViewController.swift */,
+				F09F595E1B027BB70012A48B /* VideoGameDetail.swift */,
 				F0B3430A1A729E240066C2CD /* Main.storyboard */,
 				F0B3430D1A729E240066C2CD /* Images.xcassets */,
-				F0B3430F1A729E240066C2CD /* LaunchScreen.xib */,
 				F0B343041A729E240066C2CD /* Supporting Files */,
 			);
 			path = IntermediateTableFour;
@@ -93,6 +94,8 @@
 		F0B343041A729E240066C2CD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F0B3430F1A729E240066C2CD /* LaunchScreen.xib */,
+				F0B343061A729E240066C2CD /* AppDelegate.swift */,
 				F0B343051A729E240066C2CD /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F09F595F1B027BB70012A48B /* VideoGameDetail.swift in Sources */,
 				F0B343091A729E240066C2CD /* ViewController.swift in Sources */,
 				F0B343271A72A0F20066C2CD /* VideoGame.swift in Sources */,
 				F0B343071A729E240066C2CD /* AppDelegate.swift in Sources */,
@@ -409,6 +413,7 @@
 				F0B343221A729E240066C2CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F0B343231A729E240066C2CD /* Build configuration list for PBXNativeTarget "IntermediateTableFourTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				F0B343251A729E240066C2CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
