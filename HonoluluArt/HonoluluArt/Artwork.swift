@@ -52,4 +52,16 @@ class Artwork: NSObject, MKAnnotation {
         
         return mapItem
     }
+    
+    func pinColor() -> MKPinAnnotationColor {
+        switch discipline {
+            case "Sculpture":
+                return .Red
+            case "Mural", "Monument":
+                return .Purple
+        default:
+            return .Green
+        }
+        
+    }
 }
