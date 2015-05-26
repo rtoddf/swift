@@ -9,14 +9,20 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         let location = CLLocation(latitude: 40.706876, longitude: -74.011265)
-        centerMapOnLocation(location)
+        
+        // satellite view type
+        let mapType = MKMapType.Standard
+//        let mapType = MKMapType.Satellite
+        
+        centerMapOnLocation(location, mapType: mapType)
+        
         
         // setting ViewController as the delegate of the map view
         mapView.delegate = self
         
         // set one location
-        let locationOne = Artwork(title: "Wall Street", subtitle: "New York", coordinates: location.coordinate)
-        mapView.addAnnotation(locationOne)
+        let locale = Locale(title: "New York Stock Exchange", subtitle: "New York", coordinates: location.coordinate)
+        mapView.addAnnotation(locale)
         
         
         // one way is to set the location with coordinate2D
@@ -42,9 +48,11 @@ class ViewController: UIViewController {
     let regionRadius: CLLocationDistance = 1000
     
     // you need to specify the rectangular region to display to get a correct zoom level
-    func centerMapOnLocation(location: CLLocation) {
+    func centerMapOnLocation(location: CLLocation, mapType: MKMapType) {
         
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius, regionRadius)
+
+        mapView.mapType = mapType
         mapView.setRegion(coordinateRegion, animated: true)
     }
 }

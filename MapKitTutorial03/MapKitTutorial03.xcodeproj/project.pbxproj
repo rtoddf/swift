@@ -82,9 +82,9 @@
 			isa = PBXGroup;
 			children = (
 				F00E12101B14CF9E0082C37C /* Artwork.swfit.swift */,
+				F00E12121B14CFEF0082C37C /* VCMapView.swift */,
 				F00E11F21B14CEED0082C37C /* ViewController.swift */,
 				F00E11F41B14CEED0082C37C /* Main.storyboard */,
-				F00E12121B14CFEF0082C37C /* VCMapView.swift */,
 				F00E11EE1B14CEED0082C37C /* Supporting Files */,
 			);
 			path = MapKitTutorial03;
