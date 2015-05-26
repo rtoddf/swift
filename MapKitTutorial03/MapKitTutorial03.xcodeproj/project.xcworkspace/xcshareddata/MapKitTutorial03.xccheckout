@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>4C952B40-F204-4674-8973-38FC273C364B</string>
+	<string>C2D7ABDB-4127-4DC0-8749-9E23ECC47570</string>
 	<key>IDESourceControlProjectName</key>
 	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,7 +14,7 @@
 		<string>https://github.com/rtoddf/swift.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>HonoluluArt/HonoluluArt.xcodeproj/project.xcworkspace</string>
+	<string>MapKitTutorial03/MapKitTutorial03.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>4F63601EDDDC1D98D2759C3FCAA1E91F6518717A</key>

@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F00E11DF1B14BAF50082C37C /* VCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00E11DE1B14BAF50082C37C /* VCMapView.swift */; };
+		F00E11E11B14BF750082C37C /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00E11E01B14BF750082C37C /* Artwork.swift */; };
 		F0EEC0571B13A366000180F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EEC0561B13A366000180F2 /* AppDelegate.swift */; };
 		F0EEC0591B13A366000180F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EEC0581B13A366000180F2 /* ViewController.swift */; };
 		F0EEC05C1B13A366000180F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0EEC05A1B13A366000180F2 /* Main.storyboard */; };
 		F0EEC05E1B13A366000180F2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0EEC05D1B13A366000180F2 /* Images.xcassets */; };
 		F0EEC0611B13A366000180F2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0EEC05F1B13A366000180F2 /* LaunchScreen.xib */; };
 		F0EEC06D1B13A367000180F2 /* MapKitTutorial02Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EEC06C1B13A367000180F2 /* MapKitTutorial02Tests.swift */; };
-		F0EEC0771B13A5B9000180F2 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EEC0761B13A5B9000180F2 /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F00E11DE1B14BAF50082C37C /* VCMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCMapView.swift; sourceTree = "<group>"; };
+		F00E11E01B14BF750082C37C /* Artwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 		F0EEC0511B13A366000180F2 /* MapKitTutorial02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapKitTutorial02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0EEC0551B13A366000180F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0EEC0561B13A366000180F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +40,6 @@
 		F0EEC0661B13A367000180F2 /* MapKitTutorial02Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapKitTutorial02Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0EEC06B1B13A367000180F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0EEC06C1B13A367000180F2 /* MapKitTutorial02Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitTutorial02Tests.swift; sourceTree = "<group>"; };
-		F0EEC0761B13A5B9000180F2 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +81,11 @@
 		F0EEC0531B13A366000180F2 /* MapKitTutorial02 */ = {
 			isa = PBXGroup;
 			children = (
-				F0EEC0561B13A366000180F2 /* AppDelegate.swift */,
+				F00E11E01B14BF750082C37C /* Artwork.swift */,
+				F00E11DE1B14BAF50082C37C /* VCMapView.swift */,
 				F0EEC0581B13A366000180F2 /* ViewController.swift */,
 				F0EEC05A1B13A366000180F2 /* Main.storyboard */,
-				F0EEC05D1B13A366000180F2 /* Images.xcassets */,
-				F0EEC05F1B13A366000180F2 /* LaunchScreen.xib */,
 				F0EEC0541B13A366000180F2 /* Supporting Files */,
-				F0EEC0761B13A5B9000180F2 /* Location.swift */,
 			);
 			path = MapKitTutorial02;
 			sourceTree = "<group>";
@@ -93,6 +93,9 @@
 		F0EEC0541B13A366000180F2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F0EEC05F1B13A366000180F2 /* LaunchScreen.xib */,
+				F0EEC05D1B13A366000180F2 /* Images.xcassets */,
+				F0EEC0561B13A366000180F2 /* AppDelegate.swift */,
 				F0EEC0551B13A366000180F2 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -215,8 +218,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F00E11DF1B14BAF50082C37C /* VCMapView.swift in Sources */,
 				F0EEC0591B13A366000180F2 /* ViewController.swift in Sources */,
-				F0EEC0771B13A5B9000180F2 /* Location.swift in Sources */,
+				F00E11E11B14BF750082C37C /* Artwork.swift in Sources */,
 				F0EEC0571B13A366000180F2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +417,7 @@
 				F0EEC0721B13A367000180F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F0EEC0731B13A367000180F2 /* Build configuration list for PBXNativeTarget "MapKitTutorial02Tests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +426,7 @@
 				F0EEC0751B13A367000180F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

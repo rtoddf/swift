@@ -1,15 +1,15 @@
 import Foundation
 import MapKit
 
-class location: NSObject {
+class Artwork: NSObject, MKAnnotation {
     let title: String
     let subtitle: String
-    let coordinates: CLLocationCoordinate2D
+    let coordinate: CLLocationCoordinate2D
     
     init(title: String, subtitle: String, coordinates: CLLocationCoordinate2D){
         self.title = title
         self.subtitle = subtitle
-        self.coordinates = coordinates
+        self.coordinate = coordinates
         
         super.init()
     }
