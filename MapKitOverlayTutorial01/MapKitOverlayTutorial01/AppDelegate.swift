@@ -1,21 +1,17 @@
-//
-//  AppDelegate.swift
-//  MapKitOverlayTutorial01
-//
-//  Created by Todd Fleeman on 5/26/15.
-//  Copyright (c) 2015 Todd Fleeman. All rights reserved.
-//
-
 import UIKit
+import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var locationManager:CLLocationManager?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        // request permission from the user to track the current location of the device
+        locationManager = CLLocationManager()
+        locationManager?.requestWhenInUseAuthorization()
+        
         return true
     }
 

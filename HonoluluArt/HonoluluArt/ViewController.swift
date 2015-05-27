@@ -6,6 +6,7 @@ import MapKit
 // http://www.raywenderlich.com/87008/overlay-views-mapkit-swift-tutorial
 
 // http://www.ioscreator.com/
+// http://www.ioscreator.com/tutorials/mapkit-tutorial-swift-ios8
 
 class ViewController: UIViewController {
 
