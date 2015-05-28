@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>AEB672D1-89C6-4BFD-BFE0-77A357158C6A</string>
+	<string>A971746C-2AB5-42BB-9406-163E6294D61D</string>
 	<key>IDESourceControlProjectName</key>
-	<string>MapKitOverlayTutorial01</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>4F63601EDDDC1D98D2759C3FCAA1E91F6518717A</key>
 		<string>https://github.com/rtoddf/swift.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>MapKitOverlayTutorial01/MapKitOverlayTutorial01.xcodeproj</string>
+	<string>MapKitSearchTutorial01/MapKitSearchTutorial01.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>4F63601EDDDC1D98D2759C3FCAA1E91F6518717A</key>
