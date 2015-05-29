@@ -29,6 +29,8 @@ class ViewController: UIViewController {
 
     
     @IBAction func searchOnValueChanged(sender: AnyObject) {
+        mapView.removeAnnotations(mapView.annotations)
+        searchInMap()
     }
     
     func searchInMap() {
@@ -45,11 +47,19 @@ class ViewController: UIViewController {
             (response: MKLocalSearchResponse!, error: NSError!) in
             
             for item in response.mapItems as! [MKMapItem] {
-                println("Item name = \(item.name)")
-                println("Latitude = \(item.placemark.location.coordinate.latitude)")
-                println("Longitude = \(item.placemark.location.coordinate.longitude)")
+                self.addPinToMapView(item.name, latitude: item.placemark.location.coordinate.latitude, longitude: item.placemark.location.coordinate.longitude)
+//                println("item: \(item)")
+//                println("Item name = \(item.name)")
+//                println("Latitude = \(item.placemark.location.coordinate.latitude)")
+//                println("Longitude = \(item.placemark.location.coordinate.longitude)")
             }
         }
+    }
+    
+    func addPinToMapView(title:String, latitude:CLLocationDegrees, longitude:CLLocationDegrees){
+        let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        let annotation = Annotations(coordinate: location, title: title)
+        mapView.addAnnotation(annotation)
     }
 
 }

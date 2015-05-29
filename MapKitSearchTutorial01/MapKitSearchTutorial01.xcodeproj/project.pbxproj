@@ -84,7 +84,6 @@
 			isa = PBXGroup;
 			children = (
 				F01C74651B17C20B009E26E3 /* Annotations.swift */,
-				F01C74431B17B3B0009E26E3 /* AppDelegate.swift */,
 				F01C74451B17B3B0009E26E3 /* ViewController.swift */,
 				F01C74471B17B3B0009E26E3 /* Main.storyboard */,
 				F01C74411B17B3B0009E26E3 /* Supporting Files */,
@@ -95,6 +94,7 @@
 		F01C74411B17B3B0009E26E3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F01C74431B17B3B0009E26E3 /* AppDelegate.swift */,
 				F01C744A1B17B3B0009E26E3 /* Images.xcassets */,
 				F01C744C1B17B3B0009E26E3 /* LaunchScreen.xib */,
 				F01C74421B17B3B0009E26E3 /* Info.plist */,
@@ -422,6 +422,7 @@
 				F01C745F1B17B3B0009E26E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F01C74601B17B3B0009E26E3 /* Build configuration list for PBXNativeTarget "MapKitSearchTutorial01Tests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +431,7 @@
 				F01C74621B17B3B0009E26E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
