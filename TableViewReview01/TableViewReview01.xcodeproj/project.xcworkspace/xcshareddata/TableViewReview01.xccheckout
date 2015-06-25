@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>64BC4680-D383-4B77-977D-FE41E88AC3EB</string>
+	<string>2FD221B8-8F3B-491E-9004-8B50E63663B4</string>
 	<key>IDESourceControlProjectName</key>
 	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,7 +14,7 @@
 		<string>https://github.com/rtoddf/swift.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>CoreGraphics01/CoreGraphics01.xcodeproj/project.xcworkspace</string>
+	<string>TableViewReview01/TableViewReview01.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>4F63601EDDDC1D98D2759C3FCAA1E91F6518717A</key>

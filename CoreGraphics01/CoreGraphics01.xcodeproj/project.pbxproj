@@ -14,7 +14,6 @@
 		F0F44EDC1AF3B7CD00052FE8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F44EDA1AF3B7CD00052FE8 /* LaunchScreen.xib */; };
 		F0F44EE81AF3B7CD00052FE8 /* CoreGraphics01Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F44EE71AF3B7CD00052FE8 /* CoreGraphics01Tests.swift */; };
 		F0F44EF21AF3B81C00052FE8 /* DrawExamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F44EF11AF3B81C00052FE8 /* DrawExamples.swift */; };
-		F0F44EF41AF3C36F00052FE8 /* dlanceblack.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F0F44EF31AF3C36F00052FE8 /* dlanceblack.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +38,6 @@
 		F0F44EE61AF3B7CD00052FE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0F44EE71AF3B7CD00052FE8 /* CoreGraphics01Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreGraphics01Tests.swift; sourceTree = "<group>"; };
 		F0F44EF11AF3B81C00052FE8 /* DrawExamples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawExamples.swift; sourceTree = "<group>"; };
-		F0F44EF31AF3C36F00052FE8 /* dlanceblack.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = dlanceblack.jpg; path = ../../../../dlanceblack.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +81,8 @@
 			children = (
 				F0F44ED31AF3B7CD00052FE8 /* ViewController.swift */,
 				F0F44ED51AF3B7CD00052FE8 /* Main.storyboard */,
-				F0F44ECF1AF3B7CD00052FE8 /* Supporting Files */,
 				F0F44EF11AF3B81C00052FE8 /* DrawExamples.swift */,
+				F0F44ECF1AF3B7CD00052FE8 /* Supporting Files */,
 			);
 			path = CoreGraphics01;
 			sourceTree = "<group>";
@@ -92,7 +90,6 @@
 		F0F44ECF1AF3B7CD00052FE8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F0F44EF31AF3C36F00052FE8 /* dlanceblack.jpg */,
 				F0F44ED11AF3B7CD00052FE8 /* AppDelegate.swift */,
 				F0F44EDA1AF3B7CD00052FE8 /* LaunchScreen.xib */,
 				F0F44ED81AF3B7CD00052FE8 /* Images.xcassets */,
@@ -200,7 +197,6 @@
 			files = (
 				F0F44ED71AF3B7CD00052FE8 /* Main.storyboard in Resources */,
 				F0F44EDC1AF3B7CD00052FE8 /* LaunchScreen.xib in Resources */,
-				F0F44EF41AF3C36F00052FE8 /* dlanceblack.jpg in Resources */,
 				F0F44ED91AF3B7CD00052FE8 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,6 +415,7 @@
 				F0F44EED1AF3B7CD00052FE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F0F44EEE1AF3B7CD00052FE8 /* Build configuration list for PBXNativeTarget "CoreGraphics01Tests" */ = {
 			isa = XCConfigurationList;
@@ -427,6 +424,7 @@
 				F0F44EF01AF3B7CD00052FE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
