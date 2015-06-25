@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="WN0-gy-MXw" style="IBUITableViewCellStyleDefault" id="1H3-eI-CXp">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="WN0-gy-MXw" detailTextLabel="9mh-9A-BzA" style="IBUITableViewCellStyleSubtitle" id="1H3-eI-CXp">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1H3-eI-CXp" id="LA1-1L-laW">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -24,8 +24,17 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9mh-9A-BzA">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="b3z-xR-6pA" kind="show" identifier="candySqgue" id="HqQ-GY-oQb"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -38,6 +47,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a2w-De-3fN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="944" y="447"/>
+        </scene>
+        <!--Candy Detail View Controller-->
+        <scene sceneID="6AN-gd-Y5w">
+            <objects>
+                <viewController id="b3z-xR-6pA" customClass="CandyDetailViewController" customModule="TableViewReview01" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qh4-gm-cHR"/>
+                        <viewControllerLayoutGuide type="bottom" id="XBZ-O9-UMN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fhy-3p-Vtg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AdU-g7-5Qa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1650" y="447"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zB0-gU-x4f">

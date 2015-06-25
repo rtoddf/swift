@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F0471AD91B3C8FDC00B27D27 /* CandyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0471AD81B3C8FDC00B27D27 /* CandyDetailViewController.swift */; };
 		F08872641B3C80C300975020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08872631B3C80C300975020 /* AppDelegate.swift */; };
 		F08872661B3C80C300975020 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08872651B3C80C300975020 /* ViewController.swift */; };
 		F08872691B3C80C300975020 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F08872671B3C80C300975020 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F0471AD81B3C8FDC00B27D27 /* CandyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandyDetailViewController.swift; sourceTree = "<group>"; };
 		F088725E1B3C80C300975020 /* TableViewReview01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewReview01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F08872621B3C80C300975020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F08872631B3C80C300975020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +39,7 @@
 		F08872731B3C80C400975020 /* TableViewReview01Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableViewReview01Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F08872781B3C80C400975020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F08872791B3C80C400975020 /* TableViewReview01Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewReview01Tests.swift; sourceTree = "<group>"; };
-		F08872831B3C817700975020 /* Candy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Candy.swift; sourceTree = "<group>"; };
+		F08872831B3C817700975020 /* Candy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Candy.swift; path = ../Candy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +63,6 @@
 		F08872551B3C80C300975020 = {
 			isa = PBXGroup;
 			children = (
-				F08872831B3C817700975020 /* Candy.swift */,
 				F08872601B3C80C300975020 /* TableViewReview01 */,
 				F08872761B3C80C400975020 /* TableViewReview01Tests */,
 				F088725F1B3C80C300975020 /* Products */,
@@ -80,6 +81,8 @@
 		F08872601B3C80C300975020 /* TableViewReview01 */ = {
 			isa = PBXGroup;
 			children = (
+				F08872831B3C817700975020 /* Candy.swift */,
+				F0471AD81B3C8FDC00B27D27 /* CandyDetailViewController.swift */,
 				F08872651B3C80C300975020 /* ViewController.swift */,
 				F08872671B3C80C300975020 /* Main.storyboard */,
 				F08872611B3C80C300975020 /* Supporting Files */,
@@ -218,6 +221,7 @@
 				F08872661B3C80C300975020 /* ViewController.swift in Sources */,
 				F08872841B3C817700975020 /* Candy.swift in Sources */,
 				F08872641B3C80C300975020 /* AppDelegate.swift in Sources */,
+				F0471AD91B3C8FDC00B27D27 /* CandyDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +417,7 @@
 				F088727F1B3C80C400975020 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F08872801B3C80C400975020 /* Build configuration list for PBXNativeTarget "TableViewReview01Tests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +426,7 @@
 				F08872821B3C80C400975020 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

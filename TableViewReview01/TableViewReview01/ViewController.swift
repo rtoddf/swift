@@ -14,9 +14,6 @@ class TableViewController: UITableViewController {
             Candy(name: "Butterfinger"),
             Candy(name: "Mily Way")
         ]
-     
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,7 +33,25 @@ class TableViewController: UITableViewController {
         candy = candies[indexPath.row]
         cell.textLabel?.text = candy.name
         
+        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("candySegue", sender: tableView)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "candySegue" {
+            let candyDetailViewController: CandyDetailViewController = segue.destinationViewController as! CandyDetailViewController
+            
+            let selectedIndexPath = self.tableView.indexPathForSelectedRow()!
+            
+            // get the cell tapped and send the object (Candy) to the Detailiew
+            let selectedCandy = candies[selectedIndexPath.row]
+            candyDetailViewController.candy = selectedCandy
+        }
     }
     
 }
