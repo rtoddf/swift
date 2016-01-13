@@ -82,5 +82,38 @@ print("\(c)")
 
 // FLOATING POINT NUMBERS
 
+/*
+IN computers, floating point numbers are stored as a mantissa and an exponent. Floating point numbers are often imprecise: There are many numbers that cannot be stored with perfect accuracy in a floating-point number. 
 
+Swift has two basic floating-point number types: Float, which is a 32-bit floating-point number, and Doubel, which is a 64-bit floating-point number. The bit sizes determine how much precision the numbers have. Double has more precision than Float.
+
+The default inferred type for floating-point numbers in swift is Double.
+*/
+
+let d1 = 1.1 // implicit double
+let d2:Double = 1.1
+let f1:Float = 100.3
+
+// Operattinos on floating-point numbers
+print(10.0 + 11.4)
+print(11.0/2.0)
+print(12.4 % 5.0)
+
+// comparing floating-point numbers
+if d1 == d2 {
+    print("d1 and d2 are the same")
+}
+
+// now let's ad 0.1 to d2
+print("d1 + 0.1 is \(d1 + 0.1)")
+
+
+if d1 + 0.1 == 1.2 {
+    print("d is equal to 1.2")
+}
+
+/* isn't 1.2 equal to 1.2? Sometimes it is, and sometimes its not. When you add 1.1 and 0.1, the result is really something like 1.200000000000001. The value you stored when you tyoed the literal 2.1 if really something like 1.199999999999.
+
+Swift will round both of those to 1.2 when you print them, but they are technically not equal. 
+*/
 
