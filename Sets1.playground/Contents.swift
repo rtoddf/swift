@@ -23,3 +23,17 @@ let commonGroceryBag = groceryBag.union(friendsGroceryBag)
 
 
 let itemsToReturn = groceryBag.intersect(friendsGroceryBag)
+
+let yourSecondBag:Set = (["berries", "yogurt"])
+let roommatesSecondBag:Set = (["grapes", "honey"])
+
+let disjoint = yourSecondBag.isDisjointWith(roommatesSecondBag)
+// returns true if the sets do not have matching items
+
+let myCities:Set = (["Atlanta", "Chicago", "Jacksonville", "New York", "San Francisco"])
+let yourCities:Set = (["Chicago", "San Francisco", "Jacksonville"])
+
+let isSuper = myCities.isSupersetOf(yourCities)
+let isStrictSuper = myCities.isStrictSupersetOf(yourCities)
+
+//http://www.codingexplorer.com/swift-set-type/
