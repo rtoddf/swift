@@ -1,119 +1,51 @@
 import UIKit
 
-/*
-An integer is a number that does not have a decimal point or fractional component - a whole number. Integers are frequently used to represent a count of "things", such as hte number of pages of a book. A difference between integers and used by computers and numbers you use elsewhere is that an integer type on a computer takes up a fixed amount of memory. Therefore, they cannot represent all possible values - they have a minimum and maximum value.
+print("The max Int value is \(Int.max)")
+print("The min Int value is \(Int.min)")
+print("The max 32-bit Int value is \(Int32.max)")
 
-*/
+// there is also Int8, Int16, and Int64
+// all the integer types are signed - can represent positive and negative numbers
+// there are also unsigned integer types for whole number greater than 0
+// every int type has a corresponding uint type
+// UInt8, UInt16, etc
 
-print("the maximum Int value is \(Int.max)")
-print("the minumum Int value is \(Int.min)")
-
-/*
-In OSX, Int is a 64-bit integer, which means is has 2 to the 64th power possible values. If you were to add up 2 to the 0 power, 2 to the 1st power, .... 2 to the 62nd power, you would end up with 9223372036854775807 - the value for Int max.
-
-In iOS, Int is slightly more complicated. All devices before the iPhone 5S, iPad Air, and iPad mini with retina display, used a 32-bit architecture, and you get a 32-bit Int. All devices after are 64-bit. The compiler determines the appropriate size for Int when it build your program.
-
-If you need to know the exact size of an integer, you can use on of Swift's explicit sized integer types:
-*/
-
-print("the max Int value in 32-bit is \(Int32.max)")
-print("the min Int value in 32-bit is \(Int32.min)")
-
-/*
-Also available are Int8, Int16, and Int64. You use the sized integer types when you need to know the size of an underlying integer, such as for some algorithms (common in cryptography) or to exchange integers with another computer (such as sesnding data across the Internet).
-
-You will not use these types much. Good Swift style is to use an Int for most use cases.
-*/
-
-/*
-All the ints you have seen so far, are signed. Which means that they can represent positive or negative numbers. Swift also has an unsigned integer type that can represent integers greater than 0.
-*/
-
-print("the maximum UInt value is \(UInt.max)")
-print("the minimum UINT value is \(UInt.min)")
+print("The max UInt value is \(UInt.max)")
+print("The min UInt value is \(UInt.min)")
 
 
 let numberOfPages:Int = 10
 let numberOfChapters = 3
 
+
 let numberOfPeople:UInt = 40
-let volumeAdjustment:UInt = 1000
+let volumeAdjustment:UInt32 = 100
 
-// UInt cannot be negative, and 200 is not an Int8 integer, so we have to use Integer overflow to take care of hte error
+print(10 + 2)
 
-//let firstBadValue:UInt = -1
-//let secondBadValue:Int8 = 200
-
-// "Overflows when stored into..." means that when the compiler tried to store your number into the type you specified, and it did not fit in the type's allowed range of values.
-
-// integer division
+// division on Ints returns just that - Ints
 print(11/3)
 
-// swift truncates the fractional part. Integer division always rounds toward 0. 
+//remainders too
+print(11%3)
 
-// use modulus if you want remainders
-print(11 % 3)
-
-// incrementing and decrementing
+//shorthand
 var x = 10
-x++
-print("x incremented is \(x)")
-x--
-print("x decremented is \(x)")
+x += 1
 
-// OVERFLOW OPERATORS
+print(x)
+
+x -= 1
+
+print(x)
+
+// overflow and underflow operators
+// &+, &-, &* use wraparound
+
 let y:Int8 = 120
-//let z = y + 10
-
-// execution was interrupted - this was out of range fo Int8
-
 let z = y &+ 10
-print("\(z)")
+print(z)
 
-// since y is an Int8, once you get to 127, you cannot go any higher. Instead, incrementing one more wraps you around to -128
-
-// converting int types
-let a:Int16 = 200
-let b:Int8 = 50
-//let c = a + b
-
-let c = a + Int16(b)
-print("\(c)")
-
-// FLOATING POINT NUMBERS
-
-/*
-IN computers, floating point numbers are stored as a mantissa and an exponent. Floating point numbers are often imprecise: There are many numbers that cannot be stored with perfect accuracy in a floating-point number. 
-
-Swift has two basic floating-point number types: Float, which is a 32-bit floating-point number, and Doubel, which is a 64-bit floating-point number. The bit sizes determine how much precision the numbers have. Double has more precision than Float.
-
-The default inferred type for floating-point numbers in swift is Double.
-*/
-
-let d1 = 1.1 // implicit double
-let d2:Double = 1.1
-let f1:Float = 100.3
-
-// Operattinos on floating-point numbers
-print(10.0 + 11.4)
-print(11.0/2.0)
-print(12.4 % 5.0)
-
-// comparing floating-point numbers
-if d1 == d2 {
-    print("d1 and d2 are the same")
-}
-
-// now let's ad 0.1 to d2
-print("d1 + 0.1 is \(d1 + 0.1)")
-
-
-if d1 + 0.1 == 1.2 {
-    print("d is equal to 1.2")
-}
-
-/* isn't 1.2 equal to 1.2? Sometimes it is, and sometimes its not. When you add 1.1 and 0.1, the result is really something like 1.200000000000001. The value you stored when you tyoed the literal 2.1 if really something like 1.199999999999.
-
-Swift will round both of those to 1.2 when you print them, but they are technically not equal. 
-*/
+//floating point numbers
+// two types - Float and Double: Float is 32-bit and Double is 64-bit. Double is more a more accurate approximation
 
