@@ -28,8 +28,8 @@ enum LightBulb {
 var bulb = LightBulb.On
 let ambientTemperature = 77.0
 
-var bulbTemperature = bulb.surfaceTemperatureForAmbientTemperature(ambientTemperature)
+var bulbTemperature = bulb.surfaceTemperatureForAmbientTemperature(ambient: ambientTemperature)
 // var bulbTemperature = LightBulb.On.surfaceTemperatureForAmbientTemperature(ambientTemperature)
 
 bulb.toggle()
-bulbTemperature = bulb.surfaceTemperatureForAmbientTemperature(ambientTemperature)
+bulbTemperature = bulb.surfaceTemperatureForAmbientTemperature(ambient: ambientTemperature)

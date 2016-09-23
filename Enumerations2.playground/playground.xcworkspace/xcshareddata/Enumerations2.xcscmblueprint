@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "4F63601EDDDC1D98D2759C3FCAA1E91F6518717A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2C9D5766D6379704FBAA5FF8A77AD4A80623BBD6" : 9223372036854775807,
+    "4F63601EDDDC1D98D2759C3FCAA1E91F6518717A" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "147514A7-0F09-452C-B1B4-C8548BF4763B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2C9D5766D6379704FBAA5FF8A77AD4A80623BBD6" : "",
+    "4F63601EDDDC1D98D2759C3FCAA1E91F6518717A" : "swift_stuff\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Enumerations2",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Enumerations2.playground",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:rtoddf\/knowyourvotefirst.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2C9D5766D6379704FBAA5FF8A77AD4A80623BBD6"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:rtoddf\/swift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4F63601EDDDC1D98D2759C3FCAA1E91F6518717A"
+    }
+  ]
+}
