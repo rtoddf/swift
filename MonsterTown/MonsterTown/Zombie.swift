@@ -4,7 +4,7 @@ class Zombie: Monster {
     var walksWithLimp = true
     
     override func terrorizeTown() {
-        town?.changePopulation(amount: -10)
+        town?.changePopulation(-10)
         // using super will call the superclass's method after the override
         super.terrorizeTown()
     }
