@@ -159,6 +159,8 @@
 		75623AD21A5F810D00C11410 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0730;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Todd Fleeman";
 				TargetAttributes = {
@@ -401,6 +403,7 @@
 				75623AFE1A5F810D00C11410 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		75623AFF1A5F810D00C11410 /* Build configuration list for PBXNativeTarget "tableViewAppTests" */ = {
 			isa = XCConfigurationList;
@@ -409,6 +412,7 @@
 				75623B011A5F810D00C11410 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
