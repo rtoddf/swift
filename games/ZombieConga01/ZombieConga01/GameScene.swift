@@ -8,6 +8,33 @@ class GameScene: SKScene {
     let zombieMovePointsPerSecond: CGFloat = 480.0
     var velocity = CGPoint.zero
     
+    let playableRect: CGRect
+    
+    override init(size: CGSize){
+        let maxAspectRatio: CGFloat = 16.0/9.0 // 1
+        let playableHeight = size.width / maxAspectRatio
+        let playableMargin = (size.height-playableHeight)/2.0 // 3
+        playableRect = CGRect(x: 0, y: playableMargin,
+                              width: size.width,
+                              height: playableHeight) // 4
+        super.init(size: size) // 5
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented") // 6
+    }
+    
+    // helper function to draw a box
+//    func debugDrawPlayableArea() {
+//        let shape = SKShapeNode()
+//        let path = CGPathCreateMutable()
+//        CGPathAddRect(path, nil, playableRect)
+//        shape.path = path
+//        shape.strokeColor = SKColor.redColor()
+//        shape.lineWidth = 4.0
+//        addChild(shape)
+//    }
+    
     override func didMoveToView(view: SKView){
         backgroundColor = SKColor.blackColor()
         
@@ -43,6 +70,9 @@ class GameScene: SKScene {
         moveSprite(zombie, velocity: velocity)
         
 //        zombie.position = CGPoint(x: zombie.position.x + 8, y: zombie.position.y)
+        
+        boundsCheckZombie()
+        rotateSprite(zombie, direction: velocity)
     }
     
     func moveSprite(sprite: SKSpriteNode, velocity: CGPoint){
@@ -64,6 +94,38 @@ class GameScene: SKScene {
     
     func sceneTouched(touchLocation:CGPoint){
         moveZombieToward(touchLocation)
+    }
+    
+    func boundsCheckZombie(){
+//        let bottomLeft = CGPointZero
+//        let topRight = CGPoint(x: size.width, y: size.height)
+        
+        let bottomLeft = CGPoint(x: 0, y: CGRectGetMinY(playableRect))
+        let topRight = CGPoint(x: size.width, y: CGRectGetMaxY(playableRect))
+        
+        if zombie.position.x <= bottomLeft.x {
+            zombie.position.x = bottomLeft.x
+            velocity.x = -velocity.x
+        }
+        
+        if zombie.position.x >= topRight.x {
+            zombie.position.x = topRight.x
+            velocity.x = -velocity.x
+        }
+        
+        if zombie.position.y <= bottomLeft.y {
+            zombie.position.y = bottomLeft.y
+            velocity.y = -velocity.y
+        }
+        
+        if zombie.position.y >= topRight.y {
+            zombie.position.y = topRight.y
+            velocity.y = -velocity.y
+        }
+    }
+    
+    func rotateSprite(sprite: SKSpriteNode, direction: CGPoint){
+        sprite.zRotation = CGFloat(atan2(Double(direction.y), Double(direction.x)))
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
