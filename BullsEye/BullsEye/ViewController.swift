@@ -17,18 +17,21 @@ class ViewController: UIViewController {
         currentValue = lroundf(slider.value)
         startOver()
         
-        let thumbImageNormal = UIImage(named: "SliderThumb-Normal")
+        // image literals
+        let thumbImageNormal = #imageLiteral(resourceName: "SliderThumb-Normal")
+//        let thumbImageNormal = UIImage(named: "SliderThumb-Normal")
         slider.setThumbImage(thumbImageNormal, for: .normal)
-        let thumbImageHighlighted = UIImage(named: "SliderThumb-Highlighted")
+        let thumbImageHighlighted = #imageLiteral(resourceName: "SliderThumb-Highlighted")
+//        let thumbImageHighlighted = UIImage(named: "SliderThumb-Highlighted")
         slider.setThumbImage(thumbImageHighlighted, for: .highlighted)
         
         let insets = UIEdgeInsets(top: 0, left: 14, bottom: 0, right: 14)
-        let trackImageLeft = UIImage(named: "SliderTrackLeft")
-        let trackLeftResizable = trackImageLeft?.resizableImage(withCapInsets: insets)
+        let trackImageLeft = #imageLiteral(resourceName: "SliderTrackLeft")
+        let trackLeftResizable = trackImageLeft.resizableImage(withCapInsets: insets)
         slider.setMinimumTrackImage(trackLeftResizable, for: .normal)
         
-        let trackImageRight = UIImage(named: "SliderTrackRight")
-        let trackRightResizable = trackImageRight?.resizableImage(withCapInsets: insets)
+        let trackImageRight = #imageLiteral(resourceName: "SliderTrackRight")
+        let trackRightResizable = trackImageRight.resizableImage(withCapInsets: insets)
         slider.setMaximumTrackImage(trackRightResizable, for: .normal)
     }
     
