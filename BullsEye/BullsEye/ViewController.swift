@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         currentValue = lroundf(slider.value)
-        startNewRound()
+        startOver()
     }
     
     func updateLabels() {
@@ -39,6 +39,14 @@ class ViewController: UIViewController {
     
     @IBAction func sliderMoved(_ slider:UISlider) {
         currentValue = lroundf(slider.value)
+    }
+    
+    @IBAction func startOver(){
+        points = 0
+        score = 0
+        round = 0
+        
+        startNewRound()
     }
 
     @IBAction func showAlert() {
@@ -64,12 +72,14 @@ class ViewController: UIViewController {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let action = UIAlertAction(title: "Awesome", style: .default, handler: nil)
+        // swift closure in the handler
+        let action = UIAlertAction(title: "Awesome", style: .default, handler: {
+            action in
+                self.startNewRound()
+        })
         
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
-        
-        startNewRound()
     } 
 }
 
