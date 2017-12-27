@@ -16,6 +16,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         currentValue = lroundf(slider.value)
         startOver()
+        
+        let thumbImageNormal = UIImage(named: "SliderThumb-Normal")
+        slider.setThumbImage(thumbImageNormal, for: .normal)
+        let thumbImageHighlighted = UIImage(named: "SliderThumb-Highlighted")
+        slider.setThumbImage(thumbImageHighlighted, for: .highlighted)
+        
+        
     }
     
     func updateLabels() {
