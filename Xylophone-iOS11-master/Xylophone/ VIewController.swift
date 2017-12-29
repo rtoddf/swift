@@ -12,13 +12,15 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
 
 
     @IBAction func notePressed(_ sender: UIButton) {
-//        let note = Int(sender.tag)
+        // either way would work
+        // first way doesn't require an array
+        let note = String("note\(sender.tag)")
         let selectedSoundFileName:String = soundArray[sender.tag - 1]
         
-        playSound(selectedSoundFileName)
+        playSound(selectedSoundFileName, note)
     }
     
-    func playSound(_ file:String) {
+    func playSound(_ file:String, _ note:String) {
         /* RECIPE:
          1 - import AVFoundation
          2 - add AVAudioPlayerDelegate to the ViewController
@@ -28,7 +30,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
          6 - play the sound
          */
         
-        let soundUrl = Bundle.main.url(forResource: file, withExtension: "wav")!
+        print("note: \(note)")
+        
+        let soundUrl = Bundle.main.url(forResource: note, withExtension: "wav")!
         
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: soundUrl)
