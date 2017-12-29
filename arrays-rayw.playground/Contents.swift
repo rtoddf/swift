@@ -6,9 +6,10 @@ import UIKit
 // Creating arrays
 // four ways to initialize an array
 var emptyArray1:Array<String> = []
+var emptyArray4: [String] = []
 var emptyArray2 = Array<String>()
 var emptyArray3 = [String]()
-var emptyArray4: [String] = []
+
 
 var evenNumbers:[Int] = [22, 4, 6, 8]
 evenNumbers.append(10)
