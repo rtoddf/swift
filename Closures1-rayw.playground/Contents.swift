@@ -50,7 +50,7 @@ let incrementCounter = {
 // http://goshdarnclosuresyntax.com/
 // http://fuckingswiftblocksyntax.com/
 
-
+// rewatch and do #86 #87 - closures ans collections
 
 
 
