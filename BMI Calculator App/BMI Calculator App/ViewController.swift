@@ -1,16 +1,28 @@
 import UIKit
 
+/*
+ NOTES:
+ - what if the user puts in 178.4.5.6?
+ - try putting an info view in that explains what BMI is
+ - try passing the score to the info window
+ - try adding a view that does the same thing in imperial units
+ - can you have two views that use the same calculation functions?
+ - try doing calculations to tell the user how much weight they need to lose or to be normal weight
+*/
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var weightInput: UITextField!
     @IBOutlet weak var heightInput: UITextField!
     @IBOutlet weak var resultField: UITextView!
+    @IBOutlet weak var clearFields: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         weightInput.delegate = self
         heightInput.delegate = self
+        clearFields.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,9 +40,19 @@ class ViewController: UIViewController {
             alert.addAction(action)
             present(alert, animated: true, completion: nil)
         } else {
-            bmi = bmiCalculator(weight: Float(weightInput.text!)!, height: Float(heightInput.text!)!)
-            resultField.text = "Your BMI score is \(String(bmi.score))\n\(bmi.message)"
+            let weight:String? = weightInput.text
+            let height:String? = heightInput.text
+            if let weight = weight,
+                let height = height {
+                bmi = bmiCalculator(weight: String(weight), height: String(height))
+                displayMessage(score: String(bmi.score), message: bmi.message)
+            }
         }
+    }
+    
+    func displayMessage(score:String, message:String) {
+        resultField.text = "Your BMI score is \(score)\n\(message)"
+        clearFields.isHidden = false
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -38,20 +60,37 @@ class ViewController: UIViewController {
         heightInput.resignFirstResponder()
     }
     
-    func bmiCalculator(weight:Float, height: Float) -> (score:Float, message:String) {
-        let score:Float = (weight / pow(height, 2)) * 703
-        var message:String = ""
+    func bmiCalculator(weight:String, height: String) -> (score:Float, message:String) {
+        let weight:Float? = Float(weight)
+        let height:Float? = Float(height)
+        var message:String? = ""
+        var score:Float = 0
         
-        if score > 25 {
-            message = "You are overweight"
-        } else if score >= 18.5 && score <= 25 {
-            message = "You are normal weight"
+        if let weight = weight,
+            let height = height {
+            score = (weight / pow(height, 2)) * 703
+            
+            if score > 25 {
+                message = "You are overweight"
+            } else if score >= 18.5 && score <= 25 {
+                message = "You are normal weight"
+            } else {
+                message = "You are under weight"
+            }
         } else {
-            message = "You are under weight"
+            
         }
-        
-        return (score, message)
+
+        return (score, message!)
     }
+    
+    @IBAction func startOver(_ sender: UIButton) {
+        weightInput.text? = ""
+        heightInput.text? = ""
+        resultField.text? = ""
+        clearFields.isHidden = true
+    }
+    
 }
 
 extension ViewController : UITextFieldDelegate {
