@@ -4,15 +4,36 @@
 //
 //  Created by Todd Fleeman on 1/2/18.
 //  Copyright © 2018 Todd Fleeman. All rights reserved.
-//
+/*
+ https://www.youtube.com/watch?v=YY3bTxgxWss&list=WL&index=54 - tutorial on Youtube
+ Completed Source Code: https://www.letsbuildthatapp.com/course_video?id=1562
+ */
 
 import UIKit
 
-struct Course {
-    let id:Int
+
+struct WebsiteDescription: Decodable {
     let name:String
-    let link:String
-    let imageUrl:String
+    let description:String
+    let courses: [Course]
+}
+
+//struct Course {
+// decodable protocol
+// what if json is missing a field??? - use optionals - ?
+struct Course: Decodable {
+    let id:Int?
+    let name:String?
+    let link:String?
+    let imageUrl:String?
+    
+    // not needed when using decoder
+//    init(json: [String:Any]) {
+//        id = json["id"] as? Int ?? -1
+//        name = json["name"] as? String ?? ""
+//        link = json["link"] as? String ?? ""
+//        imageUrl = json["imageUrl"] as? String ?? ""
+//    }
 }
 
 class ViewController: UIViewController {
@@ -20,7 +41,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let jsonUrlString = "https://api.letsbuildthatapp.com/jsondecodable/course"
+//        let jsonUrlString = "https://api.letsbuildthatapp.com/jsondecodable/course"
+//        let jsonUrlString = "https://api.letsbuildthatapp.com/jsondecodable/courses"
+        let jsonUrlString = "https://api.letsbuildthatapp.com/jsondecodable/website_description"
+// https://api.letsbuildthatapp.com/jsondecodable/courses_missing_fields
+        
         guard let url = URL(string: jsonUrlString) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, err) in
@@ -29,8 +54,33 @@ class ViewController: UIViewController {
             
             guard let data = data else { return }
             
-            let dataAsString = String(data: data, encoding: .utf8)
-            print(dataAsString)
+//            let dataAsString = String(data: data, encoding: .utf8)
+//            print(dataAsString)
+
+            do {
+//                let course = try JSONDecoder().decode(Course.self, from: data)
+//                print(course.name)
+                
+                // array of courses
+//                let courses = try JSONDecoder().decode([Course].self, from: data)
+//                print(courses)
+                
+                let websiteDescription = try JSONDecoder().decode(WebsiteDescription.self, from: data)
+                print(websiteDescription.name)
+                print(websiteDescription.description)
+                
+                for course in websiteDescription.courses {
+                    print(course.id)
+                }
+                // old way - gives serialized json - swift 2/3/obj-c
+//                guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any] else { return }
+//                let course = Course(json: json)
+//
+//                print(course)
+            } catch let jsonErr {
+                print("error serilaizing json:" , jsonErr)
+            }
+            
             
         }.resume()
         
