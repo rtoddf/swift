@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00D1E5911FFD91E50066798D /* SelfDrivingCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1E5901FFD91E50066798D /* SelfDrivingCar.swift */; };
 		758E20AE1FFC707F0053B193 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758E20AD1FFC707F0053B193 /* main.swift */; };
 		758E20B51FFC72950053B193 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758E20B41FFC72950053B193 /* Car.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		00D1E5901FFD91E50066798D /* SelfDrivingCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfDrivingCar.swift; sourceTree = "<group>"; };
 		758E20AA1FFC707F0053B193 /* Classes and Objects - AppBrewery */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Classes and Objects - AppBrewery"; sourceTree = BUILT_PRODUCTS_DIR; };
 		758E20AD1FFC707F0053B193 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		758E20B41FFC72950053B193 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				758E20AD1FFC707F0053B193 /* main.swift */,
+				00D1E5901FFD91E50066798D /* SelfDrivingCar.swift */,
 				758E20B41FFC72950053B193 /* Car.swift */,
 			);
 			path = "Classes and Objects - AppBrewery";
@@ -124,6 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				758E20B51FFC72950053B193 /* Car.swift in Sources */,
+				00D1E5911FFD91E50066798D /* SelfDrivingCar.swift in Sources */,
 				758E20AE1FFC707F0053B193 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,6 +245,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
@@ -250,6 +255,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 			};
