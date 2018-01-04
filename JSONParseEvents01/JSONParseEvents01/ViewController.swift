@@ -20,7 +20,7 @@ struct Event: Decodable {
     let venue_name:String?
     let time_string:String?
     let start_time:String?
-    let end_time:String?
+    let stop_time:String?
     let image:String?
 }
 
@@ -47,9 +47,18 @@ class ViewController: UIViewController {
                     print("Event title: ", event.title ?? "")
                     print("@", event.venue_name ?? "")
                     print("Time String", event.time_string ?? "")
-                    print("Start Time", event.start_time ?? "")
-                    print("End Time", event.end_time ?? "")
-                    print("Event image: ", event.image ?? "")
+                    
+                    // can this be moved to the struct??
+                    let startTime = event.start_time
+                    let startTimeFormatted = startTime?.toDateString(inputDateFormat: "yyyy-MM-dd HH:mm:ss", ouputDateFormat: "EE'.' MM/dd ha")
+                    let stopTime = event.stop_time
+                    let stopTimeFormatted = stopTime?.toDateString(inputDateFormat: "yyyy-MM-dd HH:mm:ss", ouputDateFormat: "EE'.' MM/dd ha")
+                    let eventImageString = event.image
+                    let eventImage = eventImageString?.replacingOccurrences(of: "//", with: "http://")
+                    
+                    print("Start Time", startTimeFormatted ?? "")
+                    print("Stop Time", stopTimeFormatted ?? "")
+                    print("Event image: ", eventImage ?? "")
                 }
                 
             } catch let jsonErr {
@@ -68,3 +77,12 @@ class ViewController: UIViewController {
     }
 }
 
+extension String {
+    func toDateString( inputDateFormat inputFormat  : String,  ouputDateFormat outputFormat  : String ) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = inputFormat
+        let date = dateFormatter.date(from: self)
+        dateFormatter.dateFormat = outputFormat
+        return dateFormatter.string(from: date!)
+    }
+}
