@@ -70,7 +70,10 @@ class ViewController: UIViewController {
                 print(websiteDescription.description)
                 
                 for course in websiteDescription.courses {
-                    print(course.id)
+                    print("The course id is: ", course.id ?? "")
+                    print("The course name is: ", course.name ?? "")
+                    print("The course link is: ", course.link ?? "")
+                    print("The course imageUrl is: ", course.imageUrl ?? "")
                 }
                 // old way - gives serialized json - swift 2/3/obj-c
 //                guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String:Any] else { return }
