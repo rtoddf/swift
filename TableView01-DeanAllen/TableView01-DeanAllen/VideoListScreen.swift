@@ -1,11 +1,12 @@
 import UIKit
 
+// https://www.youtube.com/watch?v=FtO5QT2D_H8&list=PL8seg1JPkqgFQQI7skvLoDeSv0vQ_IM5Q
+// https://www.youtube.com/watch?v=gN3FbNJ6_TY&list=PL8seg1JPkqgG3822Pbf_H9xldrODNV3XI&index=9 - pass data
 // this is the controller for the tableview
 class VideoListScreen: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var videos:[Video] = []
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         videos = createArray()
@@ -24,6 +25,9 @@ class VideoListScreen: UIViewController {
         let video4 = Video(image: #imageLiteral(resourceName: "colton-haynes"), title: "Colton Haynes")
         let video5 = Video(image: #imageLiteral(resourceName: "eli-lieb"), title: "Eli Lieb")
         let video6 = Video(image: #imageLiteral(resourceName: "gus-kenworthy"), title: "Gus Kenworthy")
+        let video7 = Video(image: #imageLiteral(resourceName: "matt-doyle"), title: "Matt Doyle")
+        let video8 = Video(image: #imageLiteral(resourceName: "shaping-sound"), title: "Shaping Sound")
+        let video9 = Video(image: #imageLiteral(resourceName: "tom-daley"), title: "Tom Daley")
         
         tempVideos.append(video1)
         tempVideos.append(video2)
@@ -31,6 +35,9 @@ class VideoListScreen: UIViewController {
         tempVideos.append(video4)
         tempVideos.append(video5)
         tempVideos.append(video6)
+        tempVideos.append(video7)
+        tempVideos.append(video8)
+        tempVideos.append(video9)
         
         return tempVideos
     }
@@ -88,6 +95,7 @@ class VideoListScreen: UIViewController {
 
 }
 
+// extension for add datasource and delegate protocols to the tableview 
 extension VideoListScreen: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
