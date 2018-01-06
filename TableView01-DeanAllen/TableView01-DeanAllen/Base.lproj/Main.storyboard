@@ -14,6 +14,7 @@
     <customFonts key="customFonts">
         <array key="AvenirNext.ttc">
             <string>AvenirNext-DemiBold</string>
+            <string>AvenirNext-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -81,11 +82,68 @@
                     <navigationItem key="navigationItem" id="wy2-IL-MLJ"/>
                     <connections>
                         <outlet property="tableView" destination="dfb-WZ-y54" id="5IY-As-Lbw"/>
+                        <segue destination="BmH-7H-n48" kind="show" identifier="MasterToDetail" id="TQI-Ka-lf8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="160.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="xFa-ox-Pu0">
+            <objects>
+                <viewController id="BmH-7H-n48" customClass="DetailViewController" customModule="TableView01_DeanAllen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UMa-UK-tQz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Pw-tr-IJg">
+                                <rect key="frame" x="0.0" y="64" width="375" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="225" id="QYt-eT-tmO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BaV-PS-NGf">
+                                <rect key="frame" x="15" y="304" width="345" height="343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="345" id="zcW-f6-cD9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fby-G3-LLZ">
+                                <rect key="frame" x="0.0" y="245" width="387" height="35"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="1" height="2"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BaV-PS-NGf" firstAttribute="top" secondItem="7Pw-tr-IJg" secondAttribute="bottom" constant="15" id="2TG-cC-krP"/>
+                            <constraint firstItem="fby-G3-LLZ" firstAttribute="top" secondItem="3Qb-vt-hUo" secondAttribute="top" constant="181" id="5xJ-IY-Jh9"/>
+                            <constraint firstItem="3Qb-vt-hUo" firstAttribute="trailing" secondItem="7Pw-tr-IJg" secondAttribute="trailing" id="FU2-Ix-3xm"/>
+                            <constraint firstItem="7Pw-tr-IJg" firstAttribute="top" secondItem="3Qb-vt-hUo" secondAttribute="top" id="LDr-qg-GNo"/>
+                            <constraint firstItem="fby-G3-LLZ" firstAttribute="leading" secondItem="3Qb-vt-hUo" secondAttribute="leading" id="SBu-ZY-Fy0"/>
+                            <constraint firstItem="7Pw-tr-IJg" firstAttribute="leading" secondItem="3Qb-vt-hUo" secondAttribute="leading" id="afW-wq-TZM"/>
+                            <constraint firstItem="3Qb-vt-hUo" firstAttribute="bottom" secondItem="BaV-PS-NGf" secondAttribute="bottom" constant="20" id="drr-dA-2QT"/>
+                            <constraint firstItem="BaV-PS-NGf" firstAttribute="centerX" secondItem="UMa-UK-tQz" secondAttribute="centerX" id="g9x-DK-nxF"/>
+                            <constraint firstItem="fby-G3-LLZ" firstAttribute="trailing" secondItem="3Qb-vt-hUo" secondAttribute="trailing" constant="12" id="sww-iU-W2y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3Qb-vt-hUo"/>
+                    </view>
+                    <connections>
+                        <outlet property="detailDescriptionLabel" destination="BaV-PS-NGf" id="c9F-wD-aim"/>
+                        <outlet property="detailImageView" destination="7Pw-tr-IJg" id="DBi-TF-dsg"/>
+                        <outlet property="detailTitleLabel" destination="fby-G3-LLZ" id="jpH-AW-FG5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KuF-eL-GBs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868" y="133.5832083958021"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yrw-lO-DtI">

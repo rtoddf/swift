@@ -14,6 +14,7 @@
 		7507C6341FFF264900FC208B /* VideoListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7507C6331FFF264900FC208B /* VideoListScreen.swift */; };
 		7507C6361FFF2D4E00FC208B /* VideoCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7507C6351FFF2D4E00FC208B /* VideoCellTableViewCell.swift */; };
 		7507C6381FFF2E2300FC208B /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7507C6371FFF2E2300FC208B /* Video.swift */; };
+		751071DB200066E6008D7BBB /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751071DA200066E6008D7BBB /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		7507C6331FFF264900FC208B /* VideoListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListScreen.swift; sourceTree = "<group>"; };
 		7507C6351FFF2D4E00FC208B /* VideoCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCellTableViewCell.swift; sourceTree = "<group>"; };
 		7507C6371FFF2E2300FC208B /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		751071DA200066E6008D7BBB /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				7507C6211FFF260800FC208B /* AppDelegate.swift */,
 				7507C6331FFF264900FC208B /* VideoListScreen.swift */,
 				7507C6351FFF2D4E00FC208B /* VideoCellTableViewCell.swift */,
+				751071DA200066E6008D7BBB /* DetailViewController.swift */,
 				7507C6251FFF260800FC208B /* Main.storyboard */,
 				7507C6281FFF260800FC208B /* Assets.xcassets */,
 				7507C62A1FFF260800FC208B /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 			files = (
 				7507C6361FFF2D4E00FC208B /* VideoCellTableViewCell.swift in Sources */,
 				7507C6381FFF2E2300FC208B /* Video.swift in Sources */,
+				751071DB200066E6008D7BBB /* DetailViewController.swift in Sources */,
 				7507C6221FFF260800FC208B /* AppDelegate.swift in Sources */,
 				7507C6341FFF264900FC208B /* VideoListScreen.swift in Sources */,
 			);
