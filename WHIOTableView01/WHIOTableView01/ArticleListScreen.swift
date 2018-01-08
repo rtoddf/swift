@@ -22,7 +22,18 @@ class ArticleListScreen: UIViewController {
                 let feed = try JSONDecoder().decode(ApiResults.self, from: data)
 
                 for item in feed.channel.item {
-                    print("item: \(item)")
+//                    print("item: \(item)")
+//                    print("images: \(item.images)")
+//                    print("----------------------")
+//                    print(type(of: item.images))
+                    
+//                    guard let images = item.images else { return }
+//
+//                    for image in images {
+//                        print("----------------------")
+//                        print("url: \(image.url)")
+//                        var image_url:String? = image.url
+//                    }
                     
 //                    let article = Item(title: <#T##String?#>, short_title: <#T##String?#>, link: <#T##String?#>, author: <#T##String?#>, summary: <#T##String?#>, item_class: <#T##String?#>, pub_date: <#T##String?#>, images: <#T##[Images]?#>, videos: <#T##[Videos]?#>)
                     
@@ -33,7 +44,9 @@ class ArticleListScreen: UIViewController {
                         author: item.author,
                         summary: item.summary,
                         item_class: item.item_class,
-                        pub_date: item.pub_date?.toDateString(inputDateFormat: "EE, dd MMM YYYY HH:mm:ss z", ouputDateFormat: "hh:mm a EEEE, MMMM dd, YYYY"))
+                        pub_date: item.pub_date?.toDateString(inputDateFormat: "EE, dd MMM YYYY HH:mm:ss z", ouputDateFormat: "hh:mm a EEEE, MMMM dd, YYYY"),
+                        images: item.images,
+                        videos: item.videos)
                     self.articles.append(article)
                 }
 
@@ -47,7 +60,7 @@ class ArticleListScreen: UIViewController {
             
         }.resume()
         
-        print("articles count: \(articles.count)")
+//        print("articles count: \(articles.count)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,7 +75,6 @@ extension ArticleListScreen: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let article = articles[indexPath.row]
-        print("article: \(article)")
         let cellIndentifier:String = "ArticleCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIndentifier) as! ArticleCell
         cell.setArticle(article: article)
