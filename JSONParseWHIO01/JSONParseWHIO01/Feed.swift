@@ -19,7 +19,8 @@ struct Item: Decodable {
     let link:String?
     let author:String?
     let summary:String?
-    let item_class: String?
+    let item_class:String?
+    let pub_date:String?
 }
 
 //class ApiResults: Decodable {

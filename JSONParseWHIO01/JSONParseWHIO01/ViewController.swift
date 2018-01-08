@@ -21,7 +21,14 @@ class ViewController: UIViewController {
                 var articles = [Item]()
                 
                 for item in feed.channel.item {
-                    let article = Item(title: item.title, short_title: item.short_title, link: item.link, author: item.author, summary: item.summary, item_class: item.item_class)
+                    let article = Item(
+                        title: item.title,
+                        short_title: item.short_title,
+                        link: item.link,
+                        author: item.author,
+                        summary: item.summary,
+                        item_class: item.item_class,
+                        pub_date: item.pub_date?.toDateString(inputDateFormat: "EE, dd MMM YYYY HH:mm:ss z", ouputDateFormat: "hh:mm a EEEE, MMMM dd, YYYY"))
                     articles.append(article)
                 }
                 
@@ -34,8 +41,24 @@ class ViewController: UIViewController {
     }
     
     func setUpTableView(_ articles:[Item]) {
-        print(articles)
         print(type(of: articles))
+        print(articles.count)
+        
+        for article in articles {
+            print(article)
+            print("---------")
+        }
+    }
+}
+
+// for reference: http://nsdateformatter.com/
+extension String {
+    func toDateString( inputDateFormat inputFormat  : String,  ouputDateFormat outputFormat  : String ) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = inputFormat
+        let date = dateFormatter.date(from: self)
+        dateFormatter.dateFormat = outputFormat
+        return dateFormatter.string(from: date!)
     }
 }
 
