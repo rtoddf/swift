@@ -1,31 +1,29 @@
 import UIKit
 
 class ArticleListScreen: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
+
+    var articles:[Item] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
 
-        downloadJSON()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
-    func downloadJSON(){
         let jsonUrlString = "https://www.whio.com/feed?id=0face55a-4cf7-11e6-8f16-4a55d4f1e287&count=10"
         let url = URL(string: jsonUrlString)
-        var articles = [Item]()
-        
+
         URLSession.shared.dataTask(with: url!) { (data, response, err) in
             // take care of reponses and err
             
             guard let data = data else { return }
             do {
                 let feed = try JSONDecoder().decode(ApiResults.self, from: data)
-                
-                
+
                 for item in feed.channel.item {
+                    print("item: \(item)")
+                    
                     let article = Item(
                         title: item.title,
                         short_title: item.short_title,
@@ -34,27 +32,41 @@ class ArticleListScreen: UIViewController {
                         summary: item.summary,
                         item_class: item.item_class,
                         pub_date: item.pub_date?.toDateString(inputDateFormat: "EE, dd MMM YYYY HH:mm:ss z", ouputDateFormat: "hh:mm a EEEE, MMMM dd, YYYY"))
-                    articles.append(article)
+                    self.articles.append(article)
+                }
+
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
                 }
                 
-                self.setUpTableView(articles)
             } catch let jsonErr {
                 print("error serializing JSON:", jsonErr)
             }
             
-            }.resume()
-    }
-    
-    func setUpTableView(_ articles:[Item]) {
-        print(type(of: articles))
-        print(articles.count)
+        }.resume()
         
-        for article in articles {
-            print(article)
-            print("---------")
-        }
+        print("articles count: \(articles.count)")
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+}
+
+extension ArticleListScreen: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return articles.count
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let article = articles[indexPath.row]
+        print("article: \(article)")
+        let cellIndentifier:String = "ArticleCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIndentifier) as! ArticleCell
+        cell.setArticle(article: article)
+
+        return cell
+    }
 }
 
 extension String {
