@@ -21,10 +21,15 @@ struct Item: Decodable {
     let summary:String?
     let item_class:String?
     let pub_date:String?
-//    let images:[Images]
+//    let images:[Images]?
+//    let videos:[Videos]?
 }
 
 //struct Images: Decodable {
+//    let url:String?
+//}
+//
+//struct Videos: Decodable {
 //    let url:String?
 //}
 

@@ -24,6 +24,8 @@ class ArticleListScreen: UIViewController {
                 for item in feed.channel.item {
                     print("item: \(item)")
                     
+//                    let article = Item(title: <#T##String?#>, short_title: <#T##String?#>, link: <#T##String?#>, author: <#T##String?#>, summary: <#T##String?#>, item_class: <#T##String?#>, pub_date: <#T##String?#>, images: <#T##[Images]?#>, videos: <#T##[Videos]?#>)
+                    
                     let article = Item(
                         title: item.title,
                         short_title: item.short_title,
