@@ -6,7 +6,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let imageUrl:String = "https://www.whio.com/rf/image_lowres/Pub/p9/JournalNews/2018/01/11/Images/newsEngin.20935433_board-of-elections.jpg"
+        let imageUrl:String = "https://www.whio.com/rf/image_lowres/Pub/p9/JournalNews/2018/01/11/Images/newsEngin.20935433_Jocelyn-Bucaro.jpg"
         let imageNameSplit = imageUrl.components(separatedBy: "/")
         let savedImageName = imageNameSplit.last
         
@@ -48,6 +48,9 @@ class ViewController: UIViewController {
                                     } catch {
                                         // process the error
                                     }
+                                    
+                                    // another way
+                                    // FileManager.default.createFile(atPath: savePath, contents: data, attributes: nil)
                                 }
                             }
                         }
