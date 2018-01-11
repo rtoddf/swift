@@ -6,7 +6,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let imageUrl:String = "https://cdn1.thr.com/sites/default/files/imagecache/landscape_928x523/2017/11/tommyd.jpg"
+        let imageUrl:String = "https://www.whio.com/rf/image_lowres/Pub/p9/JournalNews/2018/01/11/Images/newsEngin.20935433_board-of-elections.jpg"
         let imageNameSplit = imageUrl.components(separatedBy: "/")
         let savedImageName = imageNameSplit.last
         
