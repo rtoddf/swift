@@ -1,4 +1,5 @@
 import UIKit
+import WebKit
 
 class ArticleViewController: UIViewController {
     @IBOutlet weak var articleLeadImage: UIImageView!
@@ -6,6 +7,7 @@ class ArticleViewController: UIViewController {
     @IBOutlet weak var playButton: UIImageView!
     @IBOutlet weak var articlePubDateLabel: UILabel!
     @IBOutlet weak var articleAuthorLabel: UILabel!
+    @IBOutlet weak var fullTextWebView: WKWebView!
     
     var article:Item?
     
@@ -18,6 +20,7 @@ class ArticleViewController: UIViewController {
         articleHeadlineLabel.text = article?.title
         articlePubDateLabel.text = article?.pub_date
         articleAuthorLabel.text = "By " + (article?.author)!
+        fullTextWebView.loadHTMLString((article?.full_text)!, baseURL: nil)
         
         var imageUrl:String = ""
         

@@ -148,12 +148,23 @@
                                     <constraint firstAttribute="height" constant="40" id="pZO-ts-J5x"/>
                                 </constraints>
                             </imageView>
+                            <wkWebView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AQa-zM-Lnk">
+                                <rect key="frame" x="12" y="372.5" width="351" height="294.5"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="vox-N5-d2V" firstAttribute="trailing" secondItem="AQa-zM-Lnk" secondAttribute="trailing" constant="12" id="1IV-yZ-jXO"/>
                             <constraint firstItem="iHx-cz-IcO" firstAttribute="top" secondItem="vox-N5-d2V" secondAttribute="top" id="6lJ-3H-ZeN"/>
                             <constraint firstItem="RlG-u8-BUL" firstAttribute="top" secondItem="iHx-cz-IcO" secondAttribute="bottom" constant="12" id="Dy7-Am-mFo"/>
+                            <constraint firstItem="vox-N5-d2V" firstAttribute="bottom" secondItem="AQa-zM-Lnk" secondAttribute="bottom" id="LTY-SF-W6U"/>
                             <constraint firstItem="GVV-kC-UR3" firstAttribute="top" secondItem="vox-N5-d2V" secondAttribute="top" constant="15" id="MSP-zI-i5u"/>
+                            <constraint firstItem="AQa-zM-Lnk" firstAttribute="leading" secondItem="vox-N5-d2V" secondAttribute="leading" constant="12" id="Mcg-5z-BPa"/>
                             <constraint firstItem="vox-N5-d2V" firstAttribute="trailing" secondItem="Mje-cg-8TV" secondAttribute="trailing" constant="12" id="QJS-Io-M3m"/>
                             <constraint firstItem="nnn-Sj-JUP" firstAttribute="top" secondItem="RlG-u8-BUL" secondAttribute="bottom" constant="4" id="SIm-tH-bll"/>
                             <constraint firstItem="vox-N5-d2V" firstAttribute="trailing" secondItem="iHx-cz-IcO" secondAttribute="trailing" id="TRi-fU-SnZ"/>
@@ -163,6 +174,7 @@
                             <constraint firstItem="nnn-Sj-JUP" firstAttribute="leading" secondItem="vox-N5-d2V" secondAttribute="leading" constant="12" id="bnS-IJ-73b"/>
                             <constraint firstItem="Mje-cg-8TV" firstAttribute="leading" secondItem="vox-N5-d2V" secondAttribute="leading" constant="12" id="k5x-in-bn5"/>
                             <constraint firstItem="vox-N5-d2V" firstAttribute="trailing" secondItem="RlG-u8-BUL" secondAttribute="trailing" constant="12" id="l7D-PA-OD8"/>
+                            <constraint firstItem="AQa-zM-Lnk" firstAttribute="top" secondItem="Mje-cg-8TV" secondAttribute="bottom" constant="12" id="qSg-fe-ewd"/>
                             <constraint firstAttribute="trailing" secondItem="GVV-kC-UR3" secondAttribute="trailing" constant="12" id="vRL-Ul-1QA"/>
                             <constraint firstItem="iHx-cz-IcO" firstAttribute="leading" secondItem="vox-N5-d2V" secondAttribute="leading" id="xOi-1r-2LL"/>
                         </constraints>
@@ -173,6 +185,7 @@
                         <outlet property="articleHeadlineLabel" destination="RlG-u8-BUL" id="3Qa-uO-dfI"/>
                         <outlet property="articleLeadImage" destination="iHx-cz-IcO" id="Afs-SH-uHu"/>
                         <outlet property="articlePubDateLabel" destination="nnn-Sj-JUP" id="S0u-bH-Plt"/>
+                        <outlet property="fullTextWebView" destination="AQa-zM-Lnk" id="Cbg-Ne-6sY"/>
                         <outlet property="playButton" destination="GVV-kC-UR3" id="ijH-Me-Dfg"/>
                     </connections>
                 </viewController>

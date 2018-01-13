@@ -21,6 +21,7 @@ struct Item: Decodable {
     let summary:String?
     let item_class:String?
     let pub_date:String?
+    let full_text:String?
     let images:[Images]?
     let videos:[Videos]?
 }
