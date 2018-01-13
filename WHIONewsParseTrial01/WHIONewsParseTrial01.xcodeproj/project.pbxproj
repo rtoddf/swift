@@ -1,0 +1,329 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		754B63782009AC9F001FA256 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754B63772009AC9F001FA256 /* AppDelegate.swift */; };
+		754B637A2009AC9F001FA256 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754B63792009AC9F001FA256 /* ViewController.swift */; };
+		754B637D2009AC9F001FA256 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 754B637B2009AC9F001FA256 /* Main.storyboard */; };
+		754B637F2009AC9F001FA256 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 754B637E2009AC9F001FA256 /* Assets.xcassets */; };
+		754B63822009AC9F001FA256 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 754B63802009AC9F001FA256 /* LaunchScreen.storyboard */; };
+		754B638A2009ADE5001FA256 /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754B63892009ADE5001FA256 /* Results.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		754B63742009AC9F001FA256 /* WHIONewsParseTrial01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WHIONewsParseTrial01.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		754B63772009AC9F001FA256 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		754B63792009AC9F001FA256 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		754B637C2009AC9F001FA256 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		754B637E2009AC9F001FA256 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		754B63812009AC9F001FA256 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		754B63832009AC9F001FA256 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		754B63892009ADE5001FA256 /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		754B63712009AC9F001FA256 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		754B636B2009AC9F001FA256 = {
+			isa = PBXGroup;
+			children = (
+				754B63762009AC9F001FA256 /* WHIONewsParseTrial01 */,
+				754B63752009AC9F001FA256 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		754B63752009AC9F001FA256 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				754B63742009AC9F001FA256 /* WHIONewsParseTrial01.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		754B63762009AC9F001FA256 /* WHIONewsParseTrial01 */ = {
+			isa = PBXGroup;
+			children = (
+				754B63772009AC9F001FA256 /* AppDelegate.swift */,
+				754B63792009AC9F001FA256 /* ViewController.swift */,
+				754B63892009ADE5001FA256 /* Results.swift */,
+				754B637B2009AC9F001FA256 /* Main.storyboard */,
+				754B637E2009AC9F001FA256 /* Assets.xcassets */,
+				754B63802009AC9F001FA256 /* LaunchScreen.storyboard */,
+				754B63832009AC9F001FA256 /* Info.plist */,
+			);
+			path = WHIONewsParseTrial01;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		754B63732009AC9F001FA256 /* WHIONewsParseTrial01 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 754B63862009AC9F001FA256 /* Build configuration list for PBXNativeTarget "WHIONewsParseTrial01" */;
+			buildPhases = (
+				754B63702009AC9F001FA256 /* Sources */,
+				754B63712009AC9F001FA256 /* Frameworks */,
+				754B63722009AC9F001FA256 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WHIONewsParseTrial01;
+			productName = WHIONewsParseTrial01;
+			productReference = 754B63742009AC9F001FA256 /* WHIONewsParseTrial01.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		754B636C2009AC9F001FA256 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Todd Fleeman";
+				TargetAttributes = {
+					754B63732009AC9F001FA256 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 754B636F2009AC9F001FA256 /* Build configuration list for PBXProject "WHIONewsParseTrial01" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 754B636B2009AC9F001FA256;
+			productRefGroup = 754B63752009AC9F001FA256 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				754B63732009AC9F001FA256 /* WHIONewsParseTrial01 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		754B63722009AC9F001FA256 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				754B63822009AC9F001FA256 /* LaunchScreen.storyboard in Resources */,
+				754B637F2009AC9F001FA256 /* Assets.xcassets in Resources */,
+				754B637D2009AC9F001FA256 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		754B63702009AC9F001FA256 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				754B638A2009ADE5001FA256 /* Results.swift in Sources */,
+				754B637A2009AC9F001FA256 /* ViewController.swift in Sources */,
+				754B63782009AC9F001FA256 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		754B637B2009AC9F001FA256 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				754B637C2009AC9F001FA256 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		754B63802009AC9F001FA256 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				754B63812009AC9F001FA256 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		754B63842009AC9F001FA256 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		754B63852009AC9F001FA256 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		754B63872009AC9F001FA256 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WHIONewsParseTrial01/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rtodd.WHIONewsParseTrial01;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		754B63882009AC9F001FA256 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = WHIONewsParseTrial01/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rtodd.WHIONewsParseTrial01;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		754B636F2009AC9F001FA256 /* Build configuration list for PBXProject "WHIONewsParseTrial01" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				754B63842009AC9F001FA256 /* Debug */,
+				754B63852009AC9F001FA256 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		754B63862009AC9F001FA256 /* Build configuration list for PBXNativeTarget "WHIONewsParseTrial01" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				754B63872009AC9F001FA256 /* Debug */,
+				754B63882009AC9F001FA256 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 754B636C2009AC9F001FA256 /* Project object */;
+}

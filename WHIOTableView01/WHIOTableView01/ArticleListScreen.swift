@@ -20,8 +20,11 @@ class ArticleListScreen: UIViewController {
             guard let data = data else { return }
             do {
                 let feed = try JSONDecoder().decode(ApiResults.self, from: data)
+                self.articles = feed.channel.item
 
-                for item in feed.channel.item {
+//                for item in feed.channel.item {
+                
+                    
 //                    print("item: \(item)")
 //                    print("images: \(item.images)")
 //                    print("----------------------")
@@ -35,20 +38,18 @@ class ArticleListScreen: UIViewController {
 //                        var image_url:String? = image.url
 //                    }
                     
-//                    let article = Item(title: <#T##String?#>, short_title: <#T##String?#>, link: <#T##String?#>, author: <#T##String?#>, summary: <#T##String?#>, item_class: <#T##String?#>, pub_date: <#T##String?#>, images: <#T##[Images]?#>, videos: <#T##[Videos]?#>)
-                    
-                    let article = Item(
-                        title: item.title,
-                        short_title: item.short_title,
-                        link: item.link,
-                        author: item.author,
-                        summary: item.summary,
-                        item_class: item.item_class,
-                        pub_date: item.pub_date?.toDateString(inputDateFormat: "EE, dd MMM YYYY HH:mm:ss z", ouputDateFormat: "hh:mm a EEEE, MMMM dd, YYYY"),
-                        images: item.images,
-                        videos: item.videos)
-                    self.articles.append(article)
-                }
+//                    let article = Item(
+//                        title: item.title,
+//                        short_title: item.short_title,
+//                        link: item.link,
+//                        author: item.author,
+//                        summary: item.summary,
+//                        item_class: item.item_class,
+//                        pub_date: item.pub_date?.toDateString(inputDateFormat: "EE, dd MMM YYYY HH:mm:ss z", ouputDateFormat: "hh:mm a EEEE, MMMM dd, YYYY"),
+//                        images: item.images,
+//                        videos: item.videos)
+//                    self.articles.append(article)
+//                }
 
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
@@ -70,6 +71,7 @@ class ArticleListScreen: UIViewController {
 
 extension ArticleListScreen: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        print(something)
         return articles.count
     }
     
