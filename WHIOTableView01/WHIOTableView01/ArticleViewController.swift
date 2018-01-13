@@ -3,6 +3,8 @@ import UIKit
 class ArticleViewController: UIViewController {
     @IBOutlet weak var articleLeadImage: UIImageView!
     @IBOutlet weak var articleHeadlineLabel: UILabel!
+    @IBOutlet weak var articlePubDateLabel: UILabel!
+    @IBOutlet weak var articleAuthorLabel: UILabel!
     
     var article:Item?
     
@@ -13,6 +15,8 @@ class ArticleViewController: UIViewController {
 
     func setUI() {
         articleHeadlineLabel.text = article?.title
+        articlePubDateLabel.text = article?.pub_date
+        articleAuthorLabel.text = "By " + (article?.author)!
         
         var imageUrl:String = ""
         
