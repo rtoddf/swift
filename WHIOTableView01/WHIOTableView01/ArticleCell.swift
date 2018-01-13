@@ -15,8 +15,7 @@ class ArticleCell: UITableViewCell {
         } else if article.videos != nil {
             imageUrl = article.videos![0].image.url!
         } else {
-            imageUrl = "we need a placeholder"
-            
+            imageUrl = "https://www.whio.com/assets/images/whio-placeholder.png"
         }
         
         let imageNameSplit = imageUrl.components(separatedBy: "/")
@@ -47,9 +46,6 @@ class ArticleCell: UITableViewCell {
                     if let image = UIImage(data: data) {
                         DispatchQueue.main.async { // Correct - https://developer.apple.com/documentation/code_diagnostics/main_thread_checker
                             self.articleThumbnailImage.image = image
-                            
-                            print(image)
-                            print(type(of: image))
                             
                             // searches for documents path
                             let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
