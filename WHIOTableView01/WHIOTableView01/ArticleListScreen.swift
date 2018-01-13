@@ -11,7 +11,7 @@ class ArticleListScreen: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
 
-        let jsonUrlString = "https://www.whio.com/feed?id=0face55a-4cf7-11e6-8f16-4a55d4f1e287&count=10&secure=true"
+        let jsonUrlString = "https://www.whio.com/feed?id=bd1eb4ac-4e37-11e6-8f16-4a55d4f1e287&count=10&secure=true"
         let url = URL(string: jsonUrlString)
 
         URLSession.shared.dataTask(with: url!) { (data, response, err) in
@@ -23,32 +23,9 @@ class ArticleListScreen: UIViewController {
                 self.articles = feed.channel.item
 
 //                for item in feed.channel.item {
-                
-                    
-//                    print("item: \(item)")
-//                    print("images: \(item.images)")
-//                    print("----------------------")
-//                    print(type(of: item.images))
-                    
-//                    guard let images = item.images else { return }
-//
-//                    for image in images {
-//                        print("----------------------")
-//                        print("url: \(image.url)")
-//                        var image_url:String? = image.url
-//                    }
-                    
-//                    let article = Item(
-//                        title: item.title,
-//                        short_title: item.short_title,
-//                        link: item.link,
-//                        author: item.author,
-//                        summary: item.summary,
-//                        item_class: item.item_class,
-//                        pub_date: item.pub_date?.toDateString(inputDateFormat: "EE, dd MMM YYYY HH:mm:ss z", ouputDateFormat: "hh:mm a EEEE, MMMM dd, YYYY"),
-//                        images: item.images,
-//                        videos: item.videos)
+//                    let article = Item()
 //                    self.articles.append(article)
+                // pub_date: item.pub_date?.toDateString(inputDateFormat: "EE, dd MMM YYYY HH:mm:ss z", ouputDateFormat: "hh:mm a EEEE, MMMM dd, YYYY"),
 //                }
 
                 DispatchQueue.main.async {
