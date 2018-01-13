@@ -11,7 +11,7 @@ class ArticleListScreen: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
 
-        let jsonUrlString = "https://www.whio.com/feed?id=0face55a-4cf7-11e6-8f16-4a55d4f1e287&count=10"
+        let jsonUrlString = "https://www.whio.com/feed?id=0face55a-4cf7-11e6-8f16-4a55d4f1e287&count=10&secure=true"
         let url = URL(string: jsonUrlString)
 
         URLSession.shared.dataTask(with: url!) { (data, response, err) in

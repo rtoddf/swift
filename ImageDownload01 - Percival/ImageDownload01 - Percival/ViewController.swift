@@ -78,6 +78,7 @@ class ViewController: UIViewController {
         let url = URL(string: imageUrl)!
         let request = NSMutableURLRequest(url: url)
         
+        // restores from memory if downloaded
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         if documentsPath.count > 0 {
             let documentsDirectory = documentsPath[0]
