@@ -3,6 +3,7 @@ import UIKit
 class ArticleViewController: UIViewController {
     @IBOutlet weak var articleLeadImage: UIImageView!
     @IBOutlet weak var articleHeadlineLabel: UILabel!
+    @IBOutlet weak var playButton: UIImageView!
     @IBOutlet weak var articlePubDateLabel: UILabel!
     @IBOutlet weak var articleAuthorLabel: UILabel!
     
@@ -24,7 +25,7 @@ class ArticleViewController: UIViewController {
             imageUrl = (article?.images![0].url!)!
         } else if article?.videos != nil {
             imageUrl = (article?.videos![0].image.url!)!
-//            playButton.image = #imageLiteral(resourceName: "playbutton")
+            playButton.image = #imageLiteral(resourceName: "playbutton")
         } else {
             imageUrl = "https://www.whio.com/assets/images/whio-placeholder.png"
         }
