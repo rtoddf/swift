@@ -71,7 +71,6 @@ class ArticleListScreen: UIViewController {
 
 extension ArticleListScreen: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        print(something)
         return articles.count
     }
     

@@ -31,5 +31,10 @@ struct Images: Decodable {
 
 struct Videos: Decodable {
     let url:String?
+    let image: Image
+}
+
+struct Image: Decodable {
+    let url:String?
 }
 

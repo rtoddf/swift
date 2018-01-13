@@ -7,21 +7,18 @@ class ArticleCell: UITableViewCell {
     
     func setArticle(article: Item) {
         articleTitleLabel.text = article.title
-//        articleThumbnailImage.image = UIImage(
         
-//        print("article images: \(article.images)")
-//        print("article videos: \(article.videos)")
-//        
-//        for image in article.images! {
-//            print("image url: \(image.url)")
-//        }
-//        
-//        for video in article.videos! {
-//            print("video url: \(video.url)")
-//        }
+        var imageUrl:String = ""
         
-//        var articleThumb:String?
+        if article.images != nil {
+            imageUrl = article.images![0].url!
+        } else if article.videos != nil {
+            imageUrl = article.videos![0].image.url!
+        } else {
+            imageUrl = "we need a placeholder"
+            
+        }
         
-//        if
+        print("imageUrl: \(imageUrl)")
     }
 }
