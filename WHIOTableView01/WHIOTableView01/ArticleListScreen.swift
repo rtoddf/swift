@@ -4,6 +4,7 @@ class ArticleListScreen: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     var articles:[Item] = []
+    let segueIdentifier:String = "MasterToDetail"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -11,7 +12,7 @@ class ArticleListScreen: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
 
-        let jsonUrlString = "https://www.whio.com/feed?id=bd1eb4ac-4e37-11e6-8f16-4a55d4f1e287&count=10&secure=true"
+        let jsonUrlString = "https://www.whio.com/feed?id=0face55a-4cf7-11e6-8f16-4a55d4f1e287&count=10&secure=true"
         let url = URL(string: jsonUrlString)
 
         URLSession.shared.dataTask(with: url!) { (data, response, err) in
@@ -44,6 +45,13 @@ class ArticleListScreen: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueIdentifier {
+            let destVC = segue.destination as! ArticleViewController
+            destVC.article = sender as? Item
+        }
+    }
 }
 
 extension ArticleListScreen: UITableViewDataSource, UITableViewDelegate {
@@ -58,6 +66,11 @@ extension ArticleListScreen: UITableViewDataSource, UITableViewDelegate {
         cell.setArticle(article: article)
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let article = articles[indexPath.row]
+        performSegue(withIdentifier: segueIdentifier, sender: article)
     }
 }
 

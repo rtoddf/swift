@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7529983E2003123400367624 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7529983D2003123400367624 /* Feed.swift */; };
+		75BF3F8A200A863E00F36E27 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BF3F89200A863E00F36E27 /* ArticleViewController.swift */; };
 		75EAADDD20030D770013F47A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EAADDC20030D770013F47A /* AppDelegate.swift */; };
 		75EAADE220030D770013F47A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75EAADE020030D770013F47A /* Main.storyboard */; };
 		75EAADE420030D770013F47A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75EAADE320030D770013F47A /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		7529983D2003123400367624 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		75BF3F89200A863E00F36E27 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		75EAADD920030D770013F47A /* WHIOTableView01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WHIOTableView01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75EAADDC20030D770013F47A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75EAADE120030D770013F47A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				75EAADDC20030D770013F47A /* AppDelegate.swift */,
 				75EAADEE20030DD20013F47A /* ArticleListScreen.swift */,
 				75EAADF0200310040013F47A /* ArticleCell.swift */,
+				75BF3F89200A863E00F36E27 /* ArticleViewController.swift */,
 				75EAADE020030D770013F47A /* Main.storyboard */,
 				75EAADE320030D770013F47A /* Assets.xcassets */,
 				75EAADE520030D770013F47A /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 			files = (
 				75EAADEF20030DD20013F47A /* ArticleListScreen.swift in Sources */,
 				7529983E2003123400367624 /* Feed.swift in Sources */,
+				75BF3F8A200A863E00F36E27 /* ArticleViewController.swift in Sources */,
 				75EAADDD20030D770013F47A /* AppDelegate.swift in Sources */,
 				75EAADF1200310040013F47A /* ArticleCell.swift in Sources */,
 			);
