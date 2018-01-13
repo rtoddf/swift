@@ -35,8 +35,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tnJ-fi-XTU">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tnJ-fi-XTU">
                                                     <rect key="frame" x="12" y="2.5" width="147" height="83"/>
+                                                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="147" id="Luk-9C-U3d"/>
                                                         <constraint firstAttribute="width" secondItem="tnJ-fi-XTU" secondAttribute="height" multiplier="16:9" id="ju1-qm-g7A"/>
@@ -51,9 +52,18 @@
                                                     <color key="textColor" red="0.23529411764705882" green="0.23529411764705882" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jcn-No-hne" userLabel="Play Button">
+                                                    <rect key="frame" x="126" y="11" width="26" height="26"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="26" id="JBU-0d-nJL"/>
+                                                        <constraint firstAttribute="height" constant="26" id="t06-mJ-4Kk"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="OrP-8X-Njx" secondAttribute="trailing" constant="12" id="47J-vG-AvG"/>
+                                                <constraint firstItem="jcn-No-hne" firstAttribute="centerX" secondItem="4ag-rF-G7p" secondAttribute="centerX" constant="-48.5" id="7Bj-ql-r3x"/>
+                                                <constraint firstItem="jcn-No-hne" firstAttribute="centerY" secondItem="4ag-rF-G7p" secondAttribute="centerY" constant="-20.75" id="O1F-Qu-06A"/>
                                                 <constraint firstItem="OrP-8X-Njx" firstAttribute="centerY" secondItem="4ag-rF-G7p" secondAttribute="centerY" id="PMn-BC-QoG"/>
                                                 <constraint firstItem="OrP-8X-Njx" firstAttribute="leading" secondItem="tnJ-fi-XTU" secondAttribute="trailing" constant="12" id="SAx-nT-Mtb"/>
                                                 <constraint firstItem="tnJ-fi-XTU" firstAttribute="leading" secondItem="4ag-rF-G7p" secondAttribute="leading" constant="12" id="iBx-UX-9uS"/>
@@ -63,6 +73,7 @@
                                         <connections>
                                             <outlet property="articleThumbnailImage" destination="tnJ-fi-XTU" id="dos-DP-gq5"/>
                                             <outlet property="articleTitleLabel" destination="OrP-8X-Njx" id="s2k-AN-dCB"/>
+                                            <outlet property="playButton" destination="jcn-No-hne" id="uxh-aZ-3SD"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
