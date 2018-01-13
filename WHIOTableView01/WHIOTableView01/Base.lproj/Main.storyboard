@@ -148,7 +148,7 @@
                                     <constraint firstAttribute="height" constant="40" id="pZO-ts-J5x"/>
                                 </constraints>
                             </imageView>
-                            <wkWebView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AQa-zM-Lnk">
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AQa-zM-Lnk">
                                 <rect key="frame" x="12" y="372.5" width="351" height="294.5"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
