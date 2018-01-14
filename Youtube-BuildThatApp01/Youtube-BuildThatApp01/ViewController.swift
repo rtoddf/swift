@@ -1,7 +1,7 @@
 // Swift: Lets Build YouTube - Home Feed: UICollectionView, AutoLayout (Ep 1)
 // https://www.youtube.com/watch?v=3Xv1mJvwXok - DONE
 // Swift: YouTube - Custom Navigation Bar and MVC Clean Up (Ep 2)
-// https://www.youtube.com/watch?v=APQVltARKF8
+// https://www.youtube.com/watch?v=APQVltARKF8 - 24:32
 // Swift: Youtube - Custom Tab Bar / Menu Bar using UICollectionView (Ep 3)
 // https://www.youtube.com/watch?v=rRhJGnSmEKQ
 
