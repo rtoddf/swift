@@ -15,6 +15,17 @@ class ArticleViewController: UIViewController {
         super.viewDidLoad()
         setUI()
     }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        
+//        guard let colour = getHexColour() else {
+//            return
+//        }
+        
+        let css = "body { font-size : 20px }"
+        let js = "var style = document.createElement('style'); style.innerHTML = '\(css)'; document.head.appendChild(style);"
+        fullTextWebView.evaluateJavaScript(js, completionHandler: nil)
+    }
 
     func setUI() {
         articleHeadlineLabel.text = article?.title
