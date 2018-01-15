@@ -4,6 +4,10 @@
 // https://www.youtube.com/watch?v=APQVltARKF8 - DONE
 // Swift: Youtube - Custom Tab Bar / Menu Bar using UICollectionView (Ep 3)
 // https://www.youtube.com/watch?v=rRhJGnSmEKQ
+// Swift: YouTube - MVC Explained: Model View Controller (Ep 4)
+// https://www.youtube.com/watch?v=Zud56x_VYvs&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj&index=4
+// Swift: YouTube - REST JSON Integration via NSURLSession (Ep 5)
+// https://www.youtube.com/watch?v=WjrvcGAZfoI&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj&index=5
 
 import UIKit
 
