@@ -32,7 +32,11 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // CGSizeMake is no longer available in Swift
 //        let size = CGSize(width: view.frame.width, height: 200)
-        return CGSize(width: view.frame.width, height: 200)
+        
+        // width minus left margin minus right marging divided by the ratio - 16x9
+        let height = (view.frame.width - 16 - 16) * 9/16
+        // you need to add the top 16 and bottom 68
+        return CGSize(width: view.frame.width, height: height + 16 + 68)
     }
     
     // removes the spacing
@@ -49,28 +53,34 @@ class VideoCell: UICollectionViewCell {
     
     let thumbnailImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = UIColor.orange
-        imageView.image = UIImage(named: "adele")
+        imageView.image = UIImage(named: "darren-criss")
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
     
     let userProfileImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = UIColor.green
+        imageView.image = UIImage(named: "jonathan-groff")
+        imageView.layer.cornerRadius = 22
+         // don't forget this
+        imageView.layer.masksToBounds = true
         return imageView
     }()
     
     let titleLabel:UILabel = {
         let label = UILabel()
-        label.backgroundColor = UIColor.purple
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Darren Everett Criss"
         return label
     }()
     
     let subtitleTextView:UITextView = {
         let textview = UITextView()
-        textview.backgroundColor = UIColor.blue
         textview.translatesAutoresizingMaskIntoConstraints = false
+        textview.text = "An American actor, singer and songwriter and is one of the founding members and co-owners of StarKid Productions"
+        textview.textContainerInset = UIEdgeInsetsMake(0, -4, 0, 0)
+        textview.textColor = UIColor.lightGray
         return textview
     }()
     
@@ -122,13 +132,13 @@ class VideoCell: UICollectionViewCell {
 //        addConstraintsWithFormat(format: "V:[v0(20)]", views: titleLabel)
         
         // textview - top constraint
-        addConstraint(NSLayoutConstraint(item: subtitleTextView,  attribute: .top, relatedBy: .equal, toItem: titleLabel, attribute: .bottom, multiplier: 1, constant: 8))
+        addConstraint(NSLayoutConstraint(item: subtitleTextView,  attribute: .top, relatedBy: .equal, toItem: titleLabel, attribute: .bottom, multiplier: 1, constant: 2))
         // left constraint
         addConstraint(NSLayoutConstraint(item: subtitleTextView,  attribute: .left, relatedBy: .equal, toItem: userProfileImageView, attribute: .right, multiplier: 1, constant: 8))
         // right constraint
         addConstraint(NSLayoutConstraint(item: subtitleTextView,  attribute: .right, relatedBy: .equal, toItem: thumbnailImageView, attribute: .right, multiplier: 1, constant: 0))
         // height constraint
-        addConstraint(NSLayoutConstraint(item: subtitleTextView,  attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 20))
+        addConstraint(NSLayoutConstraint(item: subtitleTextView,  attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 30))
         
 //        addConstraintsWithFormat(format: "V:[v0(20)]", views: subtitleTextView)
     }
@@ -152,26 +162,3 @@ extension UIView {
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutFormatOptions(), metrics: nil, views: viewsDictionary))
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
