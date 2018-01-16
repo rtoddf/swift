@@ -19,6 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // remember to change info.plist - ViewController based status bar
         application.statusBarStyle = .lightContent
         
+        // get rid of the black line underneath navbar
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        
         // manually add the color
         let statusBarBackgroundView = UIView()
         statusBarBackgroundView.backgroundColor = UIColor.rgb(red: 194, green: 31, blue: 31)
