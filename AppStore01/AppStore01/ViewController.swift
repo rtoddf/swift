@@ -1,5 +1,11 @@
 import UIKit
 
+//Swift: Recreating AppStore - Horizontal Scroll Direction UICollectionView (Ep 1)
+//https://www.youtube.com/watch?v=Ko9oNhlTwH0 - DONE
+//
+//Swift: AppStore - Integrating REST API, JSON, and Model Objects (Ep 2)
+//https://www.youtube.com/watch?v=uLb8cs11h_g
+
 class FeaturedAppsController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     let cellId = "cellId"

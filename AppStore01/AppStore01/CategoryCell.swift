@@ -10,6 +10,21 @@ class CategoryCell: UICollectionViewCell, UICollectionViewDataSource, UICollecti
         fatalError("init(coder:) has not been implemented")
     }
     
+    let nameLabel:UILabel = {
+        let label = UILabel()
+        label.text = "Best New Apps"
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let dividerLineView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(white: 0.4, alpha: 0.4)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     let appsCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -26,8 +41,13 @@ class CategoryCell: UICollectionViewCell, UICollectionViewDataSource, UICollecti
     func setupViews() {
         backgroundColor = UIColor.clear
         addSubview(appsCollectionView)
+        addSubview(nameLabel)
+        addSubview(dividerLineView)
+        
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-14-[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": nameLabel]))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": appsCollectionView]))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": appsCollectionView]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-14-[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": dividerLineView]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v2(30)][v0][v1(0.5)]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": appsCollectionView, "v1": dividerLineView, "v2": nameLabel]))
         
         appsCollectionView.dataSource = self
         appsCollectionView.delegate = self
@@ -44,7 +64,7 @@ class CategoryCell: UICollectionViewCell, UICollectionViewDataSource, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: frame.height)
+        return CGSize(width: 100, height: frame.height - 32)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
