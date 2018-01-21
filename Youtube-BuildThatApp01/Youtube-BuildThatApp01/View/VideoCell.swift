@@ -17,7 +17,17 @@ class BaseCell:UICollectionViewCell {
 }
 
 class VideoCell: BaseCell {
-    
+    // var to be used in homecontroller
+    var video:Video? {
+        didSet {
+            titleLabel.text = video?.title
+            guard let imageName = video?.thumbnailImageName else { return }
+            thumbnailImageView.image = UIImage(named: imageName)
+            
+            guard let profImageName = video?.channel?.profileImageName else { return }
+            userProfileImageView.image = UIImage(named: profImageName)
+        }
+    }
     
     let thumbnailImageView: UIImageView = {
         let imageView = UIImageView()

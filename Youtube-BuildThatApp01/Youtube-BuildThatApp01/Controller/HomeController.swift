@@ -12,6 +12,24 @@
 import UIKit
 
 class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
+    var videos:[Video] = {
+        var theChannel = Channel()
+        theChannel.channelName = "Music"
+        theChannel.profileImageName = "andrew-garfield"
+        
+        var itemOne = Video()
+        itemOne.thumbnailImageName = "darren-criss"
+        itemOne.title = "Darren Everett Criss"
+        itemOne.channel = theChannel
+        
+        var itemTwo = Video()
+        itemTwo.thumbnailImageName = "adam-levine"
+        itemTwo.title = "Adam Levine"
+        itemTwo.channel = theChannel
+        
+        return [itemOne, itemTwo]
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,11 +82,15 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return videos.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
+        // downcast as VideoCell now that you have data
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! VideoCell
+        
+        cell.video = videos[indexPath.item]
+        
         return cell
     }
     
