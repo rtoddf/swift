@@ -3,7 +3,7 @@
 // Swift: YouTube - Custom Navigation Bar and MVC Clean Up (Ep 2)
 // https://www.youtube.com/watch?v=APQVltARKF8 - DONE
 // Swift: Youtube - Custom Tab Bar / Menu Bar using UICollectionView (Ep 3)
-// https://www.youtube.com/watch?v=rRhJGnSmEKQ
+// https://www.youtube.com/watch?v=rRhJGnSmEKQ - DONE
 // Swift: YouTube - MVC Explained: Model View Controller (Ep 4)
 // https://www.youtube.com/watch?v=Zud56x_VYvs&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj&index=4
 // Swift: YouTube - REST JSON Integration via NSURLSession (Ep 5)
@@ -33,6 +33,23 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         collectionView?.scrollIndicatorInsets = UIEdgeInsetsMake(50, 0, 0, 0)
         
         setUpMenuBar()
+        
+        setupNavBarButtons()
+    }
+    
+    func setupNavBarButtons() {
+        // imaged for UIBarButtonItems must me at size
+        let searchBarButtonItem = UIBarButtonItem(image: UIImage(named: "search_icon")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleSearch))
+        let moreButtonItem = UIBarButtonItem(image: UIImage(named: "nav_more_icon")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleMore))
+        navigationItem.rightBarButtonItems = [moreButtonItem, searchBarButtonItem]
+    }
+    
+    @objc func handleSearch(){
+        print("search")
+    }
+    
+    @objc func handleMore(){
+        print("more")
     }
     
     let menuBar:MenuBar = {
