@@ -26,6 +26,25 @@ class VideoCell: BaseCell {
             
             guard let profImageName = video?.channel?.profileImageName else { return }
             userProfileImageView.image = UIImage(named: profImageName)
+            
+            guard let channelName = video?.channel?.channelName else { return }
+            guard let numberOfViews = video?.numberOfViews else { return }
+            
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .decimal
+            guard let numberOfViewsFormatted = numberFormatter.string(from: numberOfViews) else { return }
+            let subtitleText:String = "\(channelName) - \(numberOfViewsFormatted) - 2 years ago"
+            subtitleTextView.text = subtitleText
+            
+            // measure titletext
+            if let title = video?.title {
+                let size = CGSize(width: frame.width - 16 - 44 - 8 - 16, height: 1000)
+                let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
+                let estimatedRect = NSString(string: title).boundingRect(with: size, options: options, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)], context: nil)
+                
+                titleLabelHeightConstraint?.constant = estimatedRect.size.height > 20 ? 44 : 20
+            }
+            
         }
     }
     
@@ -52,6 +71,7 @@ class VideoCell: BaseCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Darren Everett Criss"
+        label.numberOfLines = 2
         return label
     }()
     
@@ -69,6 +89,8 @@ class VideoCell: BaseCell {
         view.backgroundColor = UIColor.rgb(red: 230, green: 230, blue: 230)
         return view
     }()
+    
+    var titleLabelHeightConstraint:NSLayoutConstraint?
     
     override func setupViews() {
         addSubview(thumbnailImageView)
@@ -91,7 +113,7 @@ class VideoCell: BaseCell {
         //        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-16-[v0]-16-[v1(1)]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": thumbnailImageView, "v1": separatorView]))
         
         // vertical constraints
-        addConstraintsWithFormat(format: "V:|-16-[v0]-8-[v1(44)]-16-[v2(1)]|", views: thumbnailImageView, userProfileImageView, separatorView)
+        addConstraintsWithFormat(format: "V:|-16-[v0]-8-[v1(44)]-28-[v2(1)]|", views: thumbnailImageView, userProfileImageView, separatorView)
         
         // ex
         // addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": separatorView]))
@@ -106,8 +128,11 @@ class VideoCell: BaseCell {
         addConstraint(NSLayoutConstraint(item: titleLabel,  attribute: .left, relatedBy: .equal, toItem: userProfileImageView, attribute: .right, multiplier: 1, constant: 8))
         // right constraint
         addConstraint(NSLayoutConstraint(item: titleLabel,  attribute: .right, relatedBy: .equal, toItem: thumbnailImageView, attribute: .right, multiplier: 1, constant: 0))
+        
         // height constraint
-        addConstraint(NSLayoutConstraint(item: titleLabel,  attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 20))
+        titleLabelHeightConstraint = NSLayoutConstraint(item: titleLabel,  attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 44)
+        guard let tlhc = titleLabelHeightConstraint else { return }
+        addConstraint(tlhc)
         
         //        addConstraintsWithFormat(format: "V:[v0(20)]", views: titleLabel)
         

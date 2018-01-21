@@ -5,7 +5,7 @@
 // Swift: Youtube - Custom Tab Bar / Menu Bar using UICollectionView (Ep 3)
 // https://www.youtube.com/watch?v=rRhJGnSmEKQ - DONE
 // Swift: YouTube - MVC Explained: Model View Controller (Ep 4)
-// https://www.youtube.com/watch?v=Zud56x_VYvs&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj&index=4
+// https://www.youtube.com/watch?v=Zud56x_VYvs&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj&index=4 - DONE
 // Swift: YouTube - REST JSON Integration via NSURLSession (Ep 5)
 // https://www.youtube.com/watch?v=WjrvcGAZfoI&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj&index=5
 
@@ -17,16 +17,18 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         var theChannel = Channel()
         theChannel.channelName = "Music"
         theChannel.profileImageName = "andrew-garfield"
-        
+
         var itemOne = Video()
-        itemOne.thumbnailImageName = "darren-criss"
-        itemOne.title = "Darren Everett Criss"
+        itemOne.thumbnailImageName = "adam-levine"
+        itemOne.title = "Adam Levine"
         itemOne.channel = theChannel
-        
+        itemOne.numberOfViews = 15000
+
         var itemTwo = Video()
-        itemTwo.thumbnailImageName = "adam-levine"
-        itemTwo.title = "Adam Levine"
+        itemTwo.thumbnailImageName = "darren-criss"
+        itemTwo.title = "Darren Everett Criss - An American actor, singer and songwriter"
         itemTwo.channel = theChannel
+        itemTwo.numberOfViews = 3000000
         
         return [itemOne, itemTwo]
     }()
@@ -102,7 +104,7 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         // width minus left margin minus right marging divided by the ratio - 16x9
         let height = (view.frame.width - 16 - 16) * 9/16
         // you need to add the top 16 and bottom 68
-        return CGSize(width: view.frame.width, height: height + 16 + 68)
+        return CGSize(width: view.frame.width, height: height + 16 + 80)
     }
     
     // removes the spacing
