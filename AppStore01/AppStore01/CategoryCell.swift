@@ -1,6 +1,13 @@
 import UIKit
 
 class CategoryCell: UICollectionViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    var appCategory:AppCategory? {
+        didSet {
+            guard let name = appCategory?.name else { return }
+            nameLabel.text = name
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -55,11 +62,15 @@ class CategoryCell: UICollectionViewCell, UICollectionViewDataSource, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        if let appsCount = appCategory?.apps?.count {
+            return appsCount
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! AppCell
+        cell.app = appCategory?.apps![indexPath.item]
         return cell
     }
     
@@ -79,6 +90,21 @@ class CategoryCell: UICollectionViewCell, UICollectionViewDataSource, UICollecti
 }
 
 class AppCell: UICollectionViewCell {
+    
+    var app:App? {
+        didSet {
+            guard let name = app?.name else { return }
+            nameLabel.text = name
+            guard let category = app?.category else { return }
+            categoryLabel.text = category
+            guard let price = app?.price else { return }
+            priceLabel.text = "$\(price)"
+            
+            guard let imageName = app?.imageName else { return }
+            imageView.image = UIImage(named: imageName)
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -96,7 +122,7 @@ class AppCell: UICollectionViewCell {
     let nameLabel:UILabel = {
         let label = UILabel()
         label.text = "Xavier Dolan"
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont.systemFont(ofSize: 13)
         label.numberOfLines = 2
         return label
     }()
@@ -104,14 +130,14 @@ class AppCell: UICollectionViewCell {
     let categoryLabel:UILabel = {
         let label = UILabel()
         label.text = "Actor/Director"
-        label.font = UIFont.systemFont(ofSize: 13)
+        label.font = UIFont.systemFont(ofSize: 12)
         return label
     }()
     
     let priceLabel:UILabel = {
         let label = UILabel()
         label.text = "$3.99"
-        label.font = UIFont.systemFont(ofSize: 13)
+        label.font = UIFont.systemFont(ofSize: 12)
         label.textColor = UIColor.darkGray
         return label
     }()

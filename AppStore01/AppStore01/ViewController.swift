@@ -4,14 +4,18 @@ import UIKit
 //https://www.youtube.com/watch?v=Ko9oNhlTwH0 - DONE
 //
 //Swift: AppStore - Integrating REST API, JSON, and Model Objects (Ep 2)
-//https://www.youtube.com/watch?v=uLb8cs11h_g
+//https://www.youtube.com/watch?v=uLb8cs11h_g - 20:54
 
 class FeaturedAppsController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     let cellId = "cellId"
     
+    var appCategories:[AppCategory]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        appCategories = AppCategory.sampleAppCategories()
         
         collectionView?.backgroundColor = UIColor.white
         collectionView?.register(CategoryCell.self, forCellWithReuseIdentifier: cellId)
@@ -19,11 +23,17 @@ class FeaturedAppsController: UICollectionViewController, UICollectionViewDelega
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CategoryCell
+        
+        cell.appCategory = appCategories?[indexPath.item]
+        
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        if let count = appCategories?.count {
+            return count
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

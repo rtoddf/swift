@@ -13,6 +13,7 @@
 		757F833D20118E640031A245 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 757F833C20118E640031A245 /* Assets.xcassets */; };
 		757F834020118E640031A245 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 757F833E20118E640031A245 /* LaunchScreen.storyboard */; };
 		757F8348201194FB0031A245 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757F8347201194FB0031A245 /* CategoryCell.swift */; };
+		75DE227E20158AE0008CD34F /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DE227D20158AE0008CD34F /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		757F833F20118E640031A245 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		757F834120118E640031A245 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		757F8347201194FB0031A245 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		75DE227D20158AE0008CD34F /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +58,10 @@
 		757F833420118E640031A245 /* AppStore01 */ = {
 			isa = PBXGroup;
 			children = (
+				75DE227D20158AE0008CD34F /* Models.swift */,
+				757F833720118E640031A245 /* ViewController.swift */,
 				757F833520118E640031A245 /* AppDelegate.swift */,
 				757F8347201194FB0031A245 /* CategoryCell.swift */,
-				757F833720118E640031A245 /* ViewController.swift */,
 				757F833920118E640031A245 /* Main.storyboard */,
 				757F833C20118E640031A245 /* Assets.xcassets */,
 				757F833E20118E640031A245 /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 				757F833820118E640031A245 /* ViewController.swift in Sources */,
 				757F833620118E640031A245 /* AppDelegate.swift in Sources */,
 				757F8348201194FB0031A245 /* CategoryCell.swift in Sources */,
+				75DE227E20158AE0008CD34F /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
