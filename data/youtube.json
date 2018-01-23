@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Adam Levine",
+    "number_of_views": 319644991,
+    "thumbnail_image_name": "http://www.rtodd.net/swift/images/adam-levine.jpg",
+    "channel": {
+      "name": "Andrew Garfield",
+      "profile_image_name": "http://www.rtodd.net/swift/images/andrew-garfield.jpg"
+    },
+    "duration": 210
+  },
+  {
+    "title": "Darren Everett Criss - An American actor, singer and songwriter",
+    "number_of_views": 92839921,
+    "thumbnail_image_name": "http://www.rtodd.net/swift/images/darren-criss.jpg",
+    "channel": {
+      "name": "Jonathan Groff",
+      "profile_image_name": "http://www.rtodd.net/swift/images/jonathan-groff.jpg"
+    },
+    "duration": 189
+  },
+  {
+    "title": "Beyonce - Put A Ring On It",
+    "number_of_views": 52321223,
+    "thumbnail_image_name": "http://www.rtodd.net/swift/images/nico-tortorella.jpg",
+    "channel": {
+      "name": "Andy Mientus",
+      "profile_image_name": "http://www.rtodd.net/swift/images/andy-mientus.jpg"
+    },
+    "duration": 410
+  },
+  {
+    "title": "Connor Franta - Youtuber",
+    "number_of_views": 9999999999999,
+    "thumbnail_image_name": "http://www.rtodd.net/swift/images/connor-franta.jpg",
+    "channel": {
+      "name": "Adam Lambert",
+      "profile_image_name": "http://www.rtodd.net/swift/images/adam-lambert.jpg"
+    },
+    "duration": 80
+  },
+  {
+    "title": "Gideon Glick",
+    "number_of_views": 12312344,
+    "thumbnail_image_name": "http://www.rtodd.net/swift/images/gideon-glick.jpg",
+    "channel": {
+      "name": "Debbie Harry",
+      "profile_image_name": "http://www.rtodd.net/swift/images/deborah-harry.jpg"
+    },
+    "duration": 232
+  },
+  {
+    "title": "Josh Hutcherson",
+    "number_of_views": 334435123,
+    "thumbnail_image_name": "http://www.rtodd.net/swift/images/josh-hutcherson.jpg",
+    "channel": {
+      "name": "Ellen Page",
+      "profile_image_name": "http://www.rtodd.net/swift/images/ellen-page.jpg"
+    },
+    "duration": 301
+  }
+]

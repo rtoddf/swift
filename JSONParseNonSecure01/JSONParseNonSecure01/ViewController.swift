@@ -5,6 +5,7 @@ struct Feed: Decodable {
 }
 
 struct Senator: Decodable {
+//    let title:String?
     let name:String?
     let state:String?
     let party:String?
@@ -20,15 +21,13 @@ class ViewController: UIViewController {
     func downloadJSON() {
         
         
-        let jsonUrlString = "http://www.rtodd.net/interfaces/data/senators.json"
+        let jsonUrlString = "http://www.rtodd.net/swift/data/senators.json"
         let url = URL(string: jsonUrlString)
         
         URLSession.shared.dataTask(with: url!) { (data, response, err) in
             // take care of reponses and err
             
             guard let data = data else { return }
-            
-            print("data: \(data)")
             
             do {
                 let senators = try JSONDecoder().decode([Senator].self, from: data)
@@ -45,6 +44,12 @@ class ViewController: UIViewController {
                     } else {
                         return
                     }
+                    
+//                    if let title = senator.title {
+//                        print("title: \(title)")
+//                    } else {
+//                        return
+//                    }
                     
                     
                 }
