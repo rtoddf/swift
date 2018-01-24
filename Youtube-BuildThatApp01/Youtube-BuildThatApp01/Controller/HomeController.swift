@@ -8,6 +8,8 @@
 // https://www.youtube.com/watch?v=Zud56x_VYvs&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj&index=4 - DONE
 // Swift: YouTube - REST JSON Integration via NSURLSession (Ep 5)
 // https://www.youtube.com/watch?v=WjrvcGAZfoI&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj&index=5 - 15:45
+// Swift: YouTube - How to Load Images Async in UICollectionView (Ep 6)
+// https://www.youtube.com/watch?v=XFvs6eraBXM&index=6&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj
 
 import UIKit
 
