@@ -12,6 +12,10 @@ Swift: YouTube - How to Load Images Async in UICollectionView (Ep 6)
 https://www.youtube.com/watch?v=XFvs6eraBXM&index=6&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj
 Swift: YouTube - How to Create a Slide-In Menu Part 1 (Ep 7)
 https://www.youtube.com/watch?v=2kwCfFG5fDA
+Swift: YouTube - How to Create a Slide-In Menu Part 2 (Ep 8)
+https://www.youtube.com/watch?v=PNmuTTd5zWc&index=8&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj
+Swift: YouTube - How to Create a Slide-In Menu Part 3 - Lazy Var Explained (Ep 9)
+https://www.youtube.com/watch?v=DYsfAD01fYk&index=9&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj
 
 https://www.youtube.com/watch?v=0Jb29c22xu8
 autosizing textviews
