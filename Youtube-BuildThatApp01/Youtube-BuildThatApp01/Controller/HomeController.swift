@@ -55,6 +55,17 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
                     let video = Video()
                     video.title = dictionary["title"] as? String
                     video.thumbnailImageName = dictionary["thumbnail_image_name"] as? String
+                    
+                    let channelDictionary = dictionary["channel"] as? [String: AnyObject]
+                    let channel = Channel()
+                    guard let channelDict = channelDictionary else { return }
+                    
+                    channel.profileImageName = channelDict["profile_image_name"] as? String
+                    channel.channelName = channelDict["name"] as? String
+                    
+                    // why does this have to be set????
+                    video.channel = channel
+                    
                     self.videos?.append(video)
                 }
                 
