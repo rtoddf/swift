@@ -1,15 +1,23 @@
-// Swift: Lets Build YouTube - Home Feed: UICollectionView, AutoLayout (Ep 1)
-// https://www.youtube.com/watch?v=3Xv1mJvwXok - DONE
-// Swift: YouTube - Custom Navigation Bar and MVC Clean Up (Ep 2)
-// https://www.youtube.com/watch?v=APQVltARKF8 - DONE
-// Swift: Youtube - Custom Tab Bar / Menu Bar using UICollectionView (Ep 3)
-// https://www.youtube.com/watch?v=rRhJGnSmEKQ - DONE
-// Swift: YouTube - MVC Explained: Model View Controller (Ep 4)
-// https://www.youtube.com/watch?v=Zud56x_VYvs&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj&index=4 - DONE
-// Swift: YouTube - REST JSON Integration via NSURLSession (Ep 5)
-// https://www.youtube.com/watch?v=WjrvcGAZfoI&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj&index=5 - 15:45
-// Swift: YouTube - How to Load Images Async in UICollectionView (Ep 6)
-// https://www.youtube.com/watch?v=XFvs6eraBXM&index=6&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj
+/* Swift: Lets Build YouTube - Home Feed: UICollectionView, AutoLayout (Ep 1)
+https://www.youtube.com/watch?v=3Xv1mJvwXok - DONE
+Swift: YouTube - Custom Navigation Bar and MVC Clean Up (Ep 2)
+https://www.youtube.com/watch?v=APQVltARKF8 - DONE
+Swift: Youtube - Custom Tab Bar / Menu Bar using UICollectionView (Ep 3)
+https://www.youtube.com/watch?v=rRhJGnSmEKQ - DONE
+Swift: YouTube - MVC Explained: Model View Controller (Ep 4)
+https://www.youtube.com/watch?v=Zud56x_VYvs&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj&index=4 - DONE
+Swift: YouTube - REST JSON Integration via NSURLSession (Ep 5)
+https://www.youtube.com/watch?v=WjrvcGAZfoI&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj&index=5 - DONE
+Swift: YouTube - How to Load Images Async in UICollectionView (Ep 6)
+https://www.youtube.com/watch?v=XFvs6eraBXM&index=6&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj
+Swift: YouTube - How to Create a Slide-In Menu Part 1 (Ep 7)
+https://www.youtube.com/watch?v=2kwCfFG5fDA
+
+https://www.youtube.com/watch?v=0Jb29c22xu8
+autosizing textviews
+ 
+ for later: https://www.letsbuildthatapp.com/course/instagram-firebase
+ */
 
 import UIKit
 
