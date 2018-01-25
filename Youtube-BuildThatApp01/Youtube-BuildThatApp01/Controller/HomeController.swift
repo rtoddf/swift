@@ -15,28 +15,67 @@ import UIKit
 
 class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    var videos:[Video] = {
-        var theChannel = Channel()
-        theChannel.channelName = "Music"
-        theChannel.profileImageName = "andrew-garfield"
+//    var videos:[Video] = {
+//        var theChannel = Channel()
+//        theChannel.channelName = "Music"
+//        theChannel.profileImageName = "andrew-garfield"
+//
+//        var itemOne = Video()
+//        itemOne.thumbnailImageName = "adam-levine"
+//        itemOne.title = "Adam Levine"
+//        itemOne.channel = theChannel
+//        itemOne.numberOfViews = 15000
+//
+//        var itemTwo = Video()
+//        itemTwo.thumbnailImageName = "darren-criss"
+//        itemTwo.title = "Darren Everett Criss - An American actor, singer and songwriter"
+//        itemTwo.channel = theChannel
+//        itemTwo.numberOfViews = 3000000
+//
+//        return [itemOne, itemTwo]
+//    }()
+    
+    var videos:[Video]?
+    
+    func fetchVideos() {
+        let url = URL(string: "http://rtodd.net/swift/data/youtube.json")
+        let request = URLRequest(url: url!)
+        URLSession.shared.dataTask(with: request) { (data, respone, error) in
+            if error != nil {
+                print(error as Any)
+                return
+            }
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
+                self.videos = [Video]()
+                
+                // downcasting json as an array of dictionaries
+                for dictionary in json as! [[String: AnyObject]] {
+                    let video = Video()
+                    video.title = dictionary["title"] as? String
+                    video.thumbnailImageName = dictionary["thumbnail_image_name"] as? String
+                    self.videos?.append(video)
+                }
+                
+                DispatchQueue.main.async {
+                    self.collectionView?.reloadData()
+                }
+                
+            } catch let jsonError {
+                print(jsonError)
+            }
+            
+            
 
-        var itemOne = Video()
-        itemOne.thumbnailImageName = "adam-levine"
-        itemOne.title = "Adam Levine"
-        itemOne.channel = theChannel
-        itemOne.numberOfViews = 15000
-
-        var itemTwo = Video()
-        itemTwo.thumbnailImageName = "darren-criss"
-        itemTwo.title = "Darren Everett Criss - An American actor, singer and songwriter"
-        itemTwo.channel = theChannel
-        itemTwo.numberOfViews = 3000000
-        
-        return [itemOne, itemTwo]
-    }()
+//            let str = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+        }.resume()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        fetchVideos()
         
         navigationItem.title = "Home"
         navigationController?.navigationBar.isTranslucent = false
@@ -86,14 +125,14 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return videos.count
+        return videos?.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // downcast as VideoCell now that you have data
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! VideoCell
         
-        cell.video = videos[indexPath.item]
+        cell.video = videos?[indexPath.item]
         
         return cell
     }

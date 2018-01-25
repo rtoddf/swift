@@ -21,8 +21,10 @@ class VideoCell: BaseCell {
     var video:Video? {
         didSet {
             titleLabel.text = video?.title
-            guard let imageName = video?.thumbnailImageName else { return }
-            thumbnailImageView.image = UIImage(named: imageName)
+//            guard let imageName = video?.thumbnailImageName else { return }
+//            thumbnailImageView.image = UIImage(named: imageName)
+            
+            setupThumbnailImage()
             
             guard let profImageName = video?.channel?.profileImageName else { return }
             userProfileImageView.image = UIImage(named: profImageName)
@@ -46,6 +48,25 @@ class VideoCell: BaseCell {
             }
             
         }
+    }
+    
+    func setupThumbnailImage() {
+        guard let thumbnailImageUrl = video?.thumbnailImageName else { return }
+        let url = URL(string: thumbnailImageUrl)
+        guard let imageUrl = url else { return }
+        let request = URLRequest(url: imageUrl)
+        URLSession.shared.dataTask(with: request) { (data, respone, error) in
+            if error != nil {
+                print(error as Any)
+                return
+            }
+            
+            guard let imageData = data else { return }
+            DispatchQueue.main.async {
+                self.thumbnailImageView.image = UIImage(data: imageData)
+            }
+            
+        }.resume()
     }
     
     let thumbnailImageView: UIImageView = {
