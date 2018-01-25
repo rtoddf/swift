@@ -21,16 +21,9 @@ class VideoCell: BaseCell {
     var video:Video? {
         didSet {
             titleLabel.text = video?.title
-//            guard let imageName = video?.thumbnailImageName else { return }
-//            thumbnailImageView.image = UIImage(named: imageName)
-            
             setupThumbnailImage()
-            
             setupProfileImage()
-            
-//            guard let profImageName = video?.channel?.profileImageName else { return }
-//            userProfileImageView.image = UIImage(named: profImageName)
-            
+
             guard let channelName = video?.channel?.channelName else { return }
             guard let numberOfViews = video?.numberOfViews else { return }
             
@@ -42,7 +35,7 @@ class VideoCell: BaseCell {
             
             // measure titletext
             if let title = video?.title {
-                let size = CGSize(width: frame.width - 16 - 44 - 8 - 16, height: 1000)
+                let size = CGSize(width: frame.width - 16 - 44 - 8 - 16, height: 1000)                
                 let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
                 let estimatedRect = NSString(string: title).boundingRect(with: size, options: options, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)], context: nil)
                 
@@ -53,6 +46,8 @@ class VideoCell: BaseCell {
     }
     
     func setupThumbnailImage() {
+        
+        
         guard let thumbnailImageUrl = video?.thumbnailImageName else { return }
         thumbnailImageView.loadImageUsingUrlString(urlString: thumbnailImageUrl)
     }
@@ -145,7 +140,7 @@ class VideoCell: BaseCell {
         addConstraint(NSLayoutConstraint(item: titleLabel,  attribute: .right, relatedBy: .equal, toItem: thumbnailImageView, attribute: .right, multiplier: 1, constant: 0))
         
         // height constraint
-        titleLabelHeightConstraint = NSLayoutConstraint(item: titleLabel,  attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 44)
+        titleLabelHeightConstraint = NSLayoutConstraint(item: titleLabel,  attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 24)
         guard let tlhc = titleLabelHeightConstraint else { return }
         addConstraint(tlhc)
         
