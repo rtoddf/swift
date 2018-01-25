@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00F7347C201A397D00CE6C1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F7347B201A397D00CE6C1B /* AppDelegate.swift */; };
+		00F7347E201A397D00CE6C1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F7347D201A397D00CE6C1B /* ViewController.swift */; };
+		00F73481201A397D00CE6C1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00F7347F201A397D00CE6C1B /* Main.storyboard */; };
+		00F73483201A397D00CE6C1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00F73482201A397D00CE6C1B /* Assets.xcassets */; };
+		00F73486201A397D00CE6C1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00F73484201A397D00CE6C1B /* LaunchScreen.storyboard */; };
+		00F734A4201A3A5000CE6C1B /* libANVSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F7348F201A3A5000CE6C1B /* libANVSDK.a */; };
+		00F734A5201A3A5000CE6C1B /* anv-images.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 00F73491201A3A5000CE6C1B /* anv-images.bundle */; };
+		00F734A6201A3A5000CE6C1B /* VideoHeartbeat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F73494201A3A5000CE6C1B /* VideoHeartbeat.a */; };
+		00F734A7201A3A5000CE6C1B /* GoogleCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F73495201A3A5000CE6C1B /* GoogleCast.framework */; };
+		00F734A8201A3A5000CE6C1B /* NielsenAppApi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F73496201A3A5000CE6C1B /* NielsenAppApi.framework */; };
+		00F734A9201A3A5000CE6C1B /* ANVNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F734A1201A3A5000CE6C1B /* ANVNetworking.m */; };
+		00F734AA201A3A5000CE6C1B /* ANVUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F734A2201A3A5000CE6C1B /* ANVUtil.m */; };
+		00F734AB201A3A5000CE6C1B /* ANVLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F734A3201A3A5000CE6C1B /* ANVLog.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		00F73478201A397D00CE6C1B /* AnvatoPlay01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnvatoPlay01.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00F7347B201A397D00CE6C1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		00F7347D201A397D00CE6C1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		00F73480201A397D00CE6C1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		00F73482201A397D00CE6C1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		00F73485201A397D00CE6C1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		00F73487201A397D00CE6C1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00F7348F201A3A5000CE6C1B /* libANVSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libANVSDK.a; sourceTree = "<group>"; };
+		00F73490201A3A5000CE6C1B /* ANVNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANVNetworking.h; sourceTree = "<group>"; };
+		00F73491201A3A5000CE6C1B /* anv-images.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "anv-images.bundle"; sourceTree = "<group>"; };
+		00F73492201A3A5000CE6C1B /* ANVLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANVLog.h; sourceTree = "<group>"; };
+		00F73494201A3A5000CE6C1B /* VideoHeartbeat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = VideoHeartbeat.a; sourceTree = "<group>"; };
+		00F73495201A3A5000CE6C1B /* GoogleCast.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleCast.framework; sourceTree = "<group>"; };
+		00F73496201A3A5000CE6C1B /* NielsenAppApi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NielsenAppApi.framework; sourceTree = "<group>"; };
+		00F73497201A3A5000CE6C1B /* ANVUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANVUtil.h; sourceTree = "<group>"; };
+		00F73499201A3A5000CE6C1B /* ANVConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANVConfig.h; sourceTree = "<group>"; };
+		00F7349A201A3A5000CE6C1B /* ANVSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANVSDK.h; sourceTree = "<group>"; };
+		00F7349B201A3A5000CE6C1B /* ANVGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANVGlobals.h; sourceTree = "<group>"; };
+		00F7349C201A3A5000CE6C1B /* ANVEventBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANVEventBundle.h; sourceTree = "<group>"; };
+		00F7349D201A3A5000CE6C1B /* ANVAbstractMvpdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANVAbstractMvpdViewController.h; sourceTree = "<group>"; };
+		00F7349E201A3A5000CE6C1B /* ANVAbstractLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANVAbstractLoginViewController.h; sourceTree = "<group>"; };
+		00F7349F201A3A5000CE6C1B /* ANVPlaybackOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANVPlaybackOptions.h; sourceTree = "<group>"; };
+		00F734A0201A3A5000CE6C1B /* ANVError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANVError.h; sourceTree = "<group>"; };
+		00F734A1201A3A5000CE6C1B /* ANVNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANVNetworking.m; sourceTree = "<group>"; };
+		00F734A2201A3A5000CE6C1B /* ANVUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANVUtil.m; sourceTree = "<group>"; };
+		00F734A3201A3A5000CE6C1B /* ANVLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANVLog.m; sourceTree = "<group>"; };
+		00F734AD201A3AA000CE6C1B /* Anvato-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Anvato-Bridging-Header.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00F73475201A397D00CE6C1B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00F734A8201A3A5000CE6C1B /* NielsenAppApi.framework in Frameworks */,
+				00F734A7201A3A5000CE6C1B /* GoogleCast.framework in Frameworks */,
+				00F734A6201A3A5000CE6C1B /* VideoHeartbeat.a in Frameworks */,
+				00F734A4201A3A5000CE6C1B /* libANVSDK.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00F7346F201A397D00CE6C1B = {
+			isa = PBXGroup;
+			children = (
+				00F7347A201A397D00CE6C1B /* AnvatoPlay01 */,
+				00F73479201A397D00CE6C1B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		00F73479201A397D00CE6C1B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				00F73478201A397D00CE6C1B /* AnvatoPlay01.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		00F7347A201A397D00CE6C1B /* AnvatoPlay01 */ = {
+			isa = PBXGroup;
+			children = (
+				00F7348D201A3A3700CE6C1B /* Frameworks */,
+				00F7347B201A397D00CE6C1B /* AppDelegate.swift */,
+				00F7347D201A397D00CE6C1B /* ViewController.swift */,
+				00F7347F201A397D00CE6C1B /* Main.storyboard */,
+				00F73482201A397D00CE6C1B /* Assets.xcassets */,
+				00F73484201A397D00CE6C1B /* LaunchScreen.storyboard */,
+				00F73487201A397D00CE6C1B /* Info.plist */,
+				00F734AD201A3AA000CE6C1B /* Anvato-Bridging-Header.h */,
+			);
+			path = AnvatoPlay01;
+			sourceTree = "<group>";
+		};
+		00F7348D201A3A3700CE6C1B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00F7348E201A3A5000CE6C1B /* ANVSDK */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		00F7348E201A3A5000CE6C1B /* ANVSDK */ = {
+			isa = PBXGroup;
+			children = (
+				00F7348F201A3A5000CE6C1B /* libANVSDK.a */,
+				00F73490201A3A5000CE6C1B /* ANVNetworking.h */,
+				00F73491201A3A5000CE6C1B /* anv-images.bundle */,
+				00F73492201A3A5000CE6C1B /* ANVLog.h */,
+				00F73493201A3A5000CE6C1B /* dependency */,
+				00F73497201A3A5000CE6C1B /* ANVUtil.h */,
+				00F73498201A3A5000CE6C1B /* public */,
+				00F734A1201A3A5000CE6C1B /* ANVNetworking.m */,
+				00F734A2201A3A5000CE6C1B /* ANVUtil.m */,
+				00F734A3201A3A5000CE6C1B /* ANVLog.m */,
+			);
+			path = ANVSDK;
+			sourceTree = "<group>";
+		};
+		00F73493201A3A5000CE6C1B /* dependency */ = {
+			isa = PBXGroup;
+			children = (
+				00F73494201A3A5000CE6C1B /* VideoHeartbeat.a */,
+				00F73495201A3A5000CE6C1B /* GoogleCast.framework */,
+				00F73496201A3A5000CE6C1B /* NielsenAppApi.framework */,
+			);
+			path = dependency;
+			sourceTree = "<group>";
+		};
+		00F73498201A3A5000CE6C1B /* public */ = {
+			isa = PBXGroup;
+			children = (
+				00F73499201A3A5000CE6C1B /* ANVConfig.h */,
+				00F7349A201A3A5000CE6C1B /* ANVSDK.h */,
+				00F7349B201A3A5000CE6C1B /* ANVGlobals.h */,
+				00F7349C201A3A5000CE6C1B /* ANVEventBundle.h */,
+				00F7349D201A3A5000CE6C1B /* ANVAbstractMvpdViewController.h */,
+				00F7349E201A3A5000CE6C1B /* ANVAbstractLoginViewController.h */,
+				00F7349F201A3A5000CE6C1B /* ANVPlaybackOptions.h */,
+				00F734A0201A3A5000CE6C1B /* ANVError.h */,
+			);
+			path = public;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00F73477201A397D00CE6C1B /* AnvatoPlay01 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00F7348A201A397D00CE6C1B /* Build configuration list for PBXNativeTarget "AnvatoPlay01" */;
+			buildPhases = (
+				00F73474201A397D00CE6C1B /* Sources */,
+				00F73475201A397D00CE6C1B /* Frameworks */,
+				00F73476201A397D00CE6C1B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AnvatoPlay01;
+			productName = AnvatoPlay01;
+			productReference = 00F73478201A397D00CE6C1B /* AnvatoPlay01.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		00F73470201A397D00CE6C1B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Todd Fleeman";
+				TargetAttributes = {
+					00F73477201A397D00CE6C1B = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 00F73473201A397D00CE6C1B /* Build configuration list for PBXProject "AnvatoPlay01" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 00F7346F201A397D00CE6C1B;
+			productRefGroup = 00F73479201A397D00CE6C1B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				00F73477201A397D00CE6C1B /* AnvatoPlay01 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00F73476201A397D00CE6C1B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00F73486201A397D00CE6C1B /* LaunchScreen.storyboard in Resources */,
+				00F734A5201A3A5000CE6C1B /* anv-images.bundle in Resources */,
+				00F73483201A397D00CE6C1B /* Assets.xcassets in Resources */,
+				00F73481201A397D00CE6C1B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00F73474201A397D00CE6C1B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00F734A9201A3A5000CE6C1B /* ANVNetworking.m in Sources */,
+				00F734AB201A3A5000CE6C1B /* ANVLog.m in Sources */,
+				00F7347E201A397D00CE6C1B /* ViewController.swift in Sources */,
+				00F7347C201A397D00CE6C1B /* AppDelegate.swift in Sources */,
+				00F734AA201A3A5000CE6C1B /* ANVUtil.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		00F7347F201A397D00CE6C1B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00F73480201A397D00CE6C1B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		00F73484201A397D00CE6C1B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				00F73485201A397D00CE6C1B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		00F73488201A397D00CE6C1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		00F73489201A397D00CE6C1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		00F7348B201A397D00CE6C1B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AnvatoPlay01/Frameworks/ANVSDK/dependency",
+				);
+				INFOPLIST_FILE = AnvatoPlay01/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AnvatoPlay01/Frameworks/ANVSDK",
+					"$(PROJECT_DIR)/AnvatoPlay01/Frameworks/ANVSDK/dependency",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rtodd.AnvatoPlay01;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AnvatoPlay01/Anvato-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		00F7348C201A397D00CE6C1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AnvatoPlay01/Frameworks/ANVSDK/dependency",
+				);
+				INFOPLIST_FILE = AnvatoPlay01/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AnvatoPlay01/Frameworks/ANVSDK",
+					"$(PROJECT_DIR)/AnvatoPlay01/Frameworks/ANVSDK/dependency",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rtodd.AnvatoPlay01;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AnvatoPlay01/Anvato-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00F73473201A397D00CE6C1B /* Build configuration list for PBXProject "AnvatoPlay01" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00F73488201A397D00CE6C1B /* Debug */,
+				00F73489201A397D00CE6C1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00F7348A201A397D00CE6C1B /* Build configuration list for PBXNativeTarget "AnvatoPlay01" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00F7348B201A397D00CE6C1B /* Debug */,
+				00F7348C201A397D00CE6C1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 00F73470201A397D00CE6C1B /* Project object */;
+}
