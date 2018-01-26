@@ -9,7 +9,7 @@ https://www.youtube.com/watch?v=Zud56x_VYvs&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7
 Swift: YouTube - REST JSON Integration via NSURLSession (Ep 5)
 https://www.youtube.com/watch?v=WjrvcGAZfoI&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj&index=5 - DONE
 Swift: YouTube - How to Load Images Async in UICollectionView (Ep 6)
-https://www.youtube.com/watch?v=XFvs6eraBXM&index=6&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj
+https://www.youtube.com/watch?v=XFvs6eraBXM&index=6&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj - DONE
 Swift: YouTube - How to Create a Slide-In Menu Part 1 (Ep 7)
 https://www.youtube.com/watch?v=2kwCfFG5fDA
 Swift: YouTube - How to Create a Slide-In Menu Part 2 (Ep 8)
