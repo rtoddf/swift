@@ -132,8 +132,29 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         print("search")
     }
     
+    let blackView = UIView()
+    
     @objc func handleMore(){
-        print("more")
+        // show menu
+        guard let window = UIApplication.shared.keyWindow else { return }
+        blackView.backgroundColor = UIColor(white: 0, alpha: 0.5)
+        
+        blackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleDismiss)))
+
+        window.addSubview(blackView)
+        blackView.frame = window.frame
+        blackView.alpha = 0
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.blackView.alpha = 1
+        })
+    }
+    
+    @objc func handleDismiss() {
+        print("dismiss")
+        UIView.animate(withDuration: 0.5, animations: {
+            self.blackView.alpha = 0
+        })
     }
     
     let menuBar:MenuBar = {
