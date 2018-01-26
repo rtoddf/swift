@@ -127,34 +127,15 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         let moreButtonItem = UIBarButtonItem(image: UIImage(named: "nav_more_icon")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleMore))
         navigationItem.rightBarButtonItems = [moreButtonItem, searchBarButtonItem]
     }
+
+    let settingsLauncher = SettingsLauncher()
+
+    @objc func handleMore(){
+        settingsLauncher.showSettings()
+    }
     
     @objc func handleSearch(){
         print("search")
-    }
-    
-    let blackView = UIView()
-    
-    @objc func handleMore(){
-        // show menu
-        guard let window = UIApplication.shared.keyWindow else { return }
-        blackView.backgroundColor = UIColor(white: 0, alpha: 0.5)
-        
-        blackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleDismiss)))
-
-        window.addSubview(blackView)
-        blackView.frame = window.frame
-        blackView.alpha = 0
-        
-        UIView.animate(withDuration: 0.5, animations: {
-            self.blackView.alpha = 1
-        })
-    }
-    
-    @objc func handleDismiss() {
-        print("dismiss")
-        UIView.animate(withDuration: 0.5, animations: {
-            self.blackView.alpha = 0
-        })
     }
     
     let menuBar:MenuBar = {
