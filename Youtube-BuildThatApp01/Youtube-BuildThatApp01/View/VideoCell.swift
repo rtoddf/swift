@@ -46,8 +46,6 @@ class VideoCell: BaseCell {
     }
     
     func setupThumbnailImage() {
-        
-        
         guard let thumbnailImageUrl = video?.thumbnailImageName else { return }
         thumbnailImageView.loadImageUsingUrlString(urlString: thumbnailImageUrl)
     }
@@ -57,8 +55,8 @@ class VideoCell: BaseCell {
         userProfileImageView.loadImageUsingUrlString(urlString: profileImageNameUrl)
     }
     
-    let thumbnailImageView: UIImageView = {
-        let imageView = UIImageView()
+    let thumbnailImageView: CustomImageView = {
+        let imageView = CustomImageView()
         imageView.image = UIImage(named: "darren-criss")
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
@@ -67,8 +65,8 @@ class VideoCell: BaseCell {
         return imageView
     }()
     
-    let userProfileImageView: UIImageView = {
-        let imageView = UIImageView()
+    let userProfileImageView: CustomImageView = {
+        let imageView = CustomImageView()
         imageView.image = UIImage(named: "jonathan-groff")
         imageView.layer.cornerRadius = 22
         // don't forget this
