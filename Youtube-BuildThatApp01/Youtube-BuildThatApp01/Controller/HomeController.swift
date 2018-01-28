@@ -13,9 +13,13 @@ https://www.youtube.com/watch?v=XFvs6eraBXM&index=6&list=PL0dzCUj1L5JGKdVUtA5xds
 Swift: YouTube - How to Create a Slide-In Menu Part 1 (Ep 7)
 https://www.youtube.com/watch?v=2kwCfFG5fDA - DONE
 Swift: YouTube - How to Create a Slide-In Menu Part 2 (Ep 8)
-https://www.youtube.com/watch?v=PNmuTTd5zWc&index=8&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj
+https://www.youtube.com/watch?v=PNmuTTd5zWc&index=8&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj - DONE
 Swift: YouTube - How to Create a Slide-In Menu Part 3 - Lazy Var Explained (Ep 9)
 https://www.youtube.com/watch?v=DYsfAD01fYk&index=9&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj
+Swift: YouTube - How to Use Enumerations to Prevent Bugs (Ep 10)
+https://www.youtube.com/watch?v=naMqoh1_5To&index=10&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj
+Swift: YouTube - Swipe Away Navigation Bar, Menu Bar Slider Animation (Ep 11)
+https://www.youtube.com/watch?v=XgRbj4YeG9I&index=11&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj
 
 https://www.youtube.com/watch?v=0Jb29c22xu8
 autosizing textviews
@@ -25,28 +29,7 @@ autosizing textviews
 
 import UIKit
 
-class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-    
-//    var videos:[Video] = {
-//        var theChannel = Channel()
-//        theChannel.channelName = "Music"
-//        theChannel.profileImageName = "andrew-garfield"
-//
-//        var itemOne = Video()
-//        itemOne.thumbnailImageName = "adam-levine"
-//        itemOne.title = "Adam Levine"
-//        itemOne.channel = theChannel
-//        itemOne.numberOfViews = 15000
-//
-//        var itemTwo = Video()
-//        itemTwo.thumbnailImageName = "darren-criss"
-//        itemTwo.title = "Darren Everett Criss - An American actor, singer and songwriter"
-//        itemTwo.channel = theChannel
-//        itemTwo.numberOfViews = 3000000
-//
-//        return [itemOne, itemTwo]
-//    }()
-    
+class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {    
     var videos:[Video]?
     
     func fetchVideos() {

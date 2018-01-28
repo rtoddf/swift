@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		751D2C8C201D6834000A7EE6 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751D2C8B201D6834000A7EE6 /* SettingCell.swift */; };
 		75428032200D9C2500ABD36C /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75428031200D9C2500ABD36C /* MenuBar.swift */; };
 		75491D3A2014469E007D527B /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75491D392014469E007D527B /* Video.swift */; };
 		755AC03B201BAED800B61C93 /* SettingsLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755AC03A201BAED800B61C93 /* SettingsLauncher.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		751D2C8B201D6834000A7EE6 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		75428031200D9C2500ABD36C /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		75491D392014469E007D527B /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		755AC03A201BAED800B61C93 /* SettingsLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLauncher.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			children = (
 				75617256200C7981003855A7 /* VideoCell.swift */,
 				75428031200D9C2500ABD36C /* MenuBar.swift */,
+				751D2C8B201D6834000A7EE6 /* SettingCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			files = (
 				75ACE7D9200B20E900117824 /* HomeController.swift in Sources */,
 				75491D3A2014469E007D527B /* Video.swift in Sources */,
+				751D2C8C201D6834000A7EE6 /* SettingCell.swift in Sources */,
 				75617257200C7981003855A7 /* VideoCell.swift in Sources */,
 				755AC03B201BAED800B61C93 /* SettingsLauncher.swift in Sources */,
 				75617254200C7910003855A7 /* Extensions.swift in Sources */,
