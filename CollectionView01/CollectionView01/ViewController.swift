@@ -21,7 +21,8 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 200)
+        let height = view.frame.width * 9/16
+        return CGSize(width: view.frame.width, height: height + 50)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -29,8 +30,6 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
 }
-
-
 
 class StoryCell:UICollectionViewCell {
     override init(frame: CGRect) {
@@ -41,21 +40,25 @@ class StoryCell:UICollectionViewCell {
     let leadImageView:UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(named: "newsEngin.21079913")
-//        iv.contentMode = .scaleAspectFit
+        iv.contentMode = .scaleAspectFill
+        iv.clipsToBounds = true
         return iv
     }()
     
     let titleLabel:UILabel = {
         let label = UILabel()
-        let textColor = UIColor(hexString: "#333333")
-        label.backgroundColor = textColor
+        let titleColor = UIColor(hexString: "#333333")
+        label.text = "Mayor on fighting Good Sam closure: ‘We’re looking at all our options’"
+        label.textColor = titleColor
         return label
     }()
     
-    let textLabel:UILabel = {
-        let tl = UILabel()
-        let textColor = UIColor(hexString: "#333333")
-        tl.backgroundColor = textColor
+    let textLabel:UITextView = {
+        let tl = UITextView()
+        let textColor = UIColor(hexString: "#707070")
+        tl.textContainerInset = UIEdgeInsetsMake(0, -4, 0, 0)
+        tl.text = "Mayor on fighting Good Sam closure: ‘We’re looking at all our options’"
+        tl.textColor = textColor
         return tl
     }()
     
@@ -77,7 +80,7 @@ class StoryCell:UICollectionViewCell {
         addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: textLabel)
         addConstraintsWithFormat(format: "H:|[v0]|", views: dividerLine)
 
-        addConstraintsWithFormat(format: "V:|[v0]-8-[v1(20)]-8-[v2(20)]-16-[v3(1)]|", views: leadImageView, titleLabel, textLabel, dividerLine)
+        addConstraintsWithFormat(format: "V:|[v0]-8-[v1(20)]-4-[v2(30)]-16-[v3(1)]|", views: leadImageView, titleLabel, textLabel, dividerLine)
         
     }
     
