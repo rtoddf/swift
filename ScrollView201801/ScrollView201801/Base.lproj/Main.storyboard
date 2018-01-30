@@ -20,6 +20,7 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mAT-kq-ME5">
                                 <rect key="frame" x="0.0" y="237" width="375" height="430"/>
+                                <color key="backgroundColor" red="0.89901625898283755" green="0.71181195818314547" blue="0.84328427430025388" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="430" id="tfR-Of-7s8"/>
                                 </constraints>
