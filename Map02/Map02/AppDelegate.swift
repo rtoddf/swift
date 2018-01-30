@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  Map02
-//
-//  Created by Todd Fleeman on 1/30/18.
-//  Copyright © 2018 Todd Fleeman. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain

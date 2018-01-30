@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		009ED0162020C050004A5A3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009ED0152020C050004A5A3B /* AppDelegate.swift */; };
-		009ED0182020C050004A5A3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009ED0172020C050004A5A3B /* ViewController.swift */; };
+		009ED0182020C050004A5A3B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009ED0172020C050004A5A3B /* MapViewController.swift */; };
 		009ED01B2020C050004A5A3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 009ED0192020C050004A5A3B /* Main.storyboard */; };
 		009ED01D2020C050004A5A3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 009ED01C2020C050004A5A3B /* Assets.xcassets */; };
 		009ED0202020C050004A5A3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 009ED01E2020C050004A5A3B /* LaunchScreen.storyboard */; };
+		009ED0492020EB22004A5A3B /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009ED0482020EB22004A5A3B /* StoryCell.swift */; };
+		009ED04B2020EC3A004A5A3B /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009ED04A2020EC3A004A5A3B /* Story.swift */; };
+		009ED04E2020F081004A5A3B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009ED04D2020F081004A5A3B /* Extensions.swift */; };
+		009ED0502020F3F3004A5A3B /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009ED04F2020F3F3004A5A3B /* StoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		009ED0122020C050004A5A3B /* Map02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Map02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		009ED0152020C050004A5A3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		009ED0172020C050004A5A3B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		009ED0172020C050004A5A3B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		009ED01A2020C050004A5A3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		009ED01C2020C050004A5A3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		009ED01F2020C050004A5A3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		009ED0212020C050004A5A3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		009ED0482020EB22004A5A3B /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
+		009ED04A2020EC3A004A5A3B /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		009ED04D2020F081004A5A3B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		009ED04F2020F3F3004A5A3B /* StoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,34 @@
 		009ED0142020C050004A5A3B /* Map02 */ = {
 			isa = PBXGroup;
 			children = (
+				009ED051202105DC004A5A3B /* Model */,
+				009ED04C2020F072004A5A3B /* Helpers */,
 				009ED0152020C050004A5A3B /* AppDelegate.swift */,
-				009ED0172020C050004A5A3B /* ViewController.swift */,
+				009ED04F2020F3F3004A5A3B /* StoryViewController.swift */,
+				009ED0482020EB22004A5A3B /* StoryCell.swift */,
+				009ED0172020C050004A5A3B /* MapViewController.swift */,
 				009ED0192020C050004A5A3B /* Main.storyboard */,
 				009ED01C2020C050004A5A3B /* Assets.xcassets */,
 				009ED01E2020C050004A5A3B /* LaunchScreen.storyboard */,
 				009ED0212020C050004A5A3B /* Info.plist */,
 			);
 			path = Map02;
+			sourceTree = "<group>";
+		};
+		009ED04C2020F072004A5A3B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				009ED04D2020F081004A5A3B /* Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		009ED051202105DC004A5A3B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				009ED04A2020EC3A004A5A3B /* Story.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +164,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				009ED0182020C050004A5A3B /* ViewController.swift in Sources */,
+				009ED0502020F3F3004A5A3B /* StoryViewController.swift in Sources */,
+				009ED04E2020F081004A5A3B /* Extensions.swift in Sources */,
+				009ED0182020C050004A5A3B /* MapViewController.swift in Sources */,
 				009ED0162020C050004A5A3B /* AppDelegate.swift in Sources */,
+				009ED0492020EB22004A5A3B /* StoryCell.swift in Sources */,
+				009ED04B2020EC3A004A5A3B /* Story.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
