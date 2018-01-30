@@ -1,7 +1,10 @@
 import UIKit
+import MapKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
     
+    @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var mainScrollView: UIScrollView!
     
     var views = [UIView]()

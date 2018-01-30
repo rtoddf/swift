@@ -12,6 +12,7 @@
 		009ED06420210CA2004A5A3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 009ED06220210CA2004A5A3B /* Main.storyboard */; };
 		009ED06620210CA2004A5A3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 009ED06520210CA2004A5A3B /* Assets.xcassets */; };
 		009ED06920210CA2004A5A3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 009ED06720210CA2004A5A3B /* LaunchScreen.storyboard */; };
+		009ED07220213851004A5A3B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009ED07120213851004A5A3B /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		009ED06520210CA2004A5A3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		009ED06820210CA2004A5A3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		009ED06A20210CA2004A5A3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		009ED07120213851004A5A3B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				009ED07220213851004A5A3B /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +43,7 @@
 			children = (
 				009ED05D20210CA2004A5A3B /* ScrollView201801 */,
 				009ED05C20210CA2004A5A3B /* Products */,
+				009ED07020213851004A5A3B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +66,14 @@
 				009ED06A20210CA2004A5A3B /* Info.plist */,
 			);
 			path = ScrollView201801;
+			sourceTree = "<group>";
+		};
+		009ED07020213851004A5A3B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				009ED07120213851004A5A3B /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
