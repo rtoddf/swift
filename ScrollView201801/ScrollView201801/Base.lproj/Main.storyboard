@@ -26,13 +26,13 @@
                                 </constraints>
                             </scrollView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fft-2Z-Iyu">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="229"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="237"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="mAT-kq-ME5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="CFc-Bq-4KG"/>
-                            <constraint firstItem="mAT-kq-ME5" firstAttribute="top" secondItem="fft-2Z-Iyu" secondAttribute="bottom" constant="8" id="GHt-0r-WCj"/>
+                            <constraint firstItem="mAT-kq-ME5" firstAttribute="top" secondItem="fft-2Z-Iyu" secondAttribute="bottom" id="GHt-0r-WCj"/>
                             <constraint firstItem="fft-2Z-Iyu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Kaq-l7-fjS"/>
                             <constraint firstItem="fft-2Z-Iyu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Off-yz-8j0"/>
                             <constraint firstItem="fft-2Z-Iyu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WM6-nM-Sck"/>

@@ -2,7 +2,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var mainScrollView: UIScrollView!
@@ -15,10 +15,31 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
             setUpScrollView()
+            setUpMap()
+        }
+    
+        func setUpMap(){
+            let latitude:CLLocationDegrees = 33.766596
+            let longitude:CLLocationDegrees = -84.356305
+            
+            let latDelta:CLLocationDegrees = 0.025
+            let lonDelta:CLLocationDegrees = 0.025
+            
+            let span:MKCoordinateSpan = MKCoordinateSpan(latitudeDelta:latDelta, longitudeDelta:lonDelta)
+            let location:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude:latitude, longitude:longitude)
+            
+            let region:MKCoordinateRegion = MKCoordinateRegion(center:location, span:span)
+            map.setRegion(region, animated: true)
+            
+            let annotation = MKPointAnnotation()
+            annotation.title = "Jimmy Carter Presidential Library and Museum"
+            annotation.subtitle = "The museum includes photographs"
+            annotation.coordinate = location
+            map.addAnnotation(annotation)
         }
         
         func setUpScrollView() {
-            imageArray = [UIImage(named: "deborah-harry")!, UIImage(named: "adam-lambert")!, UIImage(named: "ellen-page")!, UIImage(named: "music-brett-kissel")!, UIImage(named: "tyler-oakley")!]
+            imageArray = [UIImage(named: "deborah-harry")!, UIImage(named: "adam-lambert")!, UIImage(named: "ad")!, UIImage(named: "music-brett-kissel")!, UIImage(named: "tyler-oakley")!]
             
             headlineArray = ["Democratic nominee for President", "Chosen as the Democratic nominee", "Headline 3", "Cox retired from public office", "Three-way race gaining 41.5% of the vote"]
             
@@ -81,60 +102,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         for (i, view) in views.enumerated() {
             mainScrollView.contentSize.width = mainScrollView.frame.width * CGFloat(i + 1)
             mainScrollView.addSubview(view)
-        }
-
-        func printFonts() {
-            let fontFamilyNames = UIFont.familyNames
-            for familyName in fontFamilyNames {
-                print("------------------------------")
-                print("Font Family Name = [\(familyName)]")
-                let names = UIFont.fontNames(forFamilyName: familyName )
-                print("Font Names = [\(names)]")
-            }
-        }
-
-        printFonts()
-        
-//        for i in 0..<textArray.count {
-//            let textView = UITextView()
-//            textView.text  = textArray[i]
-//            textView.font = UIFont(name: "Avenir-Light", size: 15.0)
-//            textView.textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-//            textView.backgroundColor = UIColor.white
-        
-//            let myColor = UIColor.black
-//            textView.layer.borderColor = myColor.cgColor
-//            
-//            textView.layer.borderWidth = 1.0
-//            textView.layer.cornerRadius = 20.0
-//
-//            let xPosition = self.mainScrollView.frame.width * CGFloat(i) + CGFloat(16)
-//            textView.frame = CGRect(x: xPosition, y: 16, width: self.mainScrollView.frame.width - 32, height: self.mainScrollView.frame.height - 32)
-//
-//            mainScrollView.contentSize.width = mainScrollView.frame.width * CGFloat(i + 1)
-//            mainScrollView.addSubview(textView)
-//        }
-        
-//        for i in 0..<imageArray.count {
-//            let imageView = UIImageView()
-//            imageView.image = imageArray[i]
-//            imageView.contentMode = .scaleAspectFit
-//            let xPosition = self.mainScrollView.frame.width * CGFloat(i)
-//
-//
-//            imageView.frame = CGRect(x: xPosition, y: 0, width: self.mainScrollView.frame.width, height: self.mainScrollView.frame.height)
-//
-//            mainScrollView.contentSize.width = mainScrollView.frame.width * CGFloat(i + 1)
-//            mainScrollView.addSubview(imageView)
-//        }
-        
+        }     
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
