@@ -1,6 +1,14 @@
 import UIKit
 
 class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    var stories:[Story] = {
+        var story1 = Story()
+        story1.headline = "Mayor on fighting Good Sam closure: ‘We’re looking at all our options’"
+        story1.leadImageName = "newsEngin.21079913"
+        
+        return [story1]
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -13,19 +21,31 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         titleLabel.text = "Dayton"
         titleLabel.textColor = UIColor.white
         titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
-        
-        
-        
+
         let cellId:String = "cellId"
         collectionView?.register(StoryCell.self, forCellWithReuseIdentifier: cellId)
+        
+        setupNavbarButtons()
+    }
+    
+    func setupNavbarButtons() {
+        let moreImage = UIImage(named: "nav_more_icon")?.withRenderingMode(.alwaysOriginal)
+        let moreButtonItem = UIBarButtonItem(image: moreImage, style: .plain, target: self, action: #selector(handleMore))
+        navigationItem.rightBarButtonItems = [moreButtonItem]
+    }
+    
+    @objc func handleMore(){
+        print("more")
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return stories.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! StoryCell
+        cell.story = stories[indexPath.item]
+        
         return cell
     }
     

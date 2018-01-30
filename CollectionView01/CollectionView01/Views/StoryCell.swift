@@ -1,6 +1,23 @@
 import UIKit
 
-class StoryCell:UICollectionViewCell {
+class BaseCell:UICollectionViewCell {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupViews()
+    }
+
+    func setupViews() {
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class StoryCell:BaseCell {
+    var story:Story?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -14,7 +31,7 @@ class StoryCell:UICollectionViewCell {
         return iv
     }()
     
-    let titleLabel:UILabel = {
+    let headlineLabel:UILabel = {
         let label = UILabel()
         let titleColor = UIColor(hexString: "#333333")
         label.text = "Mayor on fighting Good Sam closure: ‘We’re looking at all our options’"
@@ -38,18 +55,18 @@ class StoryCell:UICollectionViewCell {
         return dl
     }()
     
-    func setupViews(){
+    override func setupViews(){
         addSubview(leadImageView)
-        addSubview(titleLabel)
+        addSubview(headlineLabel)
         addSubview(textLabel)
         addSubview(dividerLine)
         
         addConstraintsWithFormat(format: "H:|[v0]|", views: leadImageView)
-        addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: titleLabel)
+        addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: headlineLabel)
         addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: textLabel)
         addConstraintsWithFormat(format: "H:|[v0]|", views: dividerLine)
         
-        addConstraintsWithFormat(format: "V:|[v0]-8-[v1(20)]-4-[v2(30)]-16-[v3(1)]|", views: leadImageView, titleLabel, textLabel, dividerLine)
+        addConstraintsWithFormat(format: "V:|[v0]-8-[v1(20)]-4-[v2(30)]-16-[v3(1)]|", views: leadImageView, headlineLabel, textLabel, dividerLine)
         
     }
     
