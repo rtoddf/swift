@@ -5,6 +5,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var mainScrollView: UIScrollView!
     var imageArray = [UIImage]()
     var textArray = [String]()
+    var headlineArray = [String]()
     
     var views = [UIView]()
     
@@ -12,6 +13,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         imageArray = [UIImage(named: "deborah-harry")!, UIImage(named: "adam-lambert")!, UIImage(named: "ellen-page")!, UIImage(named: "music-brett-kissel")!, UIImage(named: "tyler-oakley")!]
+        
+        headlineArray = ["Headline 1", "Headline 2", "Headline 3", "Headline 4", "Headline 5"]
         
         textArray = [
             "James Middleton Cox (March 31, 1870 – July 15, 1957) was the 46th and 48th Governor of Ohio, a U.S. Representative from Ohio, and the Democratic nominee for President of the United States in the election of 1920. He founded the chain of newspapers that continues today as Cox Enterprises, a media conglomerate. Born and raised in Ohio, Cox began his career as a newspaper copy reader before becoming an assistant to Congressman Paul J. Sorg. As owner of the Dayton Daily News, Cox introduced several innovations and crusaded against the local Republican Party boss. He served in the United States House of Representatives from 1909 to 1913 before winning election as Governor of Ohio.",
@@ -27,13 +30,14 @@ class ViewController: UIViewController {
                 
                 // create the view
                 let imgView = UIView()
-                imgView.frame = CGRect(x: xPosition, y: 16, width: self.mainScrollView.frame.width - 32, height: self.mainScrollView.frame.height - 32)
+                imgView.frame = CGRect(x: 0, y: 0, width: self.mainScrollView.frame.width, height: self.mainScrollView.frame.height)
                 
                 let imageView = UIImageView()
                 imageView.image = imageArray[i]
                 imageView.contentMode = .scaleAspectFit
                 
-                imageView.frame = CGRect(x: 0, y: 0, width: self.mainScrollView.frame.width, height: self.mainScrollView.frame.height)
+                imageView.frame = CGRect(x: xPosition, y: 16, width: self.mainScrollView.frame.width - 32, height: self.mainScrollView.frame.height - 32)
+                
 
                 imgView.addSubview(imageView)
                 views.append(imgView)
@@ -42,17 +46,24 @@ class ViewController: UIViewController {
                 
                 // create the view
                 let view = UIView()
-                view.frame = CGRect(x: xPosition, y: 16, width: self.mainScrollView.frame.width - 32, height: self.mainScrollView.frame.height - 32)
+                view.frame = CGRect(x: 0, y: 0, width: self.mainScrollView.frame.width - 32, height: self.mainScrollView.frame.height - 32)
+                
+                let headlineLabel = UILabel()
+                headlineLabel.text  = headlineArray[i]
+                headlineLabel.font = UIFont(name: "Avenir-Medium", size: 16.0)
+                headlineLabel.frame = CGRect(x: xPosition + CGFloat(8), y: 16, width: self.mainScrollView.frame.width - 32, height: 20)
                 
                 // create the textview and add the text
                 let textView = UITextView()
                 textView.text  = textArray[i]
                 textView.font = UIFont(name: "Avenir-Light", size: 15.0)
                 textView.textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+                
                 textView.backgroundColor = UIColor.white
                 textView.layer.cornerRadius = 20.0
-                textView.frame = CGRect(x: 0, y: 16, width: self.mainScrollView.frame.width - 32, height: self.mainScrollView.frame.height - 32)
+                textView.frame = CGRect(x: xPosition, y: 16, width: self.mainScrollView.frame.width - 32, height: self.mainScrollView.frame.height - 32)
                 
+//                textView.addSubview(headlineLabel)
                 view.addSubview(textView)
                 views.append(view)
             }
@@ -60,22 +71,21 @@ class ViewController: UIViewController {
         
         
         for (i, view) in views.enumerated() {
-            print("\(view)")
             mainScrollView.contentSize.width = mainScrollView.frame.width * CGFloat(i + 1)
             mainScrollView.addSubview(view)
         }
 
-//        func printFonts() {
-//            let fontFamilyNames = UIFont.familyNames
-//            for familyName in fontFamilyNames {
-//                print("------------------------------")
-//                print("Font Family Name = [\(familyName)]")
-//                let names = UIFont.fontNames(forFamilyName: familyName )
-//                print("Font Names = [\(names)]")
-//            }
-//        }
-//
-//        printFonts()
+        func printFonts() {
+            let fontFamilyNames = UIFont.familyNames
+            for familyName in fontFamilyNames {
+                print("------------------------------")
+                print("Font Family Name = [\(familyName)]")
+                let names = UIFont.fontNames(forFamilyName: familyName )
+                print("Font Names = [\(names)]")
+            }
+        }
+
+        printFonts()
         
 //        for i in 0..<textArray.count {
 //            let textView = UITextView()
