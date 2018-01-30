@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  CollectionView01
-//
-//  Created by Todd Fleeman on 1/28/18.
-//  Copyright © 2018 Todd Fleeman. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
@@ -21,6 +13,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let layout = UICollectionViewFlowLayout()
         window?.rootViewController = UINavigationController(rootViewController: HomeController(collectionViewLayout: layout))
+        
+        let navigationBarBackgroundColor = UIColor(hexString: "#333333")
+        UINavigationBar.appearance().barTintColor = navigationBarBackgroundColor
+        // you can also set the translucency in HomeController
+        
+        application.statusBarStyle = .lightContent
+        let statusBarBackgroundView = UIView()
+        let statusBarBackgroundColor = UIColor(hexString: "#000000")
+        statusBarBackgroundView.backgroundColor = statusBarBackgroundColor
+        
+        window?.addSubview(statusBarBackgroundView)
+        window?.addConstraintsWithFormat(format: "H:|[v0]|", views: statusBarBackgroundView)
+        window?.addConstraintsWithFormat(format: "V:|[v0(20)]", views: statusBarBackgroundView)
         
         return true
     }
