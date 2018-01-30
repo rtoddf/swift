@@ -6,6 +6,8 @@ class ViewController: UIViewController {
     var imageArray = [UIImage]()
     var textArray = [String]()
     
+    var views = [UIView]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -18,39 +20,82 @@ class ViewController: UIViewController {
             "After his parents divorced, he moved with his mother in 1886 to Middletown, Ohio, where he started a journalistic apprenticeship at the Middletown Weekly Signal published by John Q. Baker. In 1892 he received a job at the Cincinnati Enquirer as a copy reader on the telegraph desk, and later started to report on spot news including the railroad news. In 1908, he ran for Congress as a Democrat and was elected. Cox represented Ohio in the United States House of Representatives from 1909 to 1913, and resigned after winning election as Governor of Ohio.",
             "As Governor of Ohio, in a three-way race gaining 41.5% of the vote. Cox served three terms; after winning the 1912 election, he served from 1913 to 1915; he lost reelection in 1914, but won the 1916 and 1918 elections, and served from 1917 to 1921. He presided over a wide range of measures such as laying the foundation of Ohio's unified highway system, creating no fault workers' compensation system and restricting child labor."
         ]
+        
+        for i in 0..<5 {
+            if i == 2 {
+                let xPosition = self.mainScrollView.frame.width * CGFloat(i) + CGFloat(16)
+                
+                // create the view
+                let imgView = UIView()
+                imgView.frame = CGRect(x: xPosition, y: 16, width: self.mainScrollView.frame.width - 32, height: self.mainScrollView.frame.height - 32)
+                
+                let imageView = UIImageView()
+                imageView.image = imageArray[i]
+                imageView.contentMode = .scaleAspectFit
+                
+                imageView.frame = CGRect(x: 0, y: 0, width: self.mainScrollView.frame.width, height: self.mainScrollView.frame.height)
 
-        func printFonts() {
-            let fontFamilyNames = UIFont.familyNames
-            for familyName in fontFamilyNames {
-                print("------------------------------")
-                print("Font Family Name = [\(familyName)]")
-                let names = UIFont.fontNames(forFamilyName: familyName )
-                print("Font Names = [\(names)]")
+                imgView.addSubview(imageView)
+                views.append(imgView)
+            } else {
+                let xPosition = self.mainScrollView.frame.width * CGFloat(i) + CGFloat(16)
+                
+                // create the view
+                let view = UIView()
+                view.frame = CGRect(x: xPosition, y: 16, width: self.mainScrollView.frame.width - 32, height: self.mainScrollView.frame.height - 32)
+                
+                // create the textview and add the text
+                let textView = UITextView()
+                textView.text  = textArray[i]
+                textView.font = UIFont(name: "Avenir-Light", size: 15.0)
+                textView.textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+                textView.backgroundColor = UIColor.white
+                textView.layer.cornerRadius = 20.0
+                textView.frame = CGRect(x: 0, y: 16, width: self.mainScrollView.frame.width - 32, height: self.mainScrollView.frame.height - 32)
+                
+                view.addSubview(textView)
+                views.append(view)
             }
         }
         
-        printFonts()
         
-        for i in 0..<textArray.count {
-            let textView = UITextView()
-            textView.text  = textArray[i]
-//            textView.font = UIFont.systemFont(ofSize: 20)
-            textView.font = UIFont(name: "Avenir-Light", size: 15.0)
-            textView.textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-            textView.backgroundColor = UIColor.white
-            
+        for (i, view) in views.enumerated() {
+            print("\(view)")
+            mainScrollView.contentSize.width = mainScrollView.frame.width * CGFloat(i + 1)
+            mainScrollView.addSubview(view)
+        }
+
+//        func printFonts() {
+//            let fontFamilyNames = UIFont.familyNames
+//            for familyName in fontFamilyNames {
+//                print("------------------------------")
+//                print("Font Family Name = [\(familyName)]")
+//                let names = UIFont.fontNames(forFamilyName: familyName )
+//                print("Font Names = [\(names)]")
+//            }
+//        }
+//
+//        printFonts()
+        
+//        for i in 0..<textArray.count {
+//            let textView = UITextView()
+//            textView.text  = textArray[i]
+//            textView.font = UIFont(name: "Avenir-Light", size: 15.0)
+//            textView.textContainerInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+//            textView.backgroundColor = UIColor.white
+        
 //            let myColor = UIColor.black
 //            textView.layer.borderColor = myColor.cgColor
 //            
 //            textView.layer.borderWidth = 1.0
-            textView.layer.cornerRadius = 20.0
-            
-            let xPosition = self.mainScrollView.frame.width * CGFloat(i) + CGFloat(16)
-            textView.frame = CGRect(x: xPosition, y: 16, width: self.mainScrollView.frame.width - 32, height: self.mainScrollView.frame.height - 32)
-            
-            mainScrollView.contentSize.width = mainScrollView.frame.width * CGFloat(i + 1)
-            mainScrollView.addSubview(textView)
-        }
+//            textView.layer.cornerRadius = 20.0
+//
+//            let xPosition = self.mainScrollView.frame.width * CGFloat(i) + CGFloat(16)
+//            textView.frame = CGRect(x: xPosition, y: 16, width: self.mainScrollView.frame.width - 32, height: self.mainScrollView.frame.height - 32)
+//
+//            mainScrollView.contentSize.width = mainScrollView.frame.width * CGFloat(i + 1)
+//            mainScrollView.addSubview(textView)
+//        }
         
 //        for i in 0..<imageArray.count {
 //            let imageView = UIImageView()
@@ -60,7 +105,7 @@ class ViewController: UIViewController {
 //
 //
 //            imageView.frame = CGRect(x: xPosition, y: 0, width: self.mainScrollView.frame.width, height: self.mainScrollView.frame.height)
-//            
+//
 //            mainScrollView.contentSize.width = mainScrollView.frame.width * CGFloat(i + 1)
 //            mainScrollView.addSubview(imageView)
 //        }
