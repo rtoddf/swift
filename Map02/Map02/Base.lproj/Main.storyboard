@@ -35,42 +35,54 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="399.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cZ6-Ap-bah">
-                                                    <rect key="frame" x="12" y="12" width="351" height="215.5"/>
-                                                    <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JRw-o5-WfV">
+                                                    <rect key="frame" x="12" y="12" width="351" height="375.5"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cZ6-Ap-bah">
+                                                            <rect key="frame" x="12" y="12" width="327" height="211"/>
+                                                            <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="cZ6-Ap-bah" secondAttribute="height" multiplier="327:211" id="vof-D2-1hi"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Jd-Tj-dMU">
+                                                            <rect key="frame" x="24" y="241" width="303" height="30.5"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Il1-HQ-D8u">
+                                                            <rect key="frame" x="24" y="279.5" width="303" height="84"/>
+                                                            <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <wkWebViewConfiguration key="configuration">
+                                                                <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                                                <wkPreferences key="preferences"/>
+                                                            </wkWebViewConfiguration>
+                                                        </wkWebView>
+                                                    </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="cZ6-Ap-bah" secondAttribute="height" multiplier="345:212" id="P0J-nX-Bao"/>
+                                                        <constraint firstItem="cZ6-Ap-bah" firstAttribute="leading" secondItem="JRw-o5-WfV" secondAttribute="leading" constant="12" id="1n5-UC-nYf"/>
+                                                        <constraint firstAttribute="trailing" secondItem="cZ6-Ap-bah" secondAttribute="trailing" constant="12" id="5se-Eq-6zo"/>
+                                                        <constraint firstItem="7Jd-Tj-dMU" firstAttribute="top" secondItem="cZ6-Ap-bah" secondAttribute="bottom" constant="18" id="9dV-En-Nu4"/>
+                                                        <constraint firstItem="Il1-HQ-D8u" firstAttribute="top" secondItem="7Jd-Tj-dMU" secondAttribute="bottom" constant="8" id="CTG-mM-I1Q"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Il1-HQ-D8u" secondAttribute="trailing" constant="24" id="GcP-uh-psD"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Il1-HQ-D8u" secondAttribute="bottom" constant="12" id="HoW-HR-eIf"/>
+                                                        <constraint firstItem="Il1-HQ-D8u" firstAttribute="leading" secondItem="JRw-o5-WfV" secondAttribute="leading" constant="24" id="d4d-Xd-m8M"/>
+                                                        <constraint firstAttribute="trailing" secondItem="7Jd-Tj-dMU" secondAttribute="trailing" constant="24" id="e59-Wf-kNQ"/>
+                                                        <constraint firstItem="cZ6-Ap-bah" firstAttribute="top" secondItem="JRw-o5-WfV" secondAttribute="top" constant="12" id="rOE-jB-U4T"/>
+                                                        <constraint firstItem="7Jd-Tj-dMU" firstAttribute="leading" secondItem="JRw-o5-WfV" secondAttribute="leading" constant="24" id="wA0-oA-cqN"/>
                                                     </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Jd-Tj-dMU">
-                                                    <rect key="frame" x="24" y="245.5" width="327" height="30.5"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Il1-HQ-D8u">
-                                                    <rect key="frame" x="24" y="284" width="327" height="103.5"/>
-                                                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <wkWebViewConfiguration key="configuration">
-                                                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                                        <wkPreferences key="preferences"/>
-                                                    </wkWebViewConfiguration>
-                                                </wkWebView>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Il1-HQ-D8u" firstAttribute="leading" secondItem="npk-Kw-F2z" secondAttribute="leading" constant="24" id="1B0-5n-37b"/>
-                                                <constraint firstAttribute="trailing" secondItem="7Jd-Tj-dMU" secondAttribute="trailing" constant="24" id="DYc-4A-8xw"/>
-                                                <constraint firstAttribute="trailing" secondItem="Il1-HQ-D8u" secondAttribute="trailing" constant="24" id="Fa1-x2-SYB"/>
-                                                <constraint firstAttribute="trailing" secondItem="cZ6-Ap-bah" secondAttribute="trailing" constant="12" id="NYP-tJ-cyH"/>
-                                                <constraint firstAttribute="bottom" secondItem="Il1-HQ-D8u" secondAttribute="bottom" constant="12" id="SpI-vY-GJ9"/>
-                                                <constraint firstItem="7Jd-Tj-dMU" firstAttribute="top" secondItem="cZ6-Ap-bah" secondAttribute="bottom" constant="18" id="aNI-jB-ckc"/>
-                                                <constraint firstItem="cZ6-Ap-bah" firstAttribute="leading" secondItem="npk-Kw-F2z" secondAttribute="leading" constant="12" id="cKO-b8-0eU"/>
-                                                <constraint firstItem="cZ6-Ap-bah" firstAttribute="top" secondItem="npk-Kw-F2z" secondAttribute="top" constant="12" id="eUj-Vs-Ncs"/>
-                                                <constraint firstItem="7Jd-Tj-dMU" firstAttribute="leading" secondItem="npk-Kw-F2z" secondAttribute="leading" constant="24" id="f0i-UA-EVk"/>
-                                                <constraint firstItem="Il1-HQ-D8u" firstAttribute="top" secondItem="7Jd-Tj-dMU" secondAttribute="bottom" constant="8" id="sHN-i6-sdh"/>
+                                                <constraint firstAttribute="bottom" secondItem="JRw-o5-WfV" secondAttribute="bottom" constant="12" id="81p-I9-mAg"/>
+                                                <constraint firstAttribute="trailing" secondItem="JRw-o5-WfV" secondAttribute="trailing" constant="12" id="MMU-qk-05F"/>
+                                                <constraint firstItem="JRw-o5-WfV" firstAttribute="top" secondItem="npk-Kw-F2z" secondAttribute="top" constant="12" id="fQw-1Q-YcB"/>
+                                                <constraint firstItem="JRw-o5-WfV" firstAttribute="leading" secondItem="npk-Kw-F2z" secondAttribute="leading" constant="12" id="hUr-V8-o5l"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cell" destination="JRw-o5-WfV" id="Ueh-M5-0oK"/>
                                             <outlet property="fullTextWebView" destination="Il1-HQ-D8u" id="Gdv-vt-fhg"/>
                                             <outlet property="headlineLabel" destination="7Jd-Tj-dMU" id="WjE-Ja-WJv"/>
                                             <outlet property="leadImageView" destination="cZ6-Ap-bah" id="egr-0x-qcL"/>

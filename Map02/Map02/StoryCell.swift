@@ -3,9 +3,13 @@ import WebKit
 
 class StoryCell: UITableViewCell {
 
+    @IBOutlet weak var cell: UIView!
     @IBOutlet weak var leadImageView: UIImageView!
     @IBOutlet weak var headlineLabel: UILabel!
     @IBOutlet weak var fullTextWebView: WKWebView!
+    
+//    cell.layer.cornerRadius = 8
+//    cell.layer.masksToBounds = true
 
     func setArticle(article: Item) {
         headlineLabel.text = article.title
