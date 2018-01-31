@@ -1,12 +1,16 @@
 import UIKit
+import WebKit
 
 class StoryCell: UITableViewCell {
 
     @IBOutlet weak var leadImageView: UIImageView!
     @IBOutlet weak var headlineLabel: UILabel!
-    
+    @IBOutlet weak var fullTextWebView: WKWebView!
+
     func setArticle(article: Item) {
         headlineLabel.text = article.title
+        guard let full_text = article.full_text else { return }
+        fullTextWebView.loadHTMLString(full_text.wrapHTML(), baseURL: nil)
         
         var imageUrl:String = ""
         
