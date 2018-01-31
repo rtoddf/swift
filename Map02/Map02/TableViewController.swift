@@ -1,6 +1,6 @@
 import UIKit
 
-class MapViewController: UIViewController {
+class TableViewController: UIViewController {
     var articles:[Item] = []
     let segueIdentifier:String = "MasterToDetail"
 
@@ -11,6 +11,7 @@ class MapViewController: UIViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
         
         let jsonUrlString = "https://preview-staging.whio.com/feed?id=e7b9cfa6-05e9-11e8-883b-95fa8cdb14f5"
         let url = URL(string: jsonUrlString)
@@ -42,7 +43,7 @@ class MapViewController: UIViewController {
 
 }
 
-extension MapViewController: UITableViewDataSource, UITableViewDelegate {
+extension TableViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return articles.count
     }

@@ -1,15 +1,5 @@
 import UIKit
 
-extension String {
-    func toDateString( inputDateFormat inputFormat  : String,  ouputDateFormat outputFormat  : String ) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = inputFormat
-        let date = dateFormatter.date(from: self)
-        dateFormatter.dateFormat = outputFormat
-        return dateFormatter.string(from: date!)
-    }
-}
-
 extension UIImageView {
     func loadImageUsingUrlString(imageUrl:String) {
         let imageNameSplit = imageUrl.components(separatedBy: "/")
@@ -98,9 +88,6 @@ extension String {
         </style>
         </head>
         """
-        
-        //        .wp-caption[style]{width:100% !important;height:auto;}
-        //        .wp-caption-text{color:#7a7a7a;font-style:italic;-webkit-text-size-adjust:%ld%;}
         
         headHtml.append("<body>\(self)</body></html>")
         return headHtml

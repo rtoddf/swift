@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		009ED0162020C050004A5A3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009ED0152020C050004A5A3B /* AppDelegate.swift */; };
-		009ED0182020C050004A5A3B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009ED0172020C050004A5A3B /* MapViewController.swift */; };
+		009ED0182020C050004A5A3B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009ED0172020C050004A5A3B /* TableViewController.swift */; };
 		009ED01B2020C050004A5A3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 009ED0192020C050004A5A3B /* Main.storyboard */; };
 		009ED01D2020C050004A5A3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 009ED01C2020C050004A5A3B /* Assets.xcassets */; };
 		009ED0202020C050004A5A3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 009ED01E2020C050004A5A3B /* LaunchScreen.storyboard */; };
@@ -21,7 +21,7 @@
 /* Begin PBXFileReference section */
 		009ED0122020C050004A5A3B /* Map02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Map02.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		009ED0152020C050004A5A3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		009ED0172020C050004A5A3B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		009ED0172020C050004A5A3B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		009ED01A2020C050004A5A3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		009ED01C2020C050004A5A3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		009ED01F2020C050004A5A3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 				009ED0152020C050004A5A3B /* AppDelegate.swift */,
 				009ED04F2020F3F3004A5A3B /* StoryViewController.swift */,
 				009ED0482020EB22004A5A3B /* StoryCell.swift */,
-				009ED0172020C050004A5A3B /* MapViewController.swift */,
+				009ED0172020C050004A5A3B /* TableViewController.swift */,
 				009ED0192020C050004A5A3B /* Main.storyboard */,
 				009ED01C2020C050004A5A3B /* Assets.xcassets */,
 				009ED01E2020C050004A5A3B /* LaunchScreen.storyboard */,
@@ -166,7 +166,7 @@
 			files = (
 				009ED0502020F3F3004A5A3B /* StoryViewController.swift in Sources */,
 				009ED04E2020F081004A5A3B /* Extensions.swift in Sources */,
-				009ED0182020C050004A5A3B /* MapViewController.swift in Sources */,
+				009ED0182020C050004A5A3B /* TableViewController.swift in Sources */,
 				009ED0162020C050004A5A3B /* AppDelegate.swift in Sources */,
 				009ED0492020EB22004A5A3B /* StoryCell.swift in Sources */,
 				009ED04B2020EC3A004A5A3B /* Story.swift in Sources */,
