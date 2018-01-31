@@ -5,21 +5,43 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let smallViewWidth = view.frame.width * 0.333
+        let largeViewWidth = view.frame.width * 0.67
+        
+        
         let firstView = UIView()
-        firstView.backgroundColor = .orange
         firstView.layer.cornerRadius = 8
+        firstView.clipsToBounds = true
+        
+        let firstImageView = UIImageView()
+        firstImageView.image = UIImage(named: "adam-lambert")
+        firstImageView.frame = CGRect(x: 0, y: 0, width: smallViewWidth, height: smallViewWidth)
+        firstImageView.contentMode = .scaleAspectFill
+        firstView.addSubview(firstImageView)
         
         let secondView = UIView()
-        secondView.backgroundColor = .purple
         secondView.layer.cornerRadius = 8
+        secondView.clipsToBounds = true
+        
+        let secondImageView = UIImageView()
+        secondImageView.image = UIImage(named: "ben-barnes")
+        secondImageView.frame = CGRect(x: 0, y: 0, width: smallViewWidth, height: smallViewWidth)
+        secondImageView.contentMode = .scaleAspectFill
+        secondView.addSubview(secondImageView)
         
         let thirdView = UIView()
-        thirdView.backgroundColor = .blue
         thirdView.layer.cornerRadius = 8
+        thirdView.clipsToBounds = true
+        
+        let thirdImageView = UIImageView()
+        thirdImageView.image = UIImage(named: "jonathan-groff")
+        thirdImageView.frame = CGRect(x: 0, y: 0, width: largeViewWidth, height: largeViewWidth)
+        thirdImageView.contentMode = .scaleAspectFill
+        thirdView.addSubview(thirdImageView)
         
         [firstView, secondView, thirdView].forEach { view.addSubview($0) }
         
-        let smallViewWidth = view.frame.width / 3
+        
         
 //        view.addSubview(firstView)
 //        view.addSubview(secondView)
@@ -47,7 +69,7 @@ class ViewController: UIViewController {
 extension UIView {
     func anchor(top:NSLayoutYAxisAnchor?, leading:NSLayoutXAxisAnchor?, bottom:NSLayoutYAxisAnchor?, trailing:NSLayoutXAxisAnchor?, padding:UIEdgeInsets = .zero, size:CGSize = .zero) {
         translatesAutoresizingMaskIntoConstraints = false
-        
+        backgroundColor = .purple
         
 //        topAnchor.constraint(equalTo: <#T##NSLayoutAnchor<NSLayoutYAxisAnchor>#>, constant: <#T##CGFloat#>)
         
