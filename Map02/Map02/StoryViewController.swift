@@ -16,8 +16,6 @@ class StoryViewController: UIViewController {
     
     func setUI() {
         articleHeadlineLabel.text = article?.title
-        guard let pubdate = article?.pub_date?.toDateString(inputDateFormat: "EE, dd MMM YYYY HH:mm:ss z", ouputDateFormat: "hh:mm a EEEE, MMMM dd, YYYY") else { return }
-        articlePubDateLabel.text = "Posted: " + pubdate
         
         guard let full_text = article?.full_text else { return }
         fullTextWebView.loadHTMLString(full_text.wrapHTML(), baseURL: nil)
