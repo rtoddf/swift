@@ -5,8 +5,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let smallViewWidth = view.frame.width * 0.333
-        let largeViewWidth = view.frame.width * 0.67
+        let smallViewWidth = (view.frame.width * 0.333) - 12
+        let largeViewWidth = (view.frame.width * 0.67) - 12
         
         
         let firstView = UIView()
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         let thirdImageView = UIImageView()
         thirdImageView.image = UIImage(named: "jonathan-groff")
         thirdImageView.frame = CGRect(x: 0, y: 0, width: largeViewWidth, height: largeViewWidth)
-        thirdImageView.contentMode = .scaleAspectFill
+        thirdImageView.contentMode = .scaleAspectFit
         thirdView.addSubview(thirdImageView)
         
         [firstView, secondView, thirdView].forEach { view.addSubview($0) }
@@ -69,7 +69,7 @@ class ViewController: UIViewController {
 extension UIView {
     func anchor(top:NSLayoutYAxisAnchor?, leading:NSLayoutXAxisAnchor?, bottom:NSLayoutYAxisAnchor?, trailing:NSLayoutXAxisAnchor?, padding:UIEdgeInsets = .zero, size:CGSize = .zero) {
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = .purple
+        backgroundColor = .darkGray
         
 //        topAnchor.constraint(equalTo: <#T##NSLayoutAnchor<NSLayoutYAxisAnchor>#>, constant: <#T##CGFloat#>)
         
