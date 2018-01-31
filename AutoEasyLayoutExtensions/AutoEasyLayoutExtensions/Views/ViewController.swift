@@ -30,14 +30,18 @@ class ViewController: UIViewController {
         secondView.addSubview(secondImageView)
         
         let thirdImageView = UIImageView()
-        thirdImageView.image = UIImage(named: "jonathan-groff")
+        thirdImageView.image = UIImage(named: "adam-lambert")
         thirdImageView.frame = CGRect(x: 0, y: 0, width: largeViewWidth, height: largeViewWidth)
         thirdImageView.contentMode = .scaleAspectFit
         
         let thirdView = UIView()
         thirdView.addSubview(thirdImageView)
         
-        [firstView, secondView, thirdView].forEach { view.addSubview($0) }
+        let fourthView = UIView()
+        let fifthView = UIView()
+        let sixthView = UIView()
+        
+        [firstView, secondView, thirdView, fourthView, fifthView, sixthView].forEach { view.addSubview($0) }
         
         
         
@@ -59,6 +63,18 @@ class ViewController: UIViewController {
         secondView.anchor(top: firstView.bottomAnchor, leading: nil, bottom: nil, trailing: firstView.trailingAnchor, padding: .init(top: viewPadding, left: 0, bottom: 0, right: 0) , size: .init(width: smallViewWidth, height: smallViewWidth))
         
         thirdView.anchor(top: firstView.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: secondView.bottomAnchor, trailing: firstView.leadingAnchor, padding: .init(top: 0, left: viewPadding, bottom: 0, right: viewPadding))
+        
+        fourthView.anchor(top: thirdView.bottomAnchor, leading: thirdView.leadingAnchor, bottom: nil, trailing: nil, padding: .init(top: viewPadding, left: 0, bottom: 0, right: viewPadding), size: .init(width: smallViewWidth, height: smallViewWidth))
+        
+        fifthView.anchor(top: thirdView.bottomAnchor, leading: fourthView.trailingAnchor, bottom: nil, trailing: nil, padding: .init(top: viewPadding, left: viewPadding, bottom: 0, right: viewPadding), size: .init(width: smallViewWidth, height: smallViewWidth))
+        
+        sixthView.anchor(top: thirdView.bottomAnchor, leading: fifthView.trailingAnchor, bottom: nil, trailing: view.safeAreaLayoutGuide.trailingAnchor)
     }
 
 }
+
+
+
+
+
+
