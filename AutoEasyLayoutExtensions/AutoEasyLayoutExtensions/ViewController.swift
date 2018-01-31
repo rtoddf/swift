@@ -7,11 +7,19 @@ class ViewController: UIViewController {
         
         let firstView = UIView()
         firstView.backgroundColor = .orange
+        firstView.layer.cornerRadius = 8
         
         let secondView = UIView()
         secondView.backgroundColor = .purple
+        secondView.layer.cornerRadius = 8
         
-        [firstView, secondView].forEach { view.addSubview($0) }
+        let thirdView = UIView()
+        thirdView.backgroundColor = .blue
+        thirdView.layer.cornerRadius = 8
+        
+        [firstView, secondView, thirdView].forEach { view.addSubview($0) }
+        
+        let smallViewWidth = view.frame.width / 3
         
 //        view.addSubview(firstView)
 //        view.addSubview(secondView)
@@ -26,9 +34,11 @@ class ViewController: UIViewController {
         
 //        firstView(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor, padding: .init(top: 0, left: 16, bottom: 0, right: 16))
         
-        firstView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: nil, bottom: nil, trailing: view.safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 12), size: .init(width: 100, height: 100))
+        firstView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: nil, bottom: nil, trailing: view.safeAreaLayoutGuide.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 12), size: .init(width: smallViewWidth, height: smallViewWidth))
         
-        secondView.anchor(top: firstView.bottomAnchor, leading: nil, bottom: nil, trailing: firstView.trailingAnchor, padding: .init(top: 12, left: 0, bottom: 0, right: 0) , size: .init(width: 100, height: 100))
+        secondView.anchor(top: firstView.bottomAnchor, leading: nil, bottom: nil, trailing: firstView.trailingAnchor, padding: .init(top: 12, left: 0, bottom: 0, right: 0) , size: .init(width: smallViewWidth, height: smallViewWidth))
+        
+        thirdView.anchor(top: firstView.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: secondView.bottomAnchor, trailing: firstView.leadingAnchor, padding: .init(top: 0, left: 12, bottom: 0, right: 12))
         
     }
 
