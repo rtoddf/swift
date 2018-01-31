@@ -7,11 +7,11 @@ class StoryCell: UITableViewCell {
     @IBOutlet weak var leadImageView: UIImageView!
     @IBOutlet weak var headlineLabel: UILabel!
     @IBOutlet weak var fullTextWebView: WKWebView!
-    
-//    cell.layer.cornerRadius = 8
-//    cell.layer.masksToBounds = true
 
     func setArticle(article: Item) {
+        cell.layer.cornerRadius = 16
+        cell.layer.masksToBounds = true
+        
         headlineLabel.text = article.title
         guard let full_text = article.full_text else { return }
         fullTextWebView.loadHTMLString(full_text.wrapHTML(), baseURL: nil)

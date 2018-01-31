@@ -39,20 +39,20 @@
                                                     <rect key="frame" x="12" y="12" width="351" height="375.5"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cZ6-Ap-bah">
-                                                            <rect key="frame" x="12" y="12" width="327" height="211"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="351" height="226"/>
                                                             <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="cZ6-Ap-bah" secondAttribute="height" multiplier="327:211" id="vof-D2-1hi"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Jd-Tj-dMU">
-                                                            <rect key="frame" x="24" y="241" width="303" height="30.5"/>
+                                                            <rect key="frame" x="24" y="238" width="303" height="30.5"/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Il1-HQ-D8u">
-                                                            <rect key="frame" x="24" y="279.5" width="303" height="84"/>
+                                                            <rect key="frame" x="24" y="276.5" width="303" height="87"/>
                                                             <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <wkWebViewConfiguration key="configuration">
                                                                 <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -61,15 +61,15 @@
                                                         </wkWebView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="cZ6-Ap-bah" firstAttribute="leading" secondItem="JRw-o5-WfV" secondAttribute="leading" constant="12" id="1n5-UC-nYf"/>
-                                                        <constraint firstAttribute="trailing" secondItem="cZ6-Ap-bah" secondAttribute="trailing" constant="12" id="5se-Eq-6zo"/>
-                                                        <constraint firstItem="7Jd-Tj-dMU" firstAttribute="top" secondItem="cZ6-Ap-bah" secondAttribute="bottom" constant="18" id="9dV-En-Nu4"/>
+                                                        <constraint firstItem="cZ6-Ap-bah" firstAttribute="leading" secondItem="JRw-o5-WfV" secondAttribute="leading" id="1n5-UC-nYf"/>
+                                                        <constraint firstAttribute="trailing" secondItem="cZ6-Ap-bah" secondAttribute="trailing" id="5se-Eq-6zo"/>
+                                                        <constraint firstItem="7Jd-Tj-dMU" firstAttribute="top" secondItem="cZ6-Ap-bah" secondAttribute="bottom" constant="12" id="9dV-En-Nu4"/>
                                                         <constraint firstItem="Il1-HQ-D8u" firstAttribute="top" secondItem="7Jd-Tj-dMU" secondAttribute="bottom" constant="8" id="CTG-mM-I1Q"/>
                                                         <constraint firstAttribute="trailing" secondItem="Il1-HQ-D8u" secondAttribute="trailing" constant="24" id="GcP-uh-psD"/>
                                                         <constraint firstAttribute="bottom" secondItem="Il1-HQ-D8u" secondAttribute="bottom" constant="12" id="HoW-HR-eIf"/>
                                                         <constraint firstItem="Il1-HQ-D8u" firstAttribute="leading" secondItem="JRw-o5-WfV" secondAttribute="leading" constant="24" id="d4d-Xd-m8M"/>
                                                         <constraint firstAttribute="trailing" secondItem="7Jd-Tj-dMU" secondAttribute="trailing" constant="24" id="e59-Wf-kNQ"/>
-                                                        <constraint firstItem="cZ6-Ap-bah" firstAttribute="top" secondItem="JRw-o5-WfV" secondAttribute="top" constant="12" id="rOE-jB-U4T"/>
+                                                        <constraint firstItem="cZ6-Ap-bah" firstAttribute="top" secondItem="JRw-o5-WfV" secondAttribute="top" id="rOE-jB-U4T"/>
                                                         <constraint firstItem="7Jd-Tj-dMU" firstAttribute="leading" secondItem="JRw-o5-WfV" secondAttribute="leading" constant="24" id="wA0-oA-cqN"/>
                                                     </constraints>
                                                 </view>
@@ -82,7 +82,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="cell" destination="JRw-o5-WfV" id="Ueh-M5-0oK"/>
+                                            <outlet property="cell" destination="JRw-o5-WfV" id="FXK-Q2-vtw"/>
                                             <outlet property="fullTextWebView" destination="Il1-HQ-D8u" id="Gdv-vt-fhg"/>
                                             <outlet property="headlineLabel" destination="7Jd-Tj-dMU" id="WjE-Ja-WJv"/>
                                             <outlet property="leadImageView" destination="cZ6-Ap-bah" id="egr-0x-qcL"/>
