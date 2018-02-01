@@ -43,13 +43,16 @@ extension UIColor {
 extension UIView {
     func anchor(top:NSLayoutYAxisAnchor?, leading:NSLayoutXAxisAnchor?, bottom:NSLayoutYAxisAnchor?, trailing:NSLayoutXAxisAnchor?, padding:UIEdgeInsets = .zero, size:CGSize = .zero) {
         
-        let viewCornerRadius:CGFloat = 8.0
+//        let viewCornerRadius:CGFloat = 8.0
         let viewBackgroundColor = UIColor(hexString: "#333333")
         
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = viewBackgroundColor
-        layer.cornerRadius = viewCornerRadius
+//        layer.cornerRadius = viewCornerRadius
         clipsToBounds = true
+        
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.white.cgColor
         
         //        topAnchor.constraint(equalTo: <#T##NSLayoutAnchor<NSLayoutYAxisAnchor>#>, constant: <#T##CGFloat#>)
         
