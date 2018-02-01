@@ -40,6 +40,13 @@ extension UIColor {
     }
 }
 
+extension UIImageView {
+    func setDisplay(size:CGFloat) {
+        frame = CGRect(x: 0, y: 0, width: size, height: size)
+        contentMode = .scaleAspectFill
+    }
+}
+
 extension UIView {
     func anchor(top:NSLayoutYAxisAnchor?, leading:NSLayoutXAxisAnchor?, bottom:NSLayoutYAxisAnchor?, trailing:NSLayoutXAxisAnchor?, padding:UIEdgeInsets = .zero, size:CGSize = .zero) {
         
