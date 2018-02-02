@@ -8,16 +8,25 @@
 
 import UIKit
 
+struct Question {
+    var questionString:String?
+    var answers:[String?]
+    var selectedAnswerIndex:Int?
+}
+
 class QuestionController: UITableViewController {
     
     let cellId = "cellId"
     let headerId = "headerId"
+    
+    var question = Question(questionString: "What is your favorite type of food?", answers: ["Pizza", "Burgers", "Seafood", "Sushi"], selectedAnswerIndex: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "Question"
         navigationController?.navigationBar.tintColor = .white
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
         
         tableView.rowHeight = 50
         tableView.sectionHeaderHeight = 50
@@ -31,41 +40,61 @@ class QuestionController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return question.answers.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! AnswerCell
+        
+        if let answer = question.answers[indexPath.row] {
+            cell.nameLabel.text = answer
+        }
+        
+        return cell
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return tableView.dequeueReusableHeaderFooterView(withIdentifier: headerId)
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: headerId) as! QuestionHeader
+        header.nameLabel.text = question.questionString
+        return header
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        question.selectedAnswerIndex = indexPath.row
+        
         let controller = ResultsController()
+        controller.question = question
         navigationController?.pushViewController(controller, animated: true)
     }
 }
 
 class ResultsController:UIViewController {
+    var question:Question? {
+        didSet {
+            let names = ["Bob", "Sam", "Barb", "Mike", "Tim"]
+            if let index = question?.selectedAnswerIndex {
+                resultsLabel.text = "Congratulations? You're a total \(names[index])"
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = .white
         setupViews()
     }
     
+    let resultsLabel:UILabel = {
+        let label = UILabel()
+        label.text = "Congratulations? You're a total Ross"
+        label.font = UIFont(name: "AvenirNext-Bold", size: 16)
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     func setupViews(){
-        let resultsLabel:UILabel = {
-            let label = UILabel()
-            label.text = "Congratulations? You're a total Ross"
-            label.font = UIFont(name: "AvenirNext-Bold", size: 16)
-            label.textAlignment = .center
-            label.translatesAutoresizingMaskIntoConstraints = false
-            return label
-        }()
-        
+        navigationItem.title = "Results"
         view.addSubview(resultsLabel)
         
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": resultsLabel]))
@@ -83,28 +112,28 @@ class QuestionHeader:UITableViewHeaderFooterView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupViews(){
-        let nameLabel:UILabel = {
-            let label = UILabel()
-            label.text = "Question One"
-            label.font = UIFont(name: "AvenirNext-Bold", size: 15.0)
-
-//            func printFonts() {
-//                let fontFamilyNames = UIFont.familyNames
-//                for familyName in fontFamilyNames {
-//                    print("------------------------------")
-//                    print("Font Family Name = [\(familyName)]")
-//                    let names = UIFont.fontNames(forFamilyName: familyName)
-//                    print("Font Names = [\(names)]")
-//                }
-//            }
-//
-//            printFonts()
-            
-            label.translatesAutoresizingMaskIntoConstraints = false
-            return label
-        }()
+    let nameLabel:UILabel = {
+        let label = UILabel()
+        label.text = "Question One"
+        label.font = UIFont(name: "AvenirNext-Bold", size: 15.0)
         
+        //            func printFonts() {
+        //                let fontFamilyNames = UIFont.familyNames
+        //                for familyName in fontFamilyNames {
+        //                    print("------------------------------")
+        //                    print("Font Family Name = [\(familyName)]")
+        //                    let names = UIFont.fontNames(forFamilyName: familyName)
+        //                    print("Font Names = [\(names)]")
+        //                }
+        //            }
+        //
+        //            printFonts()
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    func setupViews(){
         addSubview(nameLabel)
         
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": nameLabel]))
@@ -122,31 +151,18 @@ class AnswerCell:UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    var nameLabel:UILabel = {
+        let label = UILabel()
+        label.text = "Sample Answer"
+        label.font = UIFont(name: "AvenirNext-Medium", size: 14)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     func setupViews(){
-        let nameLabel:UILabel = {
-            let label = UILabel()
-            label.text = "Sample Answer"
-            label.font = UIFont(name: "AvenirNext-Medium", size: 14)
-            label.translatesAutoresizingMaskIntoConstraints = false
-            return label
-        }()
-        
         addSubview(nameLabel)
         
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": nameLabel]))
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": nameLabel]))
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
