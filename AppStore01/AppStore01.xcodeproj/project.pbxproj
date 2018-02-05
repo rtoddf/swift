@@ -58,9 +58,9 @@
 		757F833420118E640031A245 /* AppStore01 */ = {
 			isa = PBXGroup;
 			children = (
+				757F833520118E640031A245 /* AppDelegate.swift */,
 				75DE227D20158AE0008CD34F /* Models.swift */,
 				757F833720118E640031A245 /* ViewController.swift */,
-				757F833520118E640031A245 /* AppDelegate.swift */,
 				757F8347201194FB0031A245 /* CategoryCell.swift */,
 				757F833920118E640031A245 /* Main.storyboard */,
 				757F833C20118E640031A245 /* Assets.xcassets */,
