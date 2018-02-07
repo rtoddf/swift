@@ -10,6 +10,15 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         super.viewDidLoad()
         
         navigationItem.title = "Home"
+        navigationController?.navigationBar.isTranslucent = false
+        
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+        titleLabel.text = "News"
+        titleLabel.textColor = .white
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 22)
+        titleLabel.textAlignment = NSTextAlignment.center
+        navigationItem.titleView = titleLabel
+        
         collectionView?.backgroundColor = UIColor.white
         collectionView?.register(StoryCell.self, forCellWithReuseIdentifier: "cellId")
     }
@@ -25,7 +34,8 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewlayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width, height: 200)
+        let height = ((view.frame.width - 16 - 16) * 9 / 16) + 92
+        return CGSize(width: view.frame.width, height: height)
     }
 
 }
@@ -74,7 +84,7 @@ class StoryCell:UICollectionViewCell {
     
     let separatorView:UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(hexString: "#222222")
+        view.backgroundColor = UIColor(hexString: "#999999")
         return view
     }()
     
@@ -88,7 +98,7 @@ class StoryCell:UICollectionViewCell {
         addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: leadImageView)
         addConstraintsWithFormat(format: "H:|-16-[v0(44)]", views: siteIconImageView)
         addConstraintsWithFormat(format: "H:|[v0]|", views: separatorView)
-        addConstraintsWithFormat(format: "V:|-16-[v0]-8-[v1(44)]-16-[v2(1)]|", views: leadImageView, siteIconImageView, separatorView)
+        addConstraintsWithFormat(format: "V:|-16-[v0]-8-[v1(44)]-24-[v2(1)]|", views: leadImageView, siteIconImageView, separatorView)
         
         addConstraint(NSLayoutConstraint(item: headlinelabel, attribute: .top, relatedBy: .equal, toItem: leadImageView, attribute: .bottom, multiplier: 1, constant: 8))
         addConstraint(NSLayoutConstraint(item: headlinelabel, attribute: .leading, relatedBy: .equal, toItem: siteIconImageView, attribute: .trailing, multiplier: 1, constant: 8))
