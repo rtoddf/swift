@@ -1,11 +1,21 @@
 import UIKit
 
-class StoryCell:UICollectionViewCell {
+class BaseCell:UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
     }
     
+    func setupViews(){
+        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class StoryCell:BaseCell {
     let leadImageView:UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "sports01")
@@ -48,7 +58,7 @@ class StoryCell:UICollectionViewCell {
         return view
     }()
     
-    func setupViews() {
+    override func setupViews() {
         addSubview(leadImageView)
         addSubview(separatorView)
         addSubview(siteIconImageView)
@@ -69,9 +79,5 @@ class StoryCell:UICollectionViewCell {
         addConstraint(NSLayoutConstraint(item: textLabel, attribute: .leading, relatedBy: .equal, toItem: headlinelabel, attribute: .leading, multiplier: 1, constant: 0))
         addConstraint(NSLayoutConstraint(item: textLabel, attribute: .trailing, relatedBy: .equal, toItem: headlinelabel, attribute: .trailing, multiplier: 1, constant: 0))
         addConstraint(NSLayoutConstraint(item: textLabel, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 32))
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

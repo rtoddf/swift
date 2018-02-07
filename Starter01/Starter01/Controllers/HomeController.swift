@@ -1,6 +1,8 @@
-/* https://www.youtube.com/watch?v=3Xv1mJvwXok - 32:31
+/* https://www.youtube.com/watch?v=3Xv1mJvwXok
 ep 2
-https://www.youtube.com/watch?v=APQVltARKF8&t=1472s&index=2&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj */
+https://www.youtube.com/watch?v=APQVltARKF8&t=1472s&index=2&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj
+ ep 3 - 24:44
+ */
 
 import UIKit
 
@@ -21,6 +23,21 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         collectionView?.backgroundColor = UIColor.white
         collectionView?.register(StoryCell.self, forCellWithReuseIdentifier: "cellId")
+        collectionView?.contentInset = UIEdgeInsetsMake(50, 0, 0, 0)
+        collectionView?.scrollIndicatorInsets = UIEdgeInsetsMake(50, 0, 0, 0)
+        
+        setupMenuBar()
+    }
+    
+    let menuBar:Menubar = {
+        let mb = Menubar()
+        return mb
+    }()
+    
+    private func setupMenuBar() {
+        view.addSubview(menuBar)
+        view.addConstraintsWithFormat(format: "H:|[v0]|", views: menuBar)
+        view.addConstraintsWithFormat(format: "V:|[v0(50)]", views: menuBar)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
