@@ -39,35 +39,42 @@ class StoryCell:UICollectionViewCell {
     let leadImageView:UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "sports01")
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.backgroundColor = UIColor(hexString: "#222222")
         return imageView
     }()
     
     let siteIconImageView:UIImageView = {
         let iv = UIImageView()
-        iv.backgroundColor = UIColor(hexString: "#003264")
+        iv.image = UIImage(named: "ben-barnes")
+        iv.contentMode = .scaleAspectFill
+        iv.clipsToBounds = true
+        iv.layer.cornerRadius = 22
         return iv
     }()
     
     let headlinelabel:UILabel = {
         let label = UILabel()
-        label.backgroundColor = UIColor(hexString: "#ae0000")
+        label.text = "Sports Today: National Signing Day gives way to big basketball night"
+        label.font = UIFont(name: "Avenir-Medium", size: 18.0)
+        label.numberOfLines = 2
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    let textLabel:UILabel = {
-        let label = UILabel()
-        label.backgroundColor = UIColor(hexString: "#baba71")
+    let textLabel:UITextView = {
+        let label = UITextView()
+        label.text = "Today is National Signing Day and a notable night for college basketball."
+        label.font = UIFont(name: "Avenir-Medium", size: 12.0)
+        label.textContainerInset = UIEdgeInsetsMake(0, -4, 0, 0)
+        label.textColor = UIColor(hexString: "#333333")
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     let separatorView:UIView = {
         let view = UIView()
-        view.backgroundColor = .purple
+        view.backgroundColor = UIColor(hexString: "#222222")
         return view
     }()
     
@@ -91,7 +98,7 @@ class StoryCell:UICollectionViewCell {
         addConstraint(NSLayoutConstraint(item: textLabel, attribute: .top, relatedBy: .equal, toItem: headlinelabel, attribute: .bottom, multiplier: 1, constant: 4))
         addConstraint(NSLayoutConstraint(item: textLabel, attribute: .leading, relatedBy: .equal, toItem: headlinelabel, attribute: .leading, multiplier: 1, constant: 0))
         addConstraint(NSLayoutConstraint(item: textLabel, attribute: .trailing, relatedBy: .equal, toItem: headlinelabel, attribute: .trailing, multiplier: 1, constant: 0))
-        addConstraint(NSLayoutConstraint(item: textLabel, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 20))
+        addConstraint(NSLayoutConstraint(item: textLabel, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 32))
     }
     
     required init?(coder aDecoder: NSCoder) {
