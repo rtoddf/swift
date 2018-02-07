@@ -1,4 +1,6 @@
-// https://www.youtube.com/watch?v=3Xv1mJvwXok - 32:31
+/* https://www.youtube.com/watch?v=3Xv1mJvwXok - 32:31
+ep 2
+https://www.youtube.com/watch?v=APQVltARKF8&t=1472s&index=2&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj */
 
 import UIKit
 
