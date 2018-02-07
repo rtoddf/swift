@@ -36,7 +36,10 @@ class StoryCell:UICollectionViewCell {
     
     let leadImageView:UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .orange
+        imageView.image = UIImage(named: "sports01")
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.backgroundColor = UIColor(hexString: "#222222")
         return imageView
     }()
     
@@ -53,6 +56,13 @@ class StoryCell:UICollectionViewCell {
         return label
     }()
     
+    let textLabel:UILabel = {
+        let label = UILabel()
+        label.backgroundColor = UIColor(hexString: "#baba71")
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     let separatorView:UIView = {
         let view = UIView()
         view.backgroundColor = .purple
@@ -64,6 +74,7 @@ class StoryCell:UICollectionViewCell {
         addSubview(separatorView)
         addSubview(siteIconImageView)
         addSubview(headlinelabel)
+        addSubview(textLabel)
 
         addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: leadImageView)
         addConstraintsWithFormat(format: "H:|-16-[v0(44)]", views: siteIconImageView)
@@ -72,9 +83,13 @@ class StoryCell:UICollectionViewCell {
         
         addConstraint(NSLayoutConstraint(item: headlinelabel, attribute: .top, relatedBy: .equal, toItem: leadImageView, attribute: .bottom, multiplier: 1, constant: 8))
         addConstraint(NSLayoutConstraint(item: headlinelabel, attribute: .leading, relatedBy: .equal, toItem: siteIconImageView, attribute: .trailing, multiplier: 1, constant: 8))
-        addConstraint(NSLayoutConstraint(item: headlinelabel, attribute: .trailing, relatedBy: .equal, toItem: leadImageView, attribute: .trailing, multiplier: 1, constant: 1))
-        addConstraintsWithFormat(format: "V:[v0(20)]", views: headlinelabel)
-//        addConstraintsWithFormat(format: "H:|[v0]|", views: headlinelabel)
+        addConstraint(NSLayoutConstraint(item: headlinelabel, attribute: .trailing, relatedBy: .equal, toItem: leadImageView, attribute: .trailing, multiplier: 1, constant: 0))
+        addConstraint(NSLayoutConstraint(item: headlinelabel, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 20))
+        
+        addConstraint(NSLayoutConstraint(item: textLabel, attribute: .top, relatedBy: .equal, toItem: headlinelabel, attribute: .bottom, multiplier: 1, constant: 4))
+        addConstraint(NSLayoutConstraint(item: textLabel, attribute: .leading, relatedBy: .equal, toItem: headlinelabel, attribute: .leading, multiplier: 1, constant: 0))
+        addConstraint(NSLayoutConstraint(item: textLabel, attribute: .trailing, relatedBy: .equal, toItem: headlinelabel, attribute: .trailing, multiplier: 1, constant: 0))
+        addConstraint(NSLayoutConstraint(item: textLabel, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 0, constant: 20))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -94,10 +109,3 @@ extension UIView {
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutFormatOptions(), metrics: nil, views: viewsDictionary))
     }
 }
-
-
-
-
-
-
-
