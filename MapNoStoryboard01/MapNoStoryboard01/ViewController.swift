@@ -67,6 +67,8 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         }
     }
     
+    
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0] as CLLocation
         
@@ -74,16 +76,57 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         // other wise this function will be called every time when user location changes.
         //manager.stopUpdatingLocation()
         
-        let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
         
+        func getLocationName() -> String {
+//            var currentLocationName = String()
+            
+            CLGeocoder().reverseGeocodeLocation(userLocation) {(placemarks, error) in
+                if error != nil {
+                    return
+                }
+                
+                guard let placemark = placemarks?[0] else { return }
+
+                guard let name = placemark.name else { return }
+                var currentLocationName = name
+            }
+//            print("currentLocationName: \(currentLocationName)")
+            
+            return "name"
+        }
+        
+        
+        let latDelta = 0.025
+        let lonDelta = 0.025
+        
+        let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: lonDelta))
         map.setRegion(region, animated: true)
         
         // Drop a pin at user's Current Location
         let myAnnotation: MKPointAnnotation = MKPointAnnotation()
         myAnnotation.coordinate = CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude);
-        myAnnotation.title = "Current location"
+        myAnnotation.title = getLocationName()
         map.addAnnotation(myAnnotation)
     }
 }
+
+http://swiftdeveloperblog.com/mapview-display-users-current-location-and-drop-a-pin/
+https://www.raywenderlich.com/160517/mapkit-tutorial-getting-started
+https://medium.com/@MissionKao/add-a-mapview-in-ios-app-without-storyboard-swift-7f73cbeada36
+
+
+//[AnyHashable("Street"): 4460 Ashford Dunwoody Rd NE,
+//    AnyHashable("ZIP"): 30346,
+//    AnyHashable("Country"): United States,
+//    AnyHashable("SubThoroughfare"): 4460,
+//    AnyHashable("State"): GA,
+//    AnyHashable("Name"): Perimeter Mall,
+//    AnyHashable("SubAdministrativeArea"): DeKalb,
+//    AnyHashable("Thoroughfare"): Ashford Dunwoody Rd NE, AnyHashable("FormattedAddressLines"): <__NSArrayM 0x604000653410>(
+//    Perimeter Mall,
+//    4460 Ashford Dunwoody Rd NE,
+//    Atlanta, GA  30346,
+//    United States
+//)
 
