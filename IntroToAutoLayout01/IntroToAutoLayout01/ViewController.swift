@@ -1,4 +1,4 @@
-// https://www.youtube.com/watch?v=nv1L3mYEg8M - ep2
+// https://www.youtube.com/watch?v=nv1L3mYEg8M - ep2 - 20:56
 
 import UIKit
 
@@ -6,7 +6,7 @@ class ViewController: UIViewController {
 
     let topHalfView:UIView = {
         let view = UIView()
-        view.backgroundColor = .orange
+        view.backgroundColor = .white
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -35,25 +35,26 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         view.addSubview(topHalfView)
-        view.addSubview(imageView)
+        topHalfView.addSubview(imageView)
         view.addSubview(textView)
         setLayout()
 //        printFonts()
     }
     
     func setLayout() {
-        topHalfView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 1).isActive = true
+        topHalfView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
         topHalfView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 1).isActive = true
         topHalfView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 1).isActive = true
         topHalfView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
 
         
-        imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: 300).isActive = true
-        imageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        imageView.centerXAnchor.constraint(equalTo: topHalfView.centerXAnchor).isActive = true
+        imageView.centerYAnchor.constraint(equalTo: topHalfView.centerYAnchor).isActive = true
+//        imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+        imageView.widthAnchor.constraint(equalTo: topHalfView.widthAnchor, multiplier: 1).isActive = true
+        imageView.heightAnchor.constraint(equalTo: topHalfView.heightAnchor, multiplier: 1).isActive = true
         
-        textView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10).isActive = true
+        textView.topAnchor.constraint(equalTo: topHalfView.bottomAnchor, constant: 10).isActive = true
         textView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         textView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         textView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
