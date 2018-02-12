@@ -21,9 +21,14 @@ class ViewController: UIViewController {
     
     let textView:UITextView = {
         let tv = UITextView()
-        tv.text = "Eli Lieb, an independent American pop singer-songwriter"
-        tv.font = UIFont(name: "Avenir-Black", size: 16.0)
-        tv.textColor  = UIColor(hexString: "#666666")
+        
+        var attributedText = NSMutableAttributedString(string: "Eli Lieb is an American pop singer-songwriter", attributes: [NSAttributedStringKey.font: UIFont(name: "Avenir-Black", size: 16.0) as Any, NSAttributedStringKey.foregroundColor: UIColor(hexString: "#333333") as Any])
+        attributedText.append(NSAttributedString(string: "\n\nLieb is openly gay, a subject that returns repeatedly in his songs and music videos.", attributes: [NSAttributedStringKey.font: UIFont(name: "Avenir-Medium", size: 14.0) as Any, NSAttributedStringKey.foregroundColor: UIColor(hexString: "#777777") as Any]))
+        
+        tv.attributedText = attributedText
+        
+//        tv.font = UIFont(name: "Avenir-Black", size: 16.0)
+//        tv.textColor  = UIColor(hexString: "#666666")
         tv.textAlignment = .center
         tv.isSelectable = false
         tv.isScrollEnabled = false
@@ -55,8 +60,8 @@ class ViewController: UIViewController {
         imageView.heightAnchor.constraint(equalTo: topHalfView.heightAnchor, multiplier: 1).isActive = true
         
         textView.topAnchor.constraint(equalTo: topHalfView.bottomAnchor, constant: 10).isActive = true
-        textView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-        textView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+        textView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12).isActive = true
+        textView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12).isActive = true
         textView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
     }
     
