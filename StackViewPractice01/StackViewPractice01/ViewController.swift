@@ -27,10 +27,40 @@ class ViewController: UIViewController {
         return view
     }()
     
+    let darkGrayView:UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(hexString: "#666666")
+        return view
+    }()
+
+    let lightGrayView:UIView = {
+        let thisView = UIView()
+        thisView.backgroundColor = UIColor(hexString: "#cccccc")
+        
+        let imageName = "gideon-glick"
+        let image = UIImage(named: imageName)
+        let imageView = UIImageView(image: image)
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        thisView.addSubview(imageView)
+        
+        thisView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": imageView]))
+        thisView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": imageView]))
+        
+        return thisView
+    }()
+    
     func setStackViews(){
-        let stackView = UIStackView(arrangedSubviews: [redView, greenView, blueView])
+        let subStackView = UIStackView(arrangedSubviews: [redView, greenView, blueView])
+        subStackView.distribution = .fillEqually
+        subStackView.spacing = 5
+        subStackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let stackView = UIStackView(arrangedSubviews: [lightGrayView, subStackView, darkGrayView])
+        stackView.axis = .vertical
         stackView.distribution = .fillEqually
-        stackView.spacing = 5
+        stackView.spacing = 10
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         // options
@@ -44,20 +74,10 @@ class ViewController: UIViewController {
         view.addSubview(stackView)
         
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": stackView]))
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": stackView]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-22-[v0(1000)]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": stackView]))
         
-//        stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-//        stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-//        stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-//        stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        
+        let width = self.lightGrayView.frame.size
+        print("width: \(width)")
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
