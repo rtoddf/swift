@@ -6,7 +6,11 @@ class ViewController: UIViewController {
         let iv = UIImageView()
         
         let image = UIImage(named: "personalities-charlie-carver")
-        let gradientImage:UIImage = imageWithGradient(img: image)
+        
+        let color1 = UIColor(hexString: "#baba71")
+        let color2 = UIColor(hexString: "#baba71")
+        
+        let gradientImage:UIImage = imageWithGradient(img: image, colors: [color1, color2], alphas: [0.0, 0.5], locations: [0.0, 0.5])
         iv.image = gradientImage
         iv.contentMode = .scaleAspectFit
         iv.translatesAutoresizingMaskIntoConstraints = false
@@ -35,7 +39,7 @@ class ViewController: UIViewController {
     }
 }
 
-func imageWithGradient(img:UIImage!) -> UIImage {
+func imageWithGradient(img:UIImage!, colors:[UIColor], alphas:[CGFloat], locations:[CGFloat]) -> UIImage {
     
     UIGraphicsBeginImageContext(img.size)
     let context = UIGraphicsGetCurrentContext()
@@ -43,12 +47,9 @@ func imageWithGradient(img:UIImage!) -> UIImage {
     img.draw(at: CGPoint(x: 0, y: 0))
     
     let colorSpace = CGColorSpaceCreateDeviceRGB()
-    let locations:[CGFloat] = [0.0, 1.0]
-    
-    let bottom = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
-    let top = UIColor(red: 0, green: 0, blue: 0, alpha: 0).cgColor
-    
-    let colors = [top, bottom] as CFArray
+    let locations:[CGFloat] = [locations[0], locations[1]]
+
+    let colors = [colors[1].withAlphaComponent(alphas[0]).cgColor, colors[0].withAlphaComponent(alphas[1]).cgColor] as CFArray
     
     let gradient = CGGradient(colorsSpace: colorSpace, colors: colors, locations: locations)
     
