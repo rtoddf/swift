@@ -39,3 +39,26 @@ extension UIColor {
         return UIColor(red: red/255, green: green/255, blue: blue/255, alpha: 1.0)
     }
 }
+
+extension UIImage {
+    func imageWithGradient(img:UIImage!, colors:[UIColor], alphas:[CGFloat], locations:[CGFloat], points:[CGFloat]) -> UIImage {
+        UIGraphicsBeginImageContext(img.size)
+        let context = UIGraphicsGetCurrentContext()
+        img.draw(at: CGPoint(x: 0, y: 0))
+        
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        var gradientLocations = [CGFloat]()
+        var gradientColors = [CGColor]()
+        for location in locations { gradientLocations.append(location) }
+        for pair in zip(colors, alphas) { gradientColors.append(pair.0.withAlphaComponent(pair.1).cgColor) }
+        
+        let gradient = CGGradient(colorsSpace: colorSpace, colors: gradientColors as CFArray, locations: gradientLocations)
+        let startPoint = CGPoint(x: img.size.width/2, y: img.size.height * points[0])
+        let endPoint = CGPoint(x: img.size.width/2, y: img.size.height * points[1])
+        
+        context!.drawLinearGradient(gradient!, start: startPoint, end: endPoint, options: CGGradientDrawingOptions(rawValue: UInt32(0)))
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
+    }
+}
