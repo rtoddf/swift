@@ -1,4 +1,5 @@
 // https://www.youtube.com/watch?v=nv1L3mYEg8M - ep2 - done
+// https://www.youtube.com/watch?v=WCECFfelSHk - ep3 done
 // https://www.youtube.com/watch?v=a5yjOMLBfSc&t=233s - ep 4
 // https://www.youtube.com/watch?v=0PnQTeNzrLI - ep 5
 // https://www.youtube.com/watch?v=TK0mxO469ok - ep 6
