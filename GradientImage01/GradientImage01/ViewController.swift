@@ -7,10 +7,7 @@ class ViewController: UIViewController {
         
         let image = UIImage(named: "personalities-charlie-carver")
         
-        let color1 = UIColor(hexString: "#baba71")
-        let color2 = UIColor(hexString: "#baba71")
-        
-        let gradientImage:UIImage = imageWithGradient(img: image, colors: [color1, color2], alphas: [0.0, 0.5], locations: [0.0, 0.5])
+        let gradientImage:UIImage = imageWithGradient(img: image, colors: [UIColor(hexString: "#222222"), UIColor(hexString: "#222222")], alphas: [0.0, 0.75], locations: [0.0, 1], points: [0.5, 1])
         iv.image = gradientImage
         iv.contentMode = .scaleAspectFit
         iv.translatesAutoresizingMaskIntoConstraints = false
@@ -20,7 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(hexString: "#333333")
+        view.backgroundColor = UIColor(hexString: "#222222")
         setLayout()
     }
     
@@ -39,7 +36,7 @@ class ViewController: UIViewController {
     }
 }
 
-func imageWithGradient(img:UIImage!, colors:[UIColor], alphas:[CGFloat], locations:[CGFloat]) -> UIImage {
+func imageWithGradient(img:UIImage!, colors:[UIColor], alphas:[CGFloat], locations:[CGFloat], points:[CGFloat]) -> UIImage {
     
     UIGraphicsBeginImageContext(img.size)
     let context = UIGraphicsGetCurrentContext()
@@ -47,14 +44,16 @@ func imageWithGradient(img:UIImage!, colors:[UIColor], alphas:[CGFloat], locatio
     img.draw(at: CGPoint(x: 0, y: 0))
     
     let colorSpace = CGColorSpaceCreateDeviceRGB()
-    let locations:[CGFloat] = [locations[0], locations[1]]
+    var gradientLocations = [CGFloat]()
+    var gradientColors = [CGColor]()
 
-    let colors = [colors[1].withAlphaComponent(alphas[0]).cgColor, colors[0].withAlphaComponent(alphas[1]).cgColor] as CFArray
+    for location in locations { gradientLocations.append(location) }
     
-    let gradient = CGGradient(colorsSpace: colorSpace, colors: colors, locations: locations)
+    for pair in zip(colors, alphas) { gradientColors.append(pair.0.withAlphaComponent(pair.1).cgColor) }
     
-    let startPoint = CGPoint(x: img.size.width/2, y: 0)
-    let endPoint = CGPoint(x: img.size.width/2, y: img.size.height)
+    let gradient = CGGradient(colorsSpace: colorSpace, colors: gradientColors as CFArray, locations: gradientLocations)
+    let startPoint = CGPoint(x: img.size.width/2, y: img.size.height * points[0])
+    let endPoint = CGPoint(x: img.size.width/2, y: img.size.height * points[1])
     
     context!.drawLinearGradient(gradient!, start: startPoint, end: endPoint, options: CGGradientDrawingOptions(rawValue: UInt32(0)))
     
