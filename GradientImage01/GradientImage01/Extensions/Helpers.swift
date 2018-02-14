@@ -40,6 +40,8 @@ extension UIColor {
     }
 }
 
+
+// https://stackoverflow.com/questions/29105541/applying-gradient-to-uiimage-smoothly
 extension UIImage {
     func imageWithGradient(img:UIImage!, colors:[UIColor], alphas:[CGFloat], locations:[CGFloat], points:[CGFloat]) -> UIImage {
         UIGraphicsBeginImageContext(img.size)
