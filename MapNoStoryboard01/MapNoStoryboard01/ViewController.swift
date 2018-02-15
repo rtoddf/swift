@@ -111,9 +111,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     }
 }
 
-http://swiftdeveloperblog.com/mapview-display-users-current-location-and-drop-a-pin/
-https://www.raywenderlich.com/160517/mapkit-tutorial-getting-started
-https://medium.com/@MissionKao/add-a-mapview-in-ios-app-without-storyboard-swift-7f73cbeada36
+//http://swiftdeveloperblog.com/mapview-display-users-current-location-and-drop-a-pin/
+//https://www.raywenderlich.com/160517/mapkit-tutorial-getting-started
+//https://medium.com/@MissionKao/add-a-mapview-in-ios-app-without-storyboard-swift-7f73cbeada36
 
 
 //[AnyHashable("Street"): 4460 Ashford Dunwoody Rd NE,
