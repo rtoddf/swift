@@ -29,7 +29,12 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-         return CGSize(width: view.frame.width, height: 300)
+         return CGSize(width: view.frame.width, height: 400)
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        collectionView?.collectionViewLayout.invalidateLayout()
     }
 
 }
@@ -80,19 +85,58 @@ class CustomCell:UICollectionViewCell {
         return imageView
     }()
     
+    let likesCommentLabel:UILabel = {
+        let label = UILabel()
+        label.text = "In 2016, Tortorella launched his podcast The Love Bomb"
+        label.textColor = UIColor(hexString: "#777777")
+        label.font = UIFont.systemFont(ofSize: 12)
+        return label
+    }()
+    
+    let separatorView:UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(hexString: "#999999")
+        return view
+    }()
+    
+    let likeButton:UIButton = buttonGenerator(title: "Like")
+    let commentButton:UIButton = buttonGenerator(title: "Comment")
+    let shareButton:UIButton = buttonGenerator(title: "Share")
+    
+    static func buttonGenerator(title:String) -> UIButton {
+        let button = UIButton()
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(UIColor(hexString: "#ae0000"), for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        return button
+    }
+    
     func setupViews(){
         addSubview(nameLabel)
         addSubview(profileImageView)
         addSubview(statusTextView)
         addSubview(statusImageView)
+        addSubview(likesCommentLabel)
+        addSubview(separatorView)
+        addSubview(likeButton)
+        addSubview(commentButton)
+        addSubview(shareButton)
         
         backgroundColor = UIColor(hexString: "#ffffff")
         
         addConstraintsWithFormat(format: "H:|-8-[v0(44)]-8-[v1]|", views: profileImageView, nameLabel)
         addConstraintsWithFormat(format: "H:|-4-[v0]-4-|", views: statusTextView)
         addConstraintsWithFormat(format: "H:|[v0]|", views: statusImageView)
+        addConstraintsWithFormat(format: "H:|-8-[v0]-8-|", views: likesCommentLabel)
+        addConstraintsWithFormat(format: "H:|[v0]|", views: separatorView)
+        
+        
+        addConstraintsWithFormat(format: "H:|[v0(v2)][v1(v2)][v2]|", views: likeButton, commentButton, shareButton)
+        
         addConstraintsWithFormat(format: "V:|-8-[v0]", views: nameLabel)
-        addConstraintsWithFormat(format: "V:|-8-[v0(44)]-4-[v1(52)]-4-[v2]|", views: profileImageView, statusTextView, statusImageView)
+        addConstraintsWithFormat(format: "V:|-8-[v0(44)]-4-[v1(52)]-4-[v2]-8-[v3(24)]-8-[v4(1)][v5(44)]|", views: profileImageView, statusTextView, statusImageView, likesCommentLabel, separatorView, likeButton)
+        addConstraintsWithFormat(format: "V:[v0(44)]|", views: commentButton)
+        addConstraintsWithFormat(format: "V:[v0(44)]|", views: shareButton)
     }
     
     required init?(coder aDecoder: NSCoder) {
