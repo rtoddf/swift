@@ -52,3 +52,30 @@ extension UIColor {
         return UIColor(red: red/255, green: green/255, blue: blue/255, alpha: 1.0)
     }
 }
+
+func buttonGenerator(title:String, imageName:String) -> UIButton {
+    let button = UIButton()
+    button.setTitle(title, for: .normal)
+    
+    // image has to be at size
+    button.setImage(UIImage(named: imageName)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate), for: .normal)
+    button.imageView?.tintColor = UIColor(hexString: "#ae0000")
+    // top, left, bottom, right
+    button.titleEdgeInsets = UIEdgeInsetsMake(2, 8, 0, 0)
+    button.setTitleColor(UIColor(hexString: "#ae0000"), for: .normal)
+    // button.titleEdgeInsets = UIEdgeInsets(top: 0,left: -30,bottom: 0,right: 34)
+    
+    button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+    return button
+}
+
+
+
+
+
+
+
+
+
+
+
