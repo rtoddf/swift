@@ -7,23 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		75E3342C20257BA600743281 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E3342B20257BA600743281 /* AppDelegate.swift */; };
-		75E3343320257BA600743281 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75E3343220257BA600743281 /* Assets.xcassets */; };
-		75E3343620257BA600743281 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75E3343420257BA600743281 /* LaunchScreen.storyboard */; };
-		75E3343E20257CE400743281 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E3343D20257CE400743281 /* HomeController.swift */; };
+		7579646F203A5AD600E68938 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7579646E203A5AD600E68938 /* AppDelegate.swift */; };
+		75796471203A5AD600E68938 /* FeedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75796470203A5AD600E68938 /* FeedController.swift */; };
+		75796476203A5AD600E68938 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75796475203A5AD600E68938 /* Assets.xcassets */; };
+		75796479203A5AD600E68938 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75796477203A5AD600E68938 /* LaunchScreen.storyboard */; };
+		75796482203A5EDE00E68938 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75796481203A5EDE00E68938 /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		75E3342820257BA600743281 /* TwitterLBTA01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterLBTA01.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		75E3342B20257BA600743281 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		75E3343220257BA600743281 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		75E3343520257BA600743281 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		75E3343720257BA600743281 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		75E3343D20257CE400743281 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		7579646B203A5AD600E68938 /* FacebookFeed01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FacebookFeed01.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7579646E203A5AD600E68938 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		75796470203A5AD600E68938 /* FeedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedController.swift; sourceTree = "<group>"; };
+		75796475203A5AD600E68938 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		75796478203A5AD600E68938 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7579647A203A5AD600E68938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75796481203A5EDE00E68938 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		75E3342520257BA600743281 /* Frameworks */ = {
+		75796468203A5AD600E68938 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,71 +35,80 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		75E3341F20257BA600743281 = {
+		75796462203A5AD600E68938 = {
 			isa = PBXGroup;
 			children = (
-				75E3342A20257BA600743281 /* TwitterLBTA01 */,
-				75E3342920257BA600743281 /* Products */,
+				7579646D203A5AD600E68938 /* FacebookFeed01 */,
+				7579646C203A5AD600E68938 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		75E3342920257BA600743281 /* Products */ = {
+		7579646C203A5AD600E68938 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				75E3342820257BA600743281 /* TwitterLBTA01.app */,
+				7579646B203A5AD600E68938 /* FacebookFeed01.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		75E3342A20257BA600743281 /* TwitterLBTA01 */ = {
+		7579646D203A5AD600E68938 /* FacebookFeed01 */ = {
 			isa = PBXGroup;
 			children = (
-				75E3342B20257BA600743281 /* AppDelegate.swift */,
-				75E3343D20257CE400743281 /* HomeController.swift */,
-				75E3343220257BA600743281 /* Assets.xcassets */,
-				75E3343420257BA600743281 /* LaunchScreen.storyboard */,
-				75E3343720257BA600743281 /* Info.plist */,
+				75796480203A5ECB00E68938 /* Extensions */,
+				7579646E203A5AD600E68938 /* AppDelegate.swift */,
+				75796470203A5AD600E68938 /* FeedController.swift */,
+				75796475203A5AD600E68938 /* Assets.xcassets */,
+				75796477203A5AD600E68938 /* LaunchScreen.storyboard */,
+				7579647A203A5AD600E68938 /* Info.plist */,
 			);
-			path = TwitterLBTA01;
+			path = FacebookFeed01;
+			sourceTree = "<group>";
+		};
+		75796480203A5ECB00E68938 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				75796481203A5EDE00E68938 /* Helpers.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		75E3342720257BA600743281 /* TwitterLBTA01 */ = {
+		7579646A203A5AD600E68938 /* FacebookFeed01 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 75E3343A20257BA600743281 /* Build configuration list for PBXNativeTarget "TwitterLBTA01" */;
+			buildConfigurationList = 7579647D203A5AD600E68938 /* Build configuration list for PBXNativeTarget "FacebookFeed01" */;
 			buildPhases = (
-				75E3342420257BA600743281 /* Sources */,
-				75E3342520257BA600743281 /* Frameworks */,
-				75E3342620257BA600743281 /* Resources */,
+				75796467203A5AD600E68938 /* Sources */,
+				75796468203A5AD600E68938 /* Frameworks */,
+				75796469203A5AD600E68938 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = TwitterLBTA01;
-			productName = TwitterLBTA01;
-			productReference = 75E3342820257BA600743281 /* TwitterLBTA01.app */;
+			name = FacebookFeed01;
+			productName = FacebookFeed01;
+			productReference = 7579646B203A5AD600E68938 /* FacebookFeed01.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		75E3342020257BA600743281 /* Project object */ = {
+		75796463203A5AD600E68938 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Todd Fleeman";
 				TargetAttributes = {
-					75E3342720257BA600743281 = {
+					7579646A203A5AD600E68938 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 75E3342320257BA600743281 /* Build configuration list for PBXProject "TwitterLBTA01" */;
+			buildConfigurationList = 75796466203A5AD600E68938 /* Build configuration list for PBXProject "FacebookFeed01" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -105,45 +116,46 @@
 				en,
 				Base,
 			);
-			mainGroup = 75E3341F20257BA600743281;
-			productRefGroup = 75E3342920257BA600743281 /* Products */;
+			mainGroup = 75796462203A5AD600E68938;
+			productRefGroup = 7579646C203A5AD600E68938 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				75E3342720257BA600743281 /* TwitterLBTA01 */,
+				7579646A203A5AD600E68938 /* FacebookFeed01 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		75E3342620257BA600743281 /* Resources */ = {
+		75796469203A5AD600E68938 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75E3343620257BA600743281 /* LaunchScreen.storyboard in Resources */,
-				75E3343320257BA600743281 /* Assets.xcassets in Resources */,
+				75796479203A5AD600E68938 /* LaunchScreen.storyboard in Resources */,
+				75796476203A5AD600E68938 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		75E3342420257BA600743281 /* Sources */ = {
+		75796467203A5AD600E68938 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75E3342C20257BA600743281 /* AppDelegate.swift in Sources */,
-				75E3343E20257CE400743281 /* HomeController.swift in Sources */,
+				75796471203A5AD600E68938 /* FeedController.swift in Sources */,
+				75796482203A5EDE00E68938 /* Helpers.swift in Sources */,
+				7579646F203A5AD600E68938 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		75E3343420257BA600743281 /* LaunchScreen.storyboard */ = {
+		75796477203A5AD600E68938 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				75E3343520257BA600743281 /* Base */,
+				75796478203A5AD600E68938 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -151,7 +163,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		75E3343820257BA600743281 /* Debug */ = {
+		7579647B203A5AD600E68938 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -208,7 +220,7 @@
 			};
 			name = Debug;
 		};
-		75E3343920257BA600743281 /* Release */ = {
+		7579647C203A5AD600E68938 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -258,28 +270,28 @@
 			};
 			name = Release;
 		};
-		75E3343B20257BA600743281 /* Debug */ = {
+		7579647E203A5AD600E68938 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TwitterLBTA01/Info.plist;
+				INFOPLIST_FILE = FacebookFeed01/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rtodd.TwitterLBTA01;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rtodd.FacebookFeed01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		75E3343C20257BA600743281 /* Release */ = {
+		7579647F203A5AD600E68938 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TwitterLBTA01/Info.plist;
+				INFOPLIST_FILE = FacebookFeed01/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rtodd.TwitterLBTA01;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rtodd.FacebookFeed01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -289,25 +301,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		75E3342320257BA600743281 /* Build configuration list for PBXProject "TwitterLBTA01" */ = {
+		75796466203A5AD600E68938 /* Build configuration list for PBXProject "FacebookFeed01" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				75E3343820257BA600743281 /* Debug */,
-				75E3343920257BA600743281 /* Release */,
+				7579647B203A5AD600E68938 /* Debug */,
+				7579647C203A5AD600E68938 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		75E3343A20257BA600743281 /* Build configuration list for PBXNativeTarget "TwitterLBTA01" */ = {
+		7579647D203A5AD600E68938 /* Build configuration list for PBXNativeTarget "FacebookFeed01" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				75E3343B20257BA600743281 /* Debug */,
-				75E3343C20257BA600743281 /* Release */,
+				7579647E203A5AD600E68938 /* Debug */,
+				7579647F203A5AD600E68938 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 75E3342020257BA600743281 /* Project object */;
+	rootObject = 75796463203A5AD600E68938 /* Project object */;
 }
