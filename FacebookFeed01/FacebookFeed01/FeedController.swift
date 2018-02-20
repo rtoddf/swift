@@ -70,12 +70,14 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
+        let statusImageHeight = view.frame.width * (9/16)
+        
         if let statusText = posts[indexPath.item].statusText {
             let rectConstraint = CGSize(width: view.frame.width, height: 1000)
             let rectOptions = NSStringDrawingOptions.usesFontLeading.union(NSStringDrawingOptions.usesLineFragmentOrigin)
             let rectAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)]
             let rect = NSString(string: statusText).boundingRect(with: rectConstraint, options: rectOptions, attributes: rectAttributes, context: nil)
-            let rectHeight = rect.height + (8 + 44 + 4 + 4 + 200 + 8 + 24 + 8 + 1 + 44) + 16
+            let rectHeight = rect.height + (8 + 44 + 4 + 4 + statusImageHeight + 8 + 24 + 8 + 1 + 44) + 16
             
             return CGSize(width: view.frame.width, height: rectHeight)
         }
@@ -133,7 +135,8 @@ class CustomCell:UICollectionViewCell {
     
     let profileImageView:UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
+        imageView.backgroundColor = UIColor(hexString: "#333333")
+        imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         return imageView
     }()
@@ -183,6 +186,7 @@ class CustomCell:UICollectionViewCell {
     
     func setupViews(){
         backgroundColor = UIColor(hexString: "#ffffff")
+        let statusImageHeight = frame.width * (9/16)
         
         addSubview(nameLabel)
         addSubview(profileImageView)
@@ -200,7 +204,7 @@ class CustomCell:UICollectionViewCell {
         addConstraintsWithFormat(format: "H:|[v0]|", views: buttonStackView)
         
         addConstraintsWithFormat(format: "V:|-8-[v0]", views: nameLabel)
-        addConstraintsWithFormat(format: "V:|-8-[v0(44)]-4-[v1]-4-[v2(200)]-8-[v3(24)]-8-[v4(0.4)][v5(44)]|", views: profileImageView, statusTextView, statusImageView, subStatusLabel, separatorView, buttonStackView)
+        addConstraintsWithFormat(format: "V:|-8-[v0(44)]-4-[v1]-4-[v2(\(statusImageHeight))]-8-[v3(24)]-8-[v4(0.4)][v5(44)]|", views: profileImageView, statusTextView, statusImageView, subStatusLabel, separatorView, buttonStackView)
     }
     
     required init?(coder aDecoder: NSCoder) {
