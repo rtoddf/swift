@@ -14,6 +14,7 @@ class Post {
     var description:String?
     var imageName:String?
     var statusImageName:String?
+    var subStatus:String?
 }
 
 class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
@@ -28,12 +29,14 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
         postOne.description = "\nNico Tortorella is an American actor and model."
         postOne.imageName = "nico"
         postOne.statusImageName = "nico-tortorella"
+        postOne.subStatus = "In 2016, Tortorella launched his podcast The Love Bomb"
         
         let postTwo = Post()
         postTwo.name = "Ben Barnes"
         postTwo.description = "\nBenjamin Thomas Barnes is a British actor and singer."
         postTwo.imageName = "ben_barnes_square"
         postTwo.statusImageName = "ben_barnes"
+        postTwo.subStatus = "In 2016, Barnes was cast in the Marvel Netflix series The Punisher"
         
         posts.append(postOne)
         posts.append(postTwo)
@@ -87,6 +90,9 @@ class CustomCell:UICollectionViewCell {
             
             guard let statusImageName = post?.statusImageName else { return }
             statusImageView.image = UIImage(named: statusImageName)
+            
+            guard let subStatus = post?.subStatus else { return }
+            subStatusLabel.text = subStatus
         }
     }
     
@@ -126,9 +132,8 @@ class CustomCell:UICollectionViewCell {
         return imageView
     }()
     
-    let likesCommentLabel:UILabel = {
+    let subStatusLabel:UILabel = {
         let label = UILabel()
-        label.text = "In 2016, Tortorella launched his podcast The Love Bomb"
         label.textColor = UIColor(hexString: "#777777")
         label.font = UIFont.systemFont(ofSize: 12)
         return label
@@ -162,19 +167,19 @@ class CustomCell:UICollectionViewCell {
         addSubview(profileImageView)
         addSubview(statusTextView)
         addSubview(statusImageView)
-        addSubview(likesCommentLabel)
+        addSubview(subStatusLabel)
         addSubview(separatorView)
         addSubview(buttonStackView)
 
         addConstraintsWithFormat(format: "H:|-8-[v0(44)]-8-[v1]|", views: profileImageView, nameLabel)
         addConstraintsWithFormat(format: "H:|-4-[v0]-4-|", views: statusTextView)
         addConstraintsWithFormat(format: "H:|[v0]|", views: statusImageView)
-        addConstraintsWithFormat(format: "H:|-8-[v0]-8-|", views: likesCommentLabel)
+        addConstraintsWithFormat(format: "H:|-8-[v0]-8-|", views: subStatusLabel)
         addConstraintsWithFormat(format: "H:|[v0]|", views: separatorView)
         addConstraintsWithFormat(format: "H:|[v0]|", views: buttonStackView)
         
         addConstraintsWithFormat(format: "V:|-8-[v0]", views: nameLabel)
-        addConstraintsWithFormat(format: "V:|-8-[v0(44)]-4-[v1(52)]-4-[v2]-8-[v3(24)]-8-[v4(1)][v5(44)]|", views: profileImageView, statusTextView, statusImageView, likesCommentLabel, separatorView, buttonStackView)
+        addConstraintsWithFormat(format: "V:|-8-[v0(44)]-4-[v1(52)]-4-[v2]-8-[v3(24)]-8-[v4(1)][v5(44)]|", views: profileImageView, statusTextView, statusImageView, subStatusLabel, separatorView, buttonStackView)
     }
     
     required init?(coder aDecoder: NSCoder) {
