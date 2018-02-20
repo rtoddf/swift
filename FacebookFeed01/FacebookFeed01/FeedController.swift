@@ -9,6 +9,16 @@ import UIKit
 
 let cellId = "cellId"
 
+struct Feed:Decodable {
+    let people:[Person]
+}
+
+struct Person:Decodable {
+    let name:String?
+    let profileImageUrl:String?
+    let description:String?
+}
+
 class Post {
     var name:String?
     var description:String?
@@ -18,12 +28,36 @@ class Post {
     var subStatus:String?
 }
 
+func downloadJSON() {
+    let jsonUrlString = "http://www.rtodd.net/swift/data/facebook.json"
+    let url = URL(string: jsonUrlString)
+    
+    URLSession.shared.dataTask(with: url!) { (data, response, err) in
+        // take care of error
+        
+        guard let data = data else { return }
+        
+        do {
+            let people  = try JSONDecoder().decode([Person].self, from:data)
+            
+            for person in people {
+                print("\(person.name)")
+            }
+            
+        } catch let jsonErr {
+            print("error serializing JSON:", jsonErr)
+        }
+    }.resume()
+}
+
 class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var posts = [Post]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        downloadJSON()
         
         let postOne = Post()
         postOne.name = "Nico Tortorella"
