@@ -9,10 +9,6 @@ import UIKit
 
 let cellId = "cellId"
 
-struct People:Decodable {
-    let people:[Person]
-}
-
 struct Person:Decodable {
     let name:String?
     var description:String?
@@ -22,19 +18,8 @@ struct Person:Decodable {
     var subStatusText:String?
 }
 
-//class Post {
-//    var name:String?
-//    var description:String?
-//    var profileImage:String?
-//    var statusImage:String?
-//    var statusText:String?
-//    var subStatusText:String?
-//}
-
 class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-    
-//    var posts = [Post]()
-    var peeps = [Person]()
+    var people = [Person]()
     
     func downloadJSON() {
         let jsonUrlString = "http://www.rtodd.net/swift/data/facebook.json"
@@ -47,7 +32,7 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
             
             do {
                 let people  = try JSONDecoder().decode([Person].self, from:data)
-                self.peeps = people
+                self.people = people
                 
                 DispatchQueue.main.async {
                     self.collectionView?.reloadData()
@@ -60,43 +45,7 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         downloadJSON()
-        
-//        let postOne = Post()
-//        postOne.name = "Nico Tortorella"
-//        postOne.description = "\nNico Tortorella is an American actor and model."
-//        postOne.profileImage = "nico"
-//        postOne.statusImage = "nico-tortorella"
-//        postOne.statusText = "Speaking to the New York Post's Page Six in June 2016, Tortorella declared himself to be sexually fluid."
-//        postOne.subStatusText = "In 2016, Tortorella launched his podcast The Love Bomb"
-//
-//        let postTwo = Post()
-//        postTwo.name = "Ben Barnes"
-//        postTwo.description = "\nBenjamin Thomas Barnes is a British actor and singer."
-//        postTwo.profileImage = "ben_barnes_square"
-//        postTwo.statusImage = "ben_barnes"
-//        postTwo.statusText = """
-//        On 20 July 2015 it was announced that Barnes would replace Eion Bailey as Logan in HBO's science fiction thriller Westworld, the first season of which aired in the fall of 2016.
-//
-//        We can save this world.
-//        We can burn it to the ground.
-//        From the ashes, build a new world.
-//        Our world.
-//        """
-//        postTwo.subStatusText = "In 2016, Barnes was cast in the Marvel Netflix series The Punisher"
-//
-//        let postThree = Post()
-//        postThree.name = "Tom Daley"
-//        postThree.description = "\nThomas Robert Daley is a British diver."
-//        postThree.profileImage = "tom-daley-square"
-//        postThree.statusImage = "tom-daley"
-//        postThree.statusText = "My reaction to others’ hate, bigotry & misinformation will not include anger or hate. For me, the path forward is lit with curiosity, listening, correcting the record when possible, and as best I can, leading with an example of strength & love."
-//        postThree.subStatusText = "Daley and Black married at Bovey Castle in Devon on 6 May 2017"
-//
-//        posts.append(postOne)
-//        posts.append(postTwo)
-//        posts.append(postThree)
         
         collectionView?.alwaysBounceVertical = true
         collectionView?.backgroundColor = UIColor(hexString: "#efefef")
@@ -105,14 +54,13 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return peeps.count
+        return people.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! CustomCell
         // reference post
-        cell.person = peeps[indexPath.item]
-        print("\(cell.person)")
+        cell.person = people[indexPath.item]
         return cell
     }
     
@@ -120,7 +68,7 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         let statusImageHeight = view.frame.width * (9/16)
         
-        if let statusText = peeps[indexPath.item].statusText {
+        if let statusText = people[indexPath.item].statusText {
             let rectConstraint = CGSize(width: view.frame.width, height: 1000)
             let rectOptions = NSStringDrawingOptions.usesFontLeading.union(NSStringDrawingOptions.usesLineFragmentOrigin)
             let rectAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)]
@@ -156,10 +104,10 @@ class CustomCell:UICollectionViewCell {
             //        label.translatesAutoresizingMaskIntoConstraints = false
             
             guard let profileImage = person?.profileImage else { return }
-            profileImageView.image = UIImage(named: profileImage)
+            profileImageView.loadImageUsingUrlString(imageUrl: profileImage)
             
             guard let statusImage = person?.statusImage else { return }
-            statusImageView.image = UIImage(named: statusImage)
+            statusImageView.loadImageUsingUrlString(imageUrl: statusImage)
             
             guard let statusText = person?.statusText else { return }
             statusTextView.text = statusText
