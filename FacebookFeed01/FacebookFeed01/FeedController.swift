@@ -9,9 +9,34 @@ import UIKit
 
 let cellId = "cellId"
 
+class Post {
+    var name:String?
+    var description:String?
+    var imageName:String?
+    var statusImageName:String?
+}
+
 class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+    
+    var posts = [Post]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let postOne = Post()
+        postOne.name = "Nico Tortorella"
+        postOne.description = "\nNico Tortorella is an American actor and model."
+        postOne.imageName = "nico"
+        postOne.statusImageName = "nico-tortorella"
+        
+        let postTwo = Post()
+        postTwo.name = "Ben Barnes"
+        postTwo.description = "\nBenjamin Thomas Barnes is a British actor and singer."
+        postTwo.imageName = "ben_barnes_square"
+        postTwo.statusImageName = "ben_barnes"
+        
+        posts.append(postOne)
+        posts.append(postTwo)
         
         collectionView?.alwaysBounceVertical = true
         collectionView?.backgroundColor = UIColor(hexString: "#efefef")
@@ -20,11 +45,13 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return posts.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! CustomCell
+        // reference post
+        cell.post = posts[indexPath.item]
         return cell
     }
     
@@ -40,6 +67,29 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
 }
 
 class CustomCell:UICollectionViewCell {
+    var post: Post? {
+        didSet {
+            guard let name = post?.name else { return }
+            guard let description = post?.description else { return }
+            let attributedText = NSMutableAttributedString(string: name, attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14)])
+            attributedText.append(NSAttributedString(string: description, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 12), NSAttributedStringKey.foregroundColor: UIColor(hexString: "#666666")]))
+            
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineSpacing = 4
+            attributedText.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attributedText.string.count))
+            
+            nameLabel.attributedText = attributedText
+            //        label.font = UIFont.boldSystemFont(ofSize: 14)
+            //        label.translatesAutoresizingMaskIntoConstraints = false
+            
+            guard let imageName = post?.imageName else { return }
+            profileImageView.image = UIImage(named: imageName)
+            
+            guard let statusImageName = post?.statusImageName else { return }
+            statusImageView.image = UIImage(named: statusImageName)
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -48,16 +98,7 @@ class CustomCell:UICollectionViewCell {
     let nameLabel:UILabel = {
         let label = UILabel()
         label.numberOfLines = 2
-        let attributedText = NSMutableAttributedString(string: "Nico Tortorella", attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14)])
-        attributedText.append(NSAttributedString(string: "\nNico Tortorella is an American actor and model.", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 12), NSAttributedStringKey.foregroundColor: UIColor(hexString: "#666666")]))
         
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 4
-        attributedText.addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attributedText.string.count))
-        
-        label.attributedText = attributedText
-//        label.font = UIFont.boldSystemFont(ofSize: 14)
-//        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -78,7 +119,7 @@ class CustomCell:UICollectionViewCell {
     
     let statusImageView:UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "nico-tortorella")
+        
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
 //        imageView.layer.masksToBounds = true
