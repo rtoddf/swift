@@ -14,6 +14,7 @@ class Post {
     var description:String?
     var imageName:String?
     var statusImageName:String?
+    var statusText:String?
     var subStatus:String?
 }
 
@@ -29,6 +30,7 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
         postOne.description = "\nNico Tortorella is an American actor and model."
         postOne.imageName = "nico"
         postOne.statusImageName = "nico-tortorella"
+        postOne.statusText = "Speaking to the New York Post's Page Six in June 2016, Tortorella declared himself to be sexually fluid."
         postOne.subStatus = "In 2016, Tortorella launched his podcast The Love Bomb"
         
         let postTwo = Post()
@@ -36,6 +38,14 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
         postTwo.description = "\nBenjamin Thomas Barnes is a British actor and singer."
         postTwo.imageName = "ben_barnes_square"
         postTwo.statusImageName = "ben_barnes"
+        postTwo.statusText = """
+        On 20 July 2015 it was announced that Barnes would replace Eion Bailey as Logan in HBO's science fiction thriller Westworld, the first season of which aired in the fall of 2016.
+        
+        We can save this world.
+        We can burn it to the ground.
+        From the ashes, build a new world.
+        Our world.
+        """
         postTwo.subStatus = "In 2016, Barnes was cast in the Marvel Netflix series The Punisher"
         
         posts.append(postOne)
@@ -59,7 +69,18 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-         return CGSize(width: view.frame.width, height: 400)
+        
+        if let statusText = posts[indexPath.item].statusText {
+            let rectConstraint = CGSize(width: view.frame.width, height: 1000)
+            let rectOptions = NSStringDrawingOptions.usesFontLeading.union(NSStringDrawingOptions.usesLineFragmentOrigin)
+            let rectAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)]
+            let rect = NSString(string: statusText).boundingRect(with: rectConstraint, options: rectOptions, attributes: rectAttributes, context: nil)
+            let rectHeight = rect.height + (8 + 44 + 4 + 4 + 200 + 8 + 24 + 8 + 1 + 44) + 16
+            
+            return CGSize(width: view.frame.width, height: rectHeight)
+        }
+        
+        return CGSize(width: view.frame.width, height: 500)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -91,6 +112,9 @@ class CustomCell:UICollectionViewCell {
             guard let statusImageName = post?.statusImageName else { return }
             statusImageView.image = UIImage(named: statusImageName)
             
+            guard let statusText = post?.statusText else { return }
+            statusTextView.text = statusText
+            
             guard let subStatus = post?.subStatus else { return }
             subStatusLabel.text = subStatus
         }
@@ -104,13 +128,11 @@ class CustomCell:UICollectionViewCell {
     let nameLabel:UILabel = {
         let label = UILabel()
         label.numberOfLines = 2
-        
         return label
     }()
     
     let profileImageView:UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "nico")
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         return imageView
@@ -118,17 +140,16 @@ class CustomCell:UICollectionViewCell {
     
     let statusTextView:UITextView = {
         let textView = UITextView()
-        textView.text = "Speaking to the New York Post's Page Six in June 2016, Tortorella declared himself to be sexually fluid."
         textView.font = UIFont.systemFont(ofSize: 14)
+        textView.isScrollEnabled = false
+        textView.isSelectable = false
         return textView
     }()
     
     let statusImageView:UIImageView = {
         let imageView = UIImageView()
-        
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-//        imageView.layer.masksToBounds = true
         return imageView
     }()
     
@@ -179,7 +200,7 @@ class CustomCell:UICollectionViewCell {
         addConstraintsWithFormat(format: "H:|[v0]|", views: buttonStackView)
         
         addConstraintsWithFormat(format: "V:|-8-[v0]", views: nameLabel)
-        addConstraintsWithFormat(format: "V:|-8-[v0(44)]-4-[v1(52)]-4-[v2]-8-[v3(24)]-8-[v4(1)][v5(44)]|", views: profileImageView, statusTextView, statusImageView, subStatusLabel, separatorView, buttonStackView)
+        addConstraintsWithFormat(format: "V:|-8-[v0(44)]-4-[v1]-4-[v2(200)]-8-[v3(24)]-8-[v4(0.4)][v5(44)]|", views: profileImageView, statusTextView, statusImageView, subStatusLabel, separatorView, buttonStackView)
     }
     
     required init?(coder aDecoder: NSCoder) {
