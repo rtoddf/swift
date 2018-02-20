@@ -48,8 +48,17 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
         """
         postTwo.subStatus = "In 2016, Barnes was cast in the Marvel Netflix series The Punisher"
         
+        let postThree = Post()
+        postThree.name = "Tom Daley"
+        postThree.description = "\nThomas Robert Daley is a British diver."
+        postThree.imageName = "tom-daley-square"
+        postThree.statusImageName = "tom-daley"
+        postThree.statusText = "My reaction to others’ hate, bigotry & misinformation will not include anger or hate. For me, the path forward is lit with curiosity, listening, correcting the record when possible, and as best I can, leading with an example of strength & love."
+        postThree.subStatus = "Daley and Black married at Bovey Castle in Devon on 6 May 2017"
+        
         posts.append(postOne)
         posts.append(postTwo)
+        posts.append(postThree)
         
         collectionView?.alwaysBounceVertical = true
         collectionView?.backgroundColor = UIColor(hexString: "#efefef")
@@ -89,7 +98,6 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
         super.viewWillTransition(to: size, with: coordinator)
         collectionView?.collectionViewLayout.invalidateLayout()
     }
-
 }
 
 class CustomCell:UICollectionViewCell {
@@ -136,7 +144,7 @@ class CustomCell:UICollectionViewCell {
     let profileImageView:UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = UIColor(hexString: "#333333")
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         return imageView
     }()
