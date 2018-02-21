@@ -1,9 +1,12 @@
 // ep1 - https://www.youtube.com/watch?v=NJxb7EKXF3U&list=PL0dzCUj1L5JHDWIO3x4wePhD8G4d1Fa6N&index=1
 // ep2 - https://www.youtube.com/watch?v=ZwBYQpLQAvw&list=PL0dzCUj1L5JHDWIO3x4wePhD8G4d1Fa6N&index=2
 // ep3 - https://www.youtube.com/watch?v=L9cZrAbxN1E&list=PL0dzCUj1L5JHDWIO3x4wePhD8G4d1Fa6N&index=3
+// ep4 - https://www.youtube.com/watch?v=1Sg7HjR_k2c&t=19s
+// ep5 - https://www.youtube.com/watch?v=kzdI2aiTX4k
 // https://www.raywenderlich.com/99087/swift-expanding-cells-ios-collection-views
 // https://medium.com/@adinugroho/fixed-height-uicollectionview-inside-uitableview-79f24657d08f
 // https://coderwall.com/p/dyqrfa/customize-navigation-bar-appearance-with-swift
+// https://grokswift.com/json-swift-4/
 
 import UIKit
 
@@ -24,6 +27,8 @@ class FeedController: UICollectionViewController, UICollectionViewDelegateFlowLa
             do {
                 let people  = try JSONDecoder().decode([Person].self, from:data)
                 self.people = people
+                
+                print("\(people)")
                 
                 DispatchQueue.main.async {
                     self.collectionView?.reloadData()
