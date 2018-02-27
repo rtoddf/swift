@@ -8,6 +8,34 @@ struct Category:Decodable {
     let name:String?
     let description:String?
     let people:[Person]?
+    
+    static func downloadData(completion: @escaping ([Category]) -> Void
+        ){
+        var categories = [Category]()
+        let urlString = "http://www.rtodd.net/swift/data/apps06.json"
+        let url = URL(string: urlString)
+        
+        if let urlObject = url {
+            URLSession.shared.dataTask(with: urlObject) { (data, response, error) in
+                guard let data = data else { return }
+            
+                do {
+                    let feed = try JSONDecoder().decode(Feed.self, from: data)
+                    
+                    guard let cats = feed.categories else { return }
+                    categories = cats
+                    
+                    DispatchQueue.main.async {
+                        completion(categories)
+                    }
+                    
+                } catch let jsonErr {
+                    print("we got an error")
+                }
+
+            }.resume()
+        }
+    }
 }
 
 struct Person:Decodable {
@@ -18,41 +46,20 @@ struct Person:Decodable {
 }
 
 class ViewController: UIViewController {
+    
+    var categories:[Category]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        downloadData()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-   var categories = [Category]()
-
-    func downloadData(){
-        let urlString = "http://www.rtodd.net/swift/data/apps06.json"
-        let url = URL(string: urlString)
+        Category.downloadData { [weak self] (returnedCategories) in
+            guard let strongSelf = self else { return }
+            strongSelf.categories = returnedCategories
+        }
         
-        guard let urlObject = url else { return }
-        
-        URLSession.shared.dataTask(with: urlObject) { (data, response, error) in
-            guard let data = data else { return }
-            
-            do {
-                let feed = try JSONDecoder().decode(Feed.self, from: data)
-                
-                guard let cats = feed.categories else { return }
-                self.categories = cats
-                
-            } catch let jsonErr {
-                print("we got an error")
-            }
-            
-            print(self.categories)
-            
-        }.resume()
+        Category.downloadData { (categories) in
+            // this is where you'd do self.collectionView.reloadData()
+            print("categories outside: \(categories)")
+        }
     }
 }
 
