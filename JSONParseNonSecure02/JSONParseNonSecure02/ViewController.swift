@@ -11,7 +11,7 @@ struct Category:Decodable {
     
     static func downloadData(completion: @escaping ([Category]) -> Void
         ){
-        var categories = [Category]()
+//        var peopleCategories = [Category]()
         let urlString = "http://www.rtodd.net/swift/data/apps06.json"
         let url = URL(string: urlString)
         
@@ -22,15 +22,15 @@ struct Category:Decodable {
                 do {
                     let feed = try JSONDecoder().decode(Feed.self, from: data)
                     
-                    guard let cats = feed.categories else { return }
-                    categories = cats
+                    guard let categories = feed.categories else { return }
+//                    peopleCategories = categories
                     
                     DispatchQueue.main.async {
                         completion(categories)
                     }
                     
                 } catch let jsonErr {
-                    print("we got an error")
+                    print("we got an error \(jsonErr)")
                 }
 
             }.resume()
@@ -47,19 +47,24 @@ struct Person:Decodable {
 
 class ViewController: UIViewController {
     
-    var categories:[Category]?
+    var peopleCategories:[Category]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Category.downloadData { [weak self] (returnedCategories) in
-            guard let strongSelf = self else { return }
-            strongSelf.categories = returnedCategories
-        }
+//        Category.downloadData { [weak self] (returnedCategories) in
+//            guard let strongSelf = self else { return }
+//            strongSelf.categories = returnedCategories
+//        }
         
         Category.downloadData { (categories) in
+            self.peopleCategories = categories
             // this is where you'd do self.collectionView.reloadData()
-            print("categories outside: \(categories)")
+            print("categories inside: \(self.peopleCategories)")
         }
+        
+        print("categories outside: \(self.peopleCategories)")
     }
+    
+    
 }
 
