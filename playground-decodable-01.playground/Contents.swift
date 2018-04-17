@@ -13,6 +13,7 @@ let jsonString = """
 """
 
 let jsonData = Data(jsonString.utf8)
+var stories:[Story]
 
 struct Story: Decodable {
     let headline:String?
@@ -34,7 +35,7 @@ let decoder = JSONDecoder()
 decoder.keyDecodingStrategy = .convertFromSnakeCase
 
 do {
-    let stories = try decoder.decode([Story].self, from: jsonData)
+    stories = try decoder.decode([Story].self, from: jsonData)
     print(stories)
 } catch {
     print(error.localizedDescription)
