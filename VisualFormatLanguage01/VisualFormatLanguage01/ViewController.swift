@@ -23,9 +23,16 @@ class ViewController: UIViewController {
             return view
         }()
         
+        let viewThree:UIView = {
+            let view = UIView()
+            view.backgroundColor = .blue
+            view.translatesAutoresizingMaskIntoConstraints = false
+            return view
+        }()
         
-        view.addSubview(viewTwo)
         view.addSubview(viewOne)
+        view.addSubview(viewTwo)
+        view.addSubview(viewThree)
         
 //        var allConstraints: [NSLayoutConstraint] = []
 //        
@@ -40,9 +47,14 @@ class ViewController: UIViewController {
 //        allConstraints += verticalConstraints
 //        allConstraints += verticalConstraints2
         
-        view.addConstraintsWithFormat(format: "V:|[v0(200)][v1]|", views: viewOne, viewTwo)
-        view.addConstraintsWithFormat(format: "H:|[v0]|", views: viewOne)
-        view.addConstraintsWithFormat(format: "H:|[v0]|", views: viewTwo)
+        let width = view.frame.width / 3
+        
+//        view.addConstraintsWithFormat(format: "V:|[v0(\(height))][v1(\(height))][v2]|", views: viewOne, viewTwo, viewThree)
+        
+        view.addConstraintsWithFormat(format: "H:|-10-[v0(>=100,<=\(width))]-10-[v1(==v0)]-10-[v2(==v0)]-10-|", views: viewOne, viewTwo, viewThree)
+        view.addConstraintsWithFormat(format: "V:|[v0]|", views: viewOne)
+        view.addConstraintsWithFormat(format: "V:|[v0]|", views: viewTwo)
+        view.addConstraintsWithFormat(format: "V:|[v0]|", views: viewThree)
         
 //        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[v0]-20-[v1]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": viewOne, "v1": viewTwo]))
 //
