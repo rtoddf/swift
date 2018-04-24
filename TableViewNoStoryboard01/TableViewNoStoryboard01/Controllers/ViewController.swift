@@ -1,3 +1,5 @@
+// https://www.journaldev.com/14081/ios-tableview-uitableview-storyboard
+
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -33,7 +35,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         Article.downloadData{ (articles) in
             self.articles = articles
             tableView.reloadData()
-//            print("articles: \(self.articles)")
+            print("articles: \(self.articles)")
         }
 
         tableView.dataSource = self

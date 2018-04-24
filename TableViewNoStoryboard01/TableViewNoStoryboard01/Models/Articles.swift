@@ -3,6 +3,7 @@ import UIKit
 struct Article:Decodable {
     let headline:String?
     let summary:String?
+    let leadImage:String?
     
     static func downloadData(completion: @escaping ([Article]) -> Void) {
         let urlString = "http://rtodd.net/swift/data/personalities02.json"
@@ -14,6 +15,7 @@ struct Article:Decodable {
                 
                 do {
                     let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
                     let articles = try decoder.decode([Article].self, from: data)
                     
                     DispatchQueue.main.async {
