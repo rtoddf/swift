@@ -4,8 +4,10 @@ class CustomCell:UITableViewCell {
     var article:Article? {
         didSet {
             guard let headline = article?.headline else { return }
+            guard let summary = article?.summary else { return }
             
             nameLabel.text = headline
+            summaryLabel.text = summary
         }
     }
     
@@ -22,7 +24,7 @@ class CustomCell:UITableViewCell {
         return label
     }()
     
-    let descriptionLabel:UILabel = {
+    let summaryLabel:UILabel = {
         let label = UILabel()
         label.text = "Label text"
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -37,10 +39,10 @@ class CustomCell:UITableViewCell {
     
     func setupViews(){
         addSubview(nameLabel)
-        addSubview(descriptionLabel)
+        addSubview(summaryLabel)
         
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[v0]-16-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": nameLabel]))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[v0]-16-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": descriptionLabel]))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-8-[v0]-4-[v1]-8-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": nameLabel, "v1": descriptionLabel]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[v0]-16-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": summaryLabel]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-8-[v0]-4-[v1]-8-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": nameLabel, "v1": summaryLabel]))
     }
 }

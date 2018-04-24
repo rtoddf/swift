@@ -1,19 +1,18 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    var tableData = ["Beach", "Clubs", "Chill", "Dance"]
     var articles:[Article]?
     let cellId = "cellId"
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tableData.count
+        if let count = articles?.count {
+            return count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! CustomCell
-//        let text = tableData[indexPath.row]
-//        cell.nameLabel.text = text
         cell.article = articles?[indexPath.row]
         return cell
     }
@@ -21,13 +20,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        
-        Article.downloadData{ (articles) in
-            self.articles = articles
-            
-            print("articles: \(self.articles)")
-        }
-        
     }
     
     func setupViews(){
@@ -37,10 +29,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             tv.register(CustomCell.self, forCellReuseIdentifier: cellId)
             return tv
         }()
+        
+        Article.downloadData{ (articles) in
+            self.articles = articles
+            tableView.reloadData()
+//            print("articles: \(self.articles)")
+        }
 
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.reloadData()
+        
 
         view.addSubview(tableView)
     }

@@ -2,6 +2,7 @@ import UIKit
 
 struct Article:Decodable {
     let headline:String?
+    let summary:String?
     
     static func downloadData(completion: @escaping ([Article]) -> Void) {
         let urlString = "http://rtodd.net/swift/data/personalities02.json"
