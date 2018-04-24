@@ -1,6 +1,14 @@
 import UIKit
 
 class CustomCell:UITableViewCell {
+    var article:Article? {
+        didSet {
+            guard let headline = article?.headline else { return }
+            
+            nameLabel.text = headline
+        }
+    }
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupViews()

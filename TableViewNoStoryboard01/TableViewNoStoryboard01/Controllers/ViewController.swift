@@ -3,6 +3,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var tableData = ["Beach", "Clubs", "Chill", "Dance"]
+    var articles:[Article]?
     let cellId = "cellId"
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -11,14 +12,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! CustomCell
-        let text = tableData[indexPath.row]
-        cell.nameLabel.text = text
+//        let text = tableData[indexPath.row]
+//        cell.nameLabel.text = text
+        cell.article = articles?[indexPath.row]
         return cell
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        
+        Article.downloadData{ (articles) in
+            self.articles = articles
+            
+            print("articles: \(self.articles)")
+        }
+        
     }
     
     func setupViews(){
@@ -31,6 +40,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.reloadData()
 
         view.addSubview(tableView)
     }
