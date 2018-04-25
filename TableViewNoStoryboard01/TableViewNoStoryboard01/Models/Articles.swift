@@ -6,6 +6,7 @@ struct Article:Decodable {
     let summary:String?
     let leadImage:String?
     let images:[Image]?
+    let fullText:String?
     
     static func downloadData(completion: @escaping ([Article]) -> Void) {
         let urlString = "http://rtodd.net/swift/data/personalities02.json"

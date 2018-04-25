@@ -9,6 +9,7 @@ class ArticleDetailController: UIViewController {
             guard let leadImage = article?.images?[0].path else { return }
             guard let caption = article?.images?[0].caption else { return }
             guard let credit = article?.images?[0].credit else { return }
+            guard let fullText = article?.fullText else { return }
             
             headlineLabel.text = headline
             subheadLabel.text = subhead
@@ -32,6 +33,14 @@ class ArticleDetailController: UIViewController {
             imageInfoLabel.numberOfLines = 0
             imageInfoLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
             imageInfoLabel.sizeToFit()
+            
+            fullTextView.text  = fullText
+            
+            self.view.frame.size.height = self.view.frame.height + 1000
+            
+            self.view.layoutIfNeeded()
+            self.view.isUserInteractionEnabled = true
+            fullTextView.invalidateIntrinsicContentSize()
         }
     }
 
@@ -76,11 +85,19 @@ class ArticleDetailController: UIViewController {
         return label
     }()
     
+    let fullTextView:UITextView = {
+        let tv = UITextView()
+        tv.font = UIFont(name: "Georgia", size: 14)
+        tv.translatesAutoresizingMaskIntoConstraints = false
+        return tv
+    }()
+    
     func setupViews(){
         view.addSubview(headlineLabel)
         view.addSubview(subheadLabel)
         view.addSubview(leadImageView)
         view.addSubview(imageInfoLabel)
+        view.addSubview(fullTextView)
         
         let width = view.frame.width
         let height = (9 / 16) * width
@@ -88,8 +105,11 @@ class ArticleDetailController: UIViewController {
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[v0]-16-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": headlineLabel]))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[v0]-16-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": subheadLabel]))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[v0]|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": leadImageView]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[v0]-16-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": fullTextView]))
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-16-[v0]-16-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": imageInfoLabel]))
-        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-75-[v0(25)]-8-[v1]-8-[v2(\(height))]-8-[v3]", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": headlineLabel, "v1": subheadLabel, "v2": leadImageView, "v3": imageInfoLabel]))
+        view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-75-[v0(25)]-8-[v1]-8-[v2(\(height))]-8-[v3]-8-[v4(2000)]", options: NSLayoutFormatOptions(), metrics: nil, views: ["v0": headlineLabel, "v1": subheadLabel, "v2": leadImageView, "v3": imageInfoLabel, "v4": fullTextView]))
+        
+//        view.addConstraint(NSLayoutConstraint(item: fullTextView, attribute: .bottom, relatedBy: .equal, toItem: self.view.frame, attribute: .bottom, multiplier: 1.0, constant: 0))
     }
     
 }
