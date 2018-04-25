@@ -24,6 +24,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         setupViews()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let article = articles?[indexPath.item] else { return }
+        showArticleDetail(article: article)
+    }
+    
     func setupViews(){
         let tableView:UITableView = {
             let tv = UITableView(frame: self.view.bounds, style: UITableViewStyle.plain)
@@ -35,13 +40,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         Article.downloadData{ (articles) in
             self.articles = articles
             tableView.reloadData()
-            print("articles: \(self.articles)")
+//            print("articles: \(self.articles)")
         }
 
         tableView.dataSource = self
         tableView.delegate = self
-        
-
         view.addSubview(tableView)
+    }
+    
+    func showArticleDetail(article:Article){
+        let detailController = ArticleDetailController()
+        detailController.article = article
+        self.navigationController?.pushViewController(detailController, animated: true)
     }
 }

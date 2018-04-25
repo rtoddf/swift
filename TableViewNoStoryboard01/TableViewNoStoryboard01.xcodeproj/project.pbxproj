@@ -14,6 +14,8 @@
 		AD427E2F208E7E2000909F96 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD427E2E208E7E2000909F96 /* CustomCell.swift */; };
 		AD618407208FA02E00C29326 /* Articles.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD618406208FA02E00C29326 /* Articles.swift */; };
 		AD61840A208FDD2300C29326 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD618409208FDD2300C29326 /* Extensions.swift */; };
+		ADCD05EE2090DE9100EB9A8E /* ArticleDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCD05ED2090DE9100EB9A8E /* ArticleDetailController.swift */; };
+		ADCD05F02090EFDC00EB9A8E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCD05EF2090EFDC00EB9A8E /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		AD427E2E208E7E2000909F96 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		AD618406208FA02E00C29326 /* Articles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Articles.swift; sourceTree = "<group>"; };
 		AD618409208FDD2300C29326 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		ADCD05ED2090DE9100EB9A8E /* ArticleDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailController.swift; sourceTree = "<group>"; };
+		ADCD05EF2090EFDC00EB9A8E /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				AD427E1C208E41AD00909F96 /* ViewController.swift */,
+				ADCD05ED2090DE9100EB9A8E /* ArticleDetailController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -98,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				AD618409208FDD2300C29326 /* Extensions.swift */,
+				ADCD05EF2090EFDC00EB9A8E /* Utilities.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -174,7 +180,9 @@
 			files = (
 				AD61840A208FDD2300C29326 /* Extensions.swift in Sources */,
 				AD618407208FA02E00C29326 /* Articles.swift in Sources */,
+				ADCD05F02090EFDC00EB9A8E /* Utilities.swift in Sources */,
 				AD427E1D208E41AD00909F96 /* ViewController.swift in Sources */,
+				ADCD05EE2090DE9100EB9A8E /* ArticleDetailController.swift in Sources */,
 				AD427E2F208E7E2000909F96 /* CustomCell.swift in Sources */,
 				AD427E1B208E41AD00909F96 /* AppDelegate.swift in Sources */,
 			);

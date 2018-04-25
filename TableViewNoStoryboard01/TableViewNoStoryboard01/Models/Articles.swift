@@ -2,8 +2,10 @@ import UIKit
 
 struct Article:Decodable {
     let headline:String?
+    let subhead:String?
     let summary:String?
     let leadImage:String?
+    let images:[Image]?
     
     static func downloadData(completion: @escaping ([Article]) -> Void) {
         let urlString = "http://rtodd.net/swift/data/personalities02.json"
@@ -28,4 +30,10 @@ struct Article:Decodable {
             }.resume()
         }
     }
+}
+
+struct Image:Decodable {
+    let path:String?
+    let caption:String?
+    let credit:String?
 }

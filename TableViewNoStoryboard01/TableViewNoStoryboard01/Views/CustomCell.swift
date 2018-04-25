@@ -8,7 +8,19 @@ class CustomCell:UITableViewCell {
             guard let leadImage = article?.leadImage else { return }
             
             headlineLabel.text = headline
-            summaryLabel.text = summary
+
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineSpacing = 3
+            
+            let textAttributes:[NSAttributedStringKey:Any] = [
+                .paragraphStyle: paragraphStyle,
+                .font : UIFont.systemFont(ofSize: 12)
+//                ,.foregroundColor: UIColor(hexString: "#777777")
+            ]
+            
+            let attributedString = NSMutableAttributedString(string: summary, attributes: textAttributes)
+            summaryLabel.attributedText = attributedString
+            
             leadImageView.loadImageUsingUrlString(imageUrl: leadImage)
             
 //            summaryLabel.sizeToFit()
@@ -35,6 +47,7 @@ class CustomCell:UITableViewCell {
         tv.font = UIFont.systemFont(ofSize: 12)
         tv.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         tv.textContainer.lineFragmentPadding = 0
+        tv.isUserInteractionEnabled = false
         return tv
     }()
     
