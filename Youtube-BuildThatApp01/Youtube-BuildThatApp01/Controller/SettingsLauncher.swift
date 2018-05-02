@@ -1,3 +1,5 @@
+// https://www.youtube.com/watch?v=2kwCfFG5fDA - youtube video
+
 import UIKit
 
 class Setting:NSObject {
@@ -38,16 +40,21 @@ class SettingsLauncher:NSObject, UICollectionViewDataSource, UICollectionViewDel
         window.addSubview(collectionView)
         
         
+//        let height:CGFloat = CGFloat(settings.count) * cellHeight
+//        let y = window.frame.height - height
+//        collectionView.frame = CGRect(x: 0, y: window.frame.height, width: window.frame.width, height: height)
+        
         let height:CGFloat = CGFloat(settings.count) * cellHeight
         let y = window.frame.height - height
-        collectionView.frame = CGRect(x: 0, y: window.frame.height, width: window.frame.width, height: height)
+        collectionView.frame = CGRect(x: (window.frame.width/2) * -1, y: 20, width: window.frame.width/2, height: window.frame.height)
 
         blackView.frame = window.frame
         blackView.alpha = 0
         
         UIView.animate(withDuration: 0.35, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.blackView.alpha = 1
-            self.collectionView.frame = CGRect(x: 0, y: y, width: self.collectionView.frame.width, height: height)
+//            self.collectionView.frame = CGRect(x: 0, y: y, width: self.collectionView.frame.width, height: height)
+            self.collectionView.frame = CGRect(x: 0, y: 20, width: self.collectionView.frame.width, height: window.frame.height)
         }, completion: nil)
     }
     
@@ -56,7 +63,8 @@ class SettingsLauncher:NSObject, UICollectionViewDataSource, UICollectionViewDel
             self.blackView.alpha = 0
             
             guard let window = UIApplication.shared.keyWindow else { return }
-            self.collectionView.frame = CGRect(x: 0, y: window.frame.height, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
+//            self.collectionView.frame = CGRect(x: 0, y: window.frame.height, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
+            self.collectionView.frame = CGRect(x: (window.frame.width/2) * -1, y: 20, width: window.frame.width/2, height: window.frame.height)
         })
     }
     
