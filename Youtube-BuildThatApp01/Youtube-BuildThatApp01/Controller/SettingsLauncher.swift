@@ -29,6 +29,8 @@ class SettingsLauncher:NSObject, UICollectionViewDataSource, UICollectionViewDel
         return [Setting(name: "Settings", imageName: "settings"), Setting(name: "Terms & Privacy Policy", imageName: "terms"), Setting(name: "Send Feedback", imageName: "settings"), Setting(name: "Help", imageName: "help"), Setting(name: "Switch Accounts", imageName: "settings"), Setting(name: "Cancel", imageName: "settings")]
     }()
     
+    var homeController: HomeController?
+    
     func showSettings(){
         // show menu
         guard let window = UIApplication.shared.keyWindow else { return }
