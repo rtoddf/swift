@@ -20,6 +20,21 @@ class ArticleImageLeftCell:BaseCell {
         }
     }
     
+    var article:Article? {
+        didSet {
+            guard let leadMedia = article?.leadMedia?.path else { return }
+            guard let headline = article?.headline else { return }
+            guard let summary = article?.summary else { return }
+            guard let date = article?.date else { return }
+            
+            leadImageView.loadImageUsingUrlString(imageUrl: leadMedia)
+            headlineLabel.text = headline
+//            let attributedText = NSMutableAttributedString(string: summary, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13), NSAttributedStringKey.foregroundColor: UIColor(hexString: "#333") as Any])
+//            textLabel.attributedText = attributedText
+//            detailsLabel.text = date.timeAgoDisplay()
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()

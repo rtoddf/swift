@@ -14,6 +14,8 @@
 		000F001120DC4EC9007599CC /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000F001020DC4EC9007599CC /* StringExtensions.swift */; };
 		000F001320DC516C007599CC /* ArticleImageLeftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000F001220DC516C007599CC /* ArticleImageLeftCell.swift */; };
 		000F001520DC54DE007599CC /* ArticleImageRightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000F001420DC54DE007599CC /* ArticleImageRightCell.swift */; };
+		000F001820DC6177007599CC /* Articles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000F001720DC6177007599CC /* Articles.swift */; };
+		000F001B20DC6532007599CC /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000F001A20DC6532007599CC /* Utilities.swift */; };
 		000FFFF320DC1E69007599CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000FFFF220DC1E69007599CC /* AppDelegate.swift */; };
 		000FFFF520DC1E69007599CC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000FFFF420DC1E69007599CC /* MainViewController.swift */; };
 		000FFFFA20DC1E6D007599CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 000FFFF920DC1E6D007599CC /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 		000F001020DC4EC9007599CC /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		000F001220DC516C007599CC /* ArticleImageLeftCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleImageLeftCell.swift; sourceTree = "<group>"; };
 		000F001420DC54DE007599CC /* ArticleImageRightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleImageRightCell.swift; sourceTree = "<group>"; };
+		000F001720DC6177007599CC /* Articles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Articles.swift; sourceTree = "<group>"; };
+		000F001A20DC6532007599CC /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		000FFFEF20DC1E69007599CC /* NestedCollectionsViews01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NestedCollectionsViews01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		000FFFF220DC1E69007599CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		000FFFF420DC1E69007599CC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +56,7 @@
 			children = (
 				000F000520DC1F06007599CC /* Extensions.swift */,
 				000F001020DC4EC9007599CC /* StringExtensions.swift */,
+				000F001A20DC6532007599CC /* Utilities.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -84,6 +89,14 @@
 			path = Layouts;
 			sourceTree = "<group>";
 		};
+		000F001620DC6158007599CC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				000F001720DC6177007599CC /* Articles.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		000FFFE620DC1E69007599CC = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +116,7 @@
 		000FFFF120DC1E69007599CC /* NestedCollectionsViews01 */ = {
 			isa = PBXGroup;
 			children = (
+				000F001620DC6158007599CC /* Models */,
 				000F000820DC200D007599CC /* Views */,
 				000F000720DC1F0D007599CC /* Controllers */,
 				000F000420DC1EE1007599CC /* Helpers */,
@@ -186,10 +200,12 @@
 			files = (
 				000F000C20DC3EDB007599CC /* ArticleImageTopCell.swift in Sources */,
 				000F000A20DC20D8007599CC /* GroupingCell.swift in Sources */,
+				000F001B20DC6532007599CC /* Utilities.swift in Sources */,
 				000FFFF520DC1E69007599CC /* MainViewController.swift in Sources */,
 				000F001120DC4EC9007599CC /* StringExtensions.swift in Sources */,
 				000F000620DC1F06007599CC /* Extensions.swift in Sources */,
 				000F000F20DC4E87007599CC /* ArticleImageLargeCell.swift in Sources */,
+				000F001820DC6177007599CC /* Articles.swift in Sources */,
 				000FFFF320DC1E69007599CC /* AppDelegate.swift in Sources */,
 				000F001320DC516C007599CC /* ArticleImageLeftCell.swift in Sources */,
 				000F001520DC54DE007599CC /* ArticleImageRightCell.swift in Sources */,

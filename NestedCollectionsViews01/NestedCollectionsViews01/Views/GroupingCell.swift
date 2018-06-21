@@ -1,13 +1,20 @@
 import UIKit
 
 class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    let feedMusicSource = "reviews-music"
+    let feedMoviesSource = "reviews-movies"
+    let version = ""
+    let menuFeed = "http://rtodd.net/swift/data/menu-music.json"
+    
     let articleImageLargeCellId = "articleImageLargeCellId"
     let articleImageLeftCellId = "articleImageLeftCellId"
     let articleImageRightCellId = "articleImageRightCellId"
     let articleImageTopCellId = "articleImageTopCellId"
     
+    var articlesMusic:[Article]?
+    var articlesMovies:[Article]?
+
     var groupCellIndexSet:Int = 0
-    
     var groupCellIndex: Int!{
         didSet {
             guard let groupCellIndex = groupCellIndex else { return }
@@ -25,6 +32,22 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
         collectionView.register(ArticleImageRightCell.self, forCellWithReuseIdentifier: articleImageRightCellId)
         collectionView.register(ArticleImageTopCell.self, forCellWithReuseIdentifier: articleImageTopCellId)
 
+        let feedMusic = "\(feedMusicSource)\(version)"
+        Feed.downloadData(feedUrl: feedMusic) { articles in
+            print("articlesMusic: \(articles)")
+            
+            self.articlesMusic = articles
+            self.collectionView.reloadData()
+        }
+        
+        let feedMovies = "\(feedMoviesSource)\(version)"
+        Feed.downloadData(feedUrl: feedMovies) { articles in
+            print("articlesMovies: \(articles)")
+            
+            self.articlesMovies = articles
+            self.collectionView.reloadData()
+        }
+        
         collectionView.dataSource = self
         collectionView.delegate = self
         
@@ -58,6 +81,7 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleImageLargeCellId", for: indexPath) as! ArticleImageLargeCell
             cell.groupCellIndex = groupCellIndex
             cell.layoutCellIndex = indexPath.row
+            cell.article = articlesMovies?[groupCellIndex]
             return cell
         }
         
@@ -65,6 +89,7 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleImageLeftCellId", for: indexPath) as! ArticleImageLeftCell
             cell.groupCellIndex = groupCellIndex
             cell.layoutCellIndex = indexPath.row
+            cell.article = articlesMusic?[0]
             return cell
         }
         
@@ -105,7 +130,7 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
         addSubview(collectionView)
 
         addConstraintsWithFormat(format: "H:|[v0]|", views: collectionView)
-        addConstraintsWithFormat(format: "V:|[v0][v1(0.5)]|", views: collectionView)
+        addConstraintsWithFormat(format: "V:|[v0]|", views: collectionView)
     }
 }
 
