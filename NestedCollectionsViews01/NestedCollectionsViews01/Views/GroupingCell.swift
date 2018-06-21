@@ -1,7 +1,11 @@
 import UIKit
 
 class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    let layoutCellId = "layoutCellId"
+    let articleImageLargeCellId = "articleImageLargeCellId"
+    let articleImageLeftCellId = "articleImageLeftCellId"
+    let articleImageRightCellId = "articleImageRightCellId"
+    let articleImageTopCellId = "articleImageTopCellId"
+    
     var groupCellIndexSet:Int = 0
     
     var groupCellIndex: Int!{
@@ -16,8 +20,11 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
         
         collectionView.backgroundColor = .white
         collectionView.alwaysBounceVertical = false
-        collectionView.register(LayoutCell.self, forCellWithReuseIdentifier: layoutCellId)
-        
+        collectionView.register(ArticleImageLargeCell.self, forCellWithReuseIdentifier: articleImageLargeCellId)
+        collectionView.register(ArticleImageLeftCell.self, forCellWithReuseIdentifier: articleImageLeftCellId)
+        collectionView.register(ArticleImageRightCell.self, forCellWithReuseIdentifier: articleImageRightCellId)
+        collectionView.register(ArticleImageTopCell.self, forCellWithReuseIdentifier: articleImageTopCellId)
+
         collectionView.dataSource = self
         collectionView.delegate = self
         
@@ -43,18 +50,47 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
     }()
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 7
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "layoutCellId", for: indexPath) as! LayoutCell
+        if indexPath.item % 7 == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleImageLargeCellId", for: indexPath) as! ArticleImageLargeCell
+            cell.groupCellIndex = groupCellIndex
+            cell.layoutCellIndex = indexPath.row
+            return cell
+        }
+        
+        if indexPath.item % 7 == 1 || indexPath.item % 7 == 2 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleImageLeftCellId", for: indexPath) as! ArticleImageLeftCell
+            cell.groupCellIndex = groupCellIndex
+            cell.layoutCellIndex = indexPath.row
+            return cell
+        }
+        
+        if indexPath.item % 7 == 3 || indexPath.item % 7 == 4 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleImageRightCellId", for: indexPath) as! ArticleImageRightCell
+            cell.groupCellIndex = groupCellIndex
+            cell.layoutCellIndex = indexPath.row
+            return cell
+        }
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleImageTopCellId", for: indexPath) as! ArticleImageTopCell
         cell.groupCellIndex = groupCellIndex
         cell.layoutCellIndex = indexPath.row
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: frame.width, height: frame.height / 4)
+        if indexPath.item % 7 == 0 {
+            return CGSize(width: frame.width, height: 345)
+        }
+        
+        if indexPath.item % 7 == 1 || indexPath.item % 7 == 2 || indexPath.item % 7 == 3 || indexPath.item % 7 == 4 {
+            return CGSize(width: frame.width, height: 120)
+        }
+        
+        return CGSize(width: frame.width/2, height: 250)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -65,19 +101,11 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
         return 0
     }
     
-    let dividerLine:UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(hexString: "#333")
-        return view
-    }()
-    
     override func setupViews(){
         addSubview(collectionView)
-        addSubview(dividerLine)
 
         addConstraintsWithFormat(format: "H:|[v0]|", views: collectionView)
-        addConstraintsWithFormat(format: "H:|[v0]|", views: dividerLine)
-        addConstraintsWithFormat(format: "V:|[v0][v1(0.5)]|", views: collectionView, dividerLine)
+        addConstraintsWithFormat(format: "V:|[v0][v1(0.5)]|", views: collectionView)
     }
 }
 
