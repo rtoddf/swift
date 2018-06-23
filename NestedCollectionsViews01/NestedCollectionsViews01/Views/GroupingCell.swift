@@ -52,7 +52,7 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
         
         let feedPlaces = "\(feedPlacesSource)\(version)"
         Feed.downloadData(feedUrl: feedPlaces) { articles in
-            print("articlesPlaces: \(articles)")
+//            print("articlesPlaces: \(articles)")
             
             self.articlesPlaces = articles
             self.collectionView.reloadData()
@@ -95,26 +95,76 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
             return cell
         }
         
-        if indexPath.item % 7 == 1 || indexPath.item % 7 == 2 {
+        if indexPath.item % 7 == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleImageLeftCellId", for: indexPath) as! ArticleImageLeftCell
             cell.groupCellIndex = groupCellIndex
             cell.layoutCellIndex = indexPath.row
-            cell.article = articlesMusic?[0]
+
+            let cellIndex = (2 * groupCellIndex) * groupCellIndex + 0
+            cell.article = articlesMusic?[cellIndex]
             return cell
         }
         
-        if indexPath.item % 7 == 3 || indexPath.item % 7 == 4 {
+        if indexPath.item % 7 == 2 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleImageLeftCellId", for: indexPath) as! ArticleImageLeftCell
+            cell.groupCellIndex = groupCellIndex
+            cell.layoutCellIndex = indexPath.row
+            
+            let cellIndex = (2 * groupCellIndex) * groupCellIndex + 1
+            cell.article = articlesMusic?[cellIndex]
+            return cell
+        }
+        
+        if indexPath.item % 7 == 3 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleImageRightCellId", for: indexPath) as! ArticleImageRightCell
             cell.groupCellIndex = groupCellIndex
             cell.layoutCellIndex = indexPath.row
-            cell.article = articlesPlaces?[0]
+
+            let cellIndex = (2 * groupCellIndex) * groupCellIndex + 0
+            print("cellIndex: \(cellIndex)")
+            cell.article = articlesPlaces?[indexPath.row]
+            return cell
+        }
+        
+        if indexPath.item % 7 == 4 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleImageRightCellId", for: indexPath) as! ArticleImageRightCell
+            cell.groupCellIndex = groupCellIndex
+            cell.layoutCellIndex = indexPath.row
+            
+            let cellIndex = (2 * groupCellIndex) * groupCellIndex + 1
+            print("cellIndex: \(cellIndex)")
+            cell.article = articlesPlaces?[indexPath.row]
+            return cell
+        }
+        
+        if indexPath.item % 7 == 5 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleImageTopCellId", for: indexPath) as! ArticleImageTopCell
+            cell.groupCellIndex = groupCellIndex
+            cell.layoutCellIndex = indexPath.row
+            
+            let cellIndex = (2 * groupCellIndex) * groupCellIndex + 0
+            print("cellIndex: \(cellIndex)")
+            cell.article = articlesMusic?[indexPath.row]
+            return cell
+        }
+        
+        if indexPath.item % 7 == 6 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleImageTopCellId", for: indexPath) as! ArticleImageTopCell
+            cell.groupCellIndex = groupCellIndex
+            cell.layoutCellIndex = indexPath.row
+            
+            let cellIndex = (2 * groupCellIndex) * groupCellIndex + 1
+            print("cellIndex: \(cellIndex)")
+            cell.article = articlesMusic?[indexPath.row]
             return cell
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleImageTopCellId", for: indexPath) as! ArticleImageTopCell
         cell.groupCellIndex = groupCellIndex
         cell.layoutCellIndex = indexPath.row
-        cell.article = articlesPlaces?[0]
+        
+//        let cellIndex = (2 * groupCellIndex) * groupCellIndex + (indexPath.item % 7 - 1)
+        cell.article = articlesMusic?[indexPath.row]
         return cell
     }
     

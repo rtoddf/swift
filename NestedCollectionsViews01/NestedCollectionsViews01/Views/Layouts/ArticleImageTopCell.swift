@@ -7,7 +7,7 @@ class ArticleImageTopCell:BaseCell {
     var groupCellIndex: Int!{
         didSet {
             guard let groupCellIndex = groupCellIndex else { return }
-            headlineLabel.text = "Grouping: \(groupCellIndex)"
+//            headlineLabel.text = "Grouping: \(groupCellIndex)"
             self.groupCellIndexSet = groupCellIndex
         }
     }
