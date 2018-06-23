@@ -1,25 +1,6 @@
 import UIKit
 
 class ArticleImageLeftCell:BaseCell {
-    var groupCellIndexSet:Int = 0
-    var layoutCellIndexSet:Int = 0
-    
-    var groupCellIndex: Int!{
-        didSet {
-            guard let groupCellIndex = groupCellIndex else { return }
-//            headlineLabel.text = "Grouping: \(groupCellIndex)"
-            self.groupCellIndexSet = groupCellIndex
-        }
-    }
-    
-    var layoutCellIndex: Int!{
-        didSet {
-            guard let layoutCellIndex = layoutCellIndex else { return }
-            //            headlineLabel.text = "Layout: \(layoutCellIndex)"
-            self.layoutCellIndexSet = layoutCellIndex
-        }
-    }
-    
     var article:Article? {
         didSet {
             guard let leadMedia = article?.leadMedia?.path else { return }

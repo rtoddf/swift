@@ -1,32 +1,8 @@
 import UIKit
 
 class ArticleImageTopCell:BaseCell {
-    var groupCellIndexSet:Int = 0
-    var layoutCellIndexSet:Int = 0
-    
-    var groupCellIndex: Int!{
-        didSet {
-            guard let groupCellIndex = groupCellIndex else { return }
-//            headlineLabel.text = "Grouping: \(groupCellIndex)"
-            self.groupCellIndexSet = groupCellIndex
-        }
-    }
-    
-    var layoutCellIndex: Int!{
-        didSet {
-            guard let layoutCellIndex = layoutCellIndex else { return }
-//            detailLabel.text = "Layout: \(layoutCellIndex)"
-            self.layoutCellIndexSet = layoutCellIndex
-        }
-    }
-    
     var event:Event? {
         didSet {
-//            guard let leadMedia = article?.leadMedia?.path else { return }
-//            guard let headline = article?.headline else { return }
-//            guard let summary = article?.summary else { return }
-//            guard let date = article?.date else { return }
-            
             guard let parentId = event?.parentId else { return }
             guard let headline = event?.headline else { return }
             guard let date = event?.date else { return }
@@ -40,12 +16,9 @@ class ArticleImageTopCell:BaseCell {
             leadImageView.loadPointsLocalImageUsingParentId(imageId: parentId)
             headlineLabel.text = headline
             detailsLabel.text = date + ", " + startTime + " @ " + venueName
-//            leadImageView.loadImageUsingUrlString(imageUrl: leadMedia)
-
-
-//            let attributedText = NSMutableAttributedString(string: summary, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13), NSAttributedStringKey.foregroundColor: UIColor(hexString: "#333") as Any])
-//            textLabel.attributedText = attributedText
             
+            guard let summaryText = fullText.htmlAttributedString else { return }
+            textLabel.text = summaryText.string
         }
     }
     
@@ -111,6 +84,6 @@ class ArticleImageTopCell:BaseCell {
         addConstraintsWithFormat(format: "H:|-12-[v0]-12-|", views: headlineLabel)
         addConstraintsWithFormat(format: "H:|-12-[v0]-12-|", views: textLabel)
         addConstraintsWithFormat(format: "H:|-12-[v0]-12-|", views: detailsLabel)
-        addConstraintsWithFormat(format: "V:|[v0(\(imageHeight))]-2-[v1]-2-[v2]-2-[v3]", views: leadImageView, headlineLabel, textLabel, detailsLabel)
+        addConstraintsWithFormat(format: "V:|[v0(\(imageHeight))]-2-[v1]-2-[v2]-2-[v3]", views: leadImageView, headlineLabel, detailsLabel, textLabel)
     }
 }

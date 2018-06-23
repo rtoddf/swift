@@ -104,82 +104,58 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.item % 7 == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleImageLargeCellId", for: indexPath) as! ArticleImageLargeCell
-            cell.groupCellIndex = groupCellIndex
-            cell.layoutCellIndex = indexPath.row
+//            cell.groupCellIndex = groupCellIndex
+//            cell.layoutCellIndex = indexPath.row
             cell.article = articlesMovies?[groupCellIndex]
             return cell
         }
         
         if indexPath.item % 7 == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleImageLeftCellId", for: indexPath) as! ArticleImageLeftCell
-            cell.groupCellIndex = groupCellIndex
-            cell.layoutCellIndex = indexPath.row
 
-            let cellIndex = (2 * groupCellIndex) + 0
-            cell.article = articlesMusic?[cellIndex]
+            cell.article = articlesMusic?[getCellIndex(numItems: 2, group: groupCellIndex, item: indexPath.item)]
             return cell
         }
         
         if indexPath.item % 7 == 2 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleImageLeftCellId", for: indexPath) as! ArticleImageLeftCell
-            cell.groupCellIndex = groupCellIndex
-            cell.layoutCellIndex = indexPath.row
-            
-            let cellIndex = (2 * groupCellIndex) + 1
-            cell.article = articlesMusic?[cellIndex]
+
+            cell.article = articlesMusic?[getCellIndex(numItems: 2, group: groupCellIndex, item: indexPath.item)]
             return cell
         }
         
         if indexPath.item % 7 == 3 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleImageRightCellId", for: indexPath) as! ArticleImageRightCell
-            cell.groupCellIndex = groupCellIndex
-            cell.layoutCellIndex = indexPath.row
-
-            let cellIndex = (2 * groupCellIndex) + 0
-
-            cell.article = articlesPlaces?[cellIndex]
+            cell.article = articlesPlaces?[getCellIndex(numItems: 2, group: groupCellIndex, item: indexPath.item)]
             return cell
         }
         
         if indexPath.item % 7 == 4 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleImageRightCellId", for: indexPath) as! ArticleImageRightCell
-            cell.groupCellIndex = groupCellIndex
-            cell.layoutCellIndex = indexPath.row
-            
-            let cellIndex = (2 * groupCellIndex) + 1
-            cell.article = articlesPlaces?[cellIndex]
+            cell.article = articlesPlaces?[getCellIndex(numItems: 2, group: groupCellIndex, item: indexPath.item)]
             return cell
         }
         
         if indexPath.item % 7 == 5 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleImageTopCellId", for: indexPath) as! ArticleImageTopCell
-            cell.groupCellIndex = groupCellIndex
-            cell.layoutCellIndex = indexPath.row
-            
-            print("events: \(events)")
-            
-            let cellIndex = (2 * groupCellIndex) + 0
-            cell.event = events?[cellIndex]
+            cell.event = events?[getCellIndex(numItems: 2, group: groupCellIndex, item: indexPath.item)]
             return cell
         }
         
         if indexPath.item % 7 == 6 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleImageTopCellId", for: indexPath) as! ArticleImageTopCell
-            cell.groupCellIndex = groupCellIndex
-            cell.layoutCellIndex = indexPath.row
-            
-            let cellIndex = (2 * groupCellIndex) + 1
-            cell.event = events?[cellIndex]
+            cell.event = events?[getCellIndex(numItems: 2, group: groupCellIndex, item: indexPath.item)]
             return cell
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleImageTopCellId", for: indexPath) as! ArticleImageTopCell
-        cell.groupCellIndex = groupCellIndex
-        cell.layoutCellIndex = indexPath.row
-        
-        let cellIndex = (2 * groupCellIndex) + 0
-        cell.event = events?[cellIndex]
+        cell.event = events?[getCellIndex(numItems: 2, group: groupCellIndex, item: indexPath.item)]
         return cell
+    }
+    
+    func getCellIndex(numItems:Int, group:Int, item:Int) -> Int {
+        let index:Int = (numItems * group) + (item % numItems == 0 ? 1 : 0)
+        return index
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

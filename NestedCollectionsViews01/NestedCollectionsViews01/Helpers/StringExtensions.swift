@@ -10,6 +10,11 @@ extension String {
         }
     }
     
+    /// Converts HTML string to a `NSAttributedString`
+    var htmlAttributedString: NSAttributedString? {
+        return try? NSAttributedString(data: Data(utf8), options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil)
+    }
+    
     func wrapHTML(width:CGFloat) -> String {
         let fontSize:String = "13"
         let margin:String = "10px 0 10px 0"
