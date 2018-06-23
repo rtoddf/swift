@@ -48,8 +48,8 @@ class MainViewController: UICollectionViewController, UICollectionViewDelegateFl
     func showController(item: Menu){
         guard let menuTitle = item.title else { return }
         
-        var controllerToBePushed:Any
-        let layout = UICollectionViewFlowLayout()
+//        var controllerToBePushed:Any
+//        let layout = UICollectionViewFlowLayout()
         
         if menuTitle == "Weather" {
 //            let weatherViewController = WeatherViewController(collectionViewLayout: layout)

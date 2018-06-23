@@ -153,6 +153,45 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
         return 0
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.item % 7 == 0 {
+            guard let article = articlesMovies?[groupCellIndex] else { return }
+            showArticleDetail(article: article)
+        }
+        
+        if indexPath.item % 7 == 1 || indexPath.item % 7 == 2 {
+            guard let article = articlesMusic?[indexPath.item] else { return }
+            showArticleDetail(article: article)
+        }
+        
+        if indexPath.item % 7 == 3 || indexPath.item % 7 == 4 {
+            guard let article = articlesMusic?[indexPath.item] else { return }
+            showArticleDetail(article: article)
+        }
+        
+        guard let article = articlesMusic?[indexPath.item] else { return }
+        showArticleDetail(article: article)
+    }
+    
+    func showArticleDetail(article: Article){
+        
+        let layout = UICollectionViewFlowLayout()
+        let articleDetailViewController = ArticleDetailController(collectionViewLayout: layout)
+        articleDetailViewController.article = article
+        
+        print("showArticleDetail: \(article)")
+//        print("\(MainViewController().navigationController)")
+//        let navigationController = UINavigationController(rootViewController: UICollectionViewController())
+        
+        MainViewController().navigationController?.pushViewController(articleDetailViewController, animated: true)
+//        MainViewController().navigationController?.pushViewController(articleDetailViewController, animated: true)
+    }
+    
+    func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+//        super.viewWillTransition(to: size, with: coordinator)
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
+    
     override func setupViews(){
         addSubview(collectionView)
 

@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  NestedCollectionsViews01
-//
-//  Created by Todd Fleeman on 6/21/18.
-//  Copyright © 2018 Todd Fleeman. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
