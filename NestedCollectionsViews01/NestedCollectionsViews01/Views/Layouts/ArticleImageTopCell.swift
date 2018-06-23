@@ -20,18 +20,31 @@ class ArticleImageTopCell:BaseCell {
         }
     }
     
-    var article:Article? {
+    var event:Event? {
         didSet {
-            guard let leadMedia = article?.leadMedia?.path else { return }
-            guard let headline = article?.headline else { return }
-            guard let summary = article?.summary else { return }
-            guard let date = article?.date else { return }
+//            guard let leadMedia = article?.leadMedia?.path else { return }
+//            guard let headline = article?.headline else { return }
+//            guard let summary = article?.summary else { return }
+//            guard let date = article?.date else { return }
             
-            leadImageView.loadImageUsingUrlString(imageUrl: leadMedia)
+            guard let parentId = event?.parentId else { return }
+            guard let headline = event?.headline else { return }
+            guard let date = event?.date else { return }
+            guard let startTime = event?.startTime else { return }
+            //            guard let endTime = event?.endTime else { return }
+            guard let venueName = event?.venueName else { return }
+            guard let parentCategoryName = event?.parentCategoryName else { return }
+            
+            guard let fullText = event?.fullText else { return }
+            
+            leadImageView.loadPointsLocalImageUsingParentId(imageId: parentId)
             headlineLabel.text = headline
-            detailsLabel.text = date.timeAgoDisplay()
-            let attributedText = NSMutableAttributedString(string: summary, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13), NSAttributedStringKey.foregroundColor: UIColor(hexString: "#333") as Any])
-            textLabel.attributedText = attributedText
+            detailsLabel.text = date + ", " + startTime + " @ " + venueName
+//            leadImageView.loadImageUsingUrlString(imageUrl: leadMedia)
+
+
+//            let attributedText = NSMutableAttributedString(string: summary, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13), NSAttributedStringKey.foregroundColor: UIColor(hexString: "#333") as Any])
+//            textLabel.attributedText = attributedText
             
         }
     }

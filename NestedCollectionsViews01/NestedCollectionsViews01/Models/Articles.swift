@@ -1,7 +1,5 @@
 import UIKit
 
-
-
 struct MenuItems:Decodable {
     let branding:Branding?
     let menuItems:[Menu]?

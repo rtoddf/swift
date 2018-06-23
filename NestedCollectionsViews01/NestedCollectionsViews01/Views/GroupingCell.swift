@@ -15,6 +15,7 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
     var articlesMusic:[Article]?
     var articlesMovies:[Article]?
     var articlesPlaces:[Article]?
+    var events:[Event]?
 
     var groupCellIndexSet:Int = 0
     var groupCellIndex: Int!{
@@ -36,25 +37,39 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
 
         let feedMusic = "\(feedMusicSource)\(version)"
         Feed.downloadData(feedUrl: feedMusic) { articles in
-//            print("articlesMusic: \(articles)")
-//
             self.articlesMusic = articles
             self.collectionView.reloadData()
         }
         
         let feedMovies = "\(feedMoviesSource)\(version)"
         Feed.downloadData(feedUrl: feedMovies) { articles in
-//            print("articlesMovies: \(articles)")
-//
             self.articlesMovies = articles
             self.collectionView.reloadData()
         }
         
         let feedPlaces = "\(feedPlacesSource)\(version)"
         Feed.downloadData(feedUrl: feedPlaces) { articles in
-//            print("articlesPlaces: \(articles)")
-            
             self.articlesPlaces = articles
+            self.collectionView.reloadData()
+        }
+        
+        let feedBase = "https://dayton.pointslocal.com/api/v1/events?"
+        let date_format = "F%20j,%20Y"
+        let time_format = "g:i%20a"
+        let search = "festival"
+        let tag = ""
+        let category = ""
+        let latitude = "39.7794694"
+        let longitude = "-84.2721968"
+        let radius = "25"
+        let start = "today"
+        let end = "+30%20days"
+        let count = "14"
+        
+        let feedEvents = "\(feedBase)date_format=\(date_format)&time_format=\(time_format)&search=\(search)&tag=\(tag)&category=\(category)&latitude=\(latitude)&longitude=\(longitude)&radius=\(radius)&start=\(start)&end=\(end)&count=\(count)"
+        
+        Events.downloadData(feedUrl: feedEvents) { (events) in
+            self.events = events
             self.collectionView.reloadData()
         }
         
@@ -100,7 +115,7 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
             cell.groupCellIndex = groupCellIndex
             cell.layoutCellIndex = indexPath.row
 
-            let cellIndex = (2 * groupCellIndex) * groupCellIndex + 0
+            let cellIndex = (2 * groupCellIndex) + 0
             cell.article = articlesMusic?[cellIndex]
             return cell
         }
@@ -110,7 +125,7 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
             cell.groupCellIndex = groupCellIndex
             cell.layoutCellIndex = indexPath.row
             
-            let cellIndex = (2 * groupCellIndex) * groupCellIndex + 1
+            let cellIndex = (2 * groupCellIndex) + 1
             cell.article = articlesMusic?[cellIndex]
             return cell
         }
@@ -120,9 +135,9 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
             cell.groupCellIndex = groupCellIndex
             cell.layoutCellIndex = indexPath.row
 
-            let cellIndex = (2 * groupCellIndex) * groupCellIndex + 0
-            print("cellIndex: \(cellIndex)")
-            cell.article = articlesPlaces?[indexPath.row]
+            let cellIndex = (2 * groupCellIndex) + 0
+
+            cell.article = articlesPlaces?[cellIndex]
             return cell
         }
         
@@ -131,9 +146,8 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
             cell.groupCellIndex = groupCellIndex
             cell.layoutCellIndex = indexPath.row
             
-            let cellIndex = (2 * groupCellIndex) * groupCellIndex + 1
-            print("cellIndex: \(cellIndex)")
-            cell.article = articlesPlaces?[indexPath.row]
+            let cellIndex = (2 * groupCellIndex) + 1
+            cell.article = articlesPlaces?[cellIndex]
             return cell
         }
         
@@ -142,9 +156,10 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
             cell.groupCellIndex = groupCellIndex
             cell.layoutCellIndex = indexPath.row
             
-            let cellIndex = (2 * groupCellIndex) * groupCellIndex + 0
-            print("cellIndex: \(cellIndex)")
-            cell.article = articlesMusic?[indexPath.row]
+            print("events: \(events)")
+            
+            let cellIndex = (2 * groupCellIndex) + 0
+            cell.event = events?[cellIndex]
             return cell
         }
         
@@ -153,9 +168,8 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
             cell.groupCellIndex = groupCellIndex
             cell.layoutCellIndex = indexPath.row
             
-            let cellIndex = (2 * groupCellIndex) * groupCellIndex + 1
-            print("cellIndex: \(cellIndex)")
-            cell.article = articlesMusic?[indexPath.row]
+            let cellIndex = (2 * groupCellIndex) + 1
+            cell.event = events?[cellIndex]
             return cell
         }
         
@@ -163,8 +177,8 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
         cell.groupCellIndex = groupCellIndex
         cell.layoutCellIndex = indexPath.row
         
-//        let cellIndex = (2 * groupCellIndex) * groupCellIndex + (indexPath.item % 7 - 1)
-        cell.article = articlesMusic?[indexPath.row]
+        let cellIndex = (2 * groupCellIndex) + 0
+        cell.event = events?[cellIndex]
         return cell
     }
     
