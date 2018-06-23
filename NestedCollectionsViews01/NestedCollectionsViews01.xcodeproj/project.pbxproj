@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		000220FF20DEAEA000FF4C39 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000220FE20DEAEA000FF4C39 /* Events.swift */; };
+		0002210120DEBFB900FF4C39 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0002210020DEBFB900FF4C39 /* Menu.swift */; };
+		0002210420DEC18B00FF4C39 /* MenuLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0002210320DEC18B00FF4C39 /* MenuLauncher.swift */; };
+		0002210720DEC29C00FF4C39 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0002210620DEC29C00FF4C39 /* MenuItemCell.swift */; };
 		000F000620DC1F06007599CC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000F000520DC1F06007599CC /* Extensions.swift */; };
 		000F000A20DC20D8007599CC /* GroupingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000F000920DC20D8007599CC /* GroupingCell.swift */; };
 		000F000C20DC3EDB007599CC /* ArticleImageTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000F000B20DC3EDB007599CC /* ArticleImageTopCell.swift */; };
@@ -25,6 +28,9 @@
 
 /* Begin PBXFileReference section */
 		000220FE20DEAEA000FF4C39 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		0002210020DEBFB900FF4C39 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		0002210320DEC18B00FF4C39 /* MenuLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuLauncher.swift; sourceTree = "<group>"; };
+		0002210620DEC29C00FF4C39 /* MenuItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
 		000F000520DC1F06007599CC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		000F000920DC20D8007599CC /* GroupingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupingCell.swift; sourceTree = "<group>"; };
 		000F000B20DC3EDB007599CC /* ArticleImageTopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleImageTopCell.swift; sourceTree = "<group>"; };
@@ -53,6 +59,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0002210220DEC18100FF4C39 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				0002210320DEC18B00FF4C39 /* MenuLauncher.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		0002210520DEC28900FF4C39 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				0002210620DEC29C00FF4C39 /* MenuItemCell.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		000F000420DC1EE1007599CC /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +88,7 @@
 		000F000720DC1F0D007599CC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0002210220DEC18100FF4C39 /* Menu */,
 				000FFFF420DC1E69007599CC /* MainViewController.swift */,
 			);
 			path = Controllers;
@@ -74,6 +97,7 @@
 		000F000820DC200D007599CC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0002210520DEC28900FF4C39 /* Menu */,
 				000F000D20DC4E53007599CC /* Layouts */,
 				000F000920DC20D8007599CC /* GroupingCell.swift */,
 			);
@@ -96,6 +120,7 @@
 			children = (
 				000F001720DC6177007599CC /* Articles.swift */,
 				000220FE20DEAEA000FF4C39 /* Events.swift */,
+				0002210020DEBFB900FF4C39 /* Menu.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -204,12 +229,15 @@
 				000220FF20DEAEA000FF4C39 /* Events.swift in Sources */,
 				000F000C20DC3EDB007599CC /* ArticleImageTopCell.swift in Sources */,
 				000F000A20DC20D8007599CC /* GroupingCell.swift in Sources */,
+				0002210720DEC29C00FF4C39 /* MenuItemCell.swift in Sources */,
 				000F001B20DC6532007599CC /* Utilities.swift in Sources */,
 				000FFFF520DC1E69007599CC /* MainViewController.swift in Sources */,
 				000F001120DC4EC9007599CC /* StringExtensions.swift in Sources */,
 				000F000620DC1F06007599CC /* Extensions.swift in Sources */,
 				000F000F20DC4E87007599CC /* ArticleImageLargeCell.swift in Sources */,
 				000F001820DC6177007599CC /* Articles.swift in Sources */,
+				0002210120DEBFB900FF4C39 /* Menu.swift in Sources */,
+				0002210420DEC18B00FF4C39 /* MenuLauncher.swift in Sources */,
 				000FFFF320DC1E69007599CC /* AppDelegate.swift in Sources */,
 				000F001320DC516C007599CC /* ArticleImageLeftCell.swift in Sources */,
 				000F001520DC54DE007599CC /* ArticleImageRightCell.swift in Sources */,
