@@ -3,6 +3,7 @@ import UIKit
 class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     let feedMusicSource = "reviews-music"
     let feedMoviesSource = "reviews-movies"
+    let feedPlacesSource = "reviews-places"
     let version = ""
     let menuFeed = "http://rtodd.net/swift/data/menu-music.json"
     
@@ -13,6 +14,7 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
     
     var articlesMusic:[Article]?
     var articlesMovies:[Article]?
+    var articlesPlaces:[Article]?
 
     var groupCellIndexSet:Int = 0
     var groupCellIndex: Int!{
@@ -34,17 +36,25 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
 
         let feedMusic = "\(feedMusicSource)\(version)"
         Feed.downloadData(feedUrl: feedMusic) { articles in
-            print("articlesMusic: \(articles)")
-            
+//            print("articlesMusic: \(articles)")
+//
             self.articlesMusic = articles
             self.collectionView.reloadData()
         }
         
         let feedMovies = "\(feedMoviesSource)\(version)"
         Feed.downloadData(feedUrl: feedMovies) { articles in
-            print("articlesMovies: \(articles)")
-            
+//            print("articlesMovies: \(articles)")
+//
             self.articlesMovies = articles
+            self.collectionView.reloadData()
+        }
+        
+        let feedPlaces = "\(feedPlacesSource)\(version)"
+        Feed.downloadData(feedUrl: feedPlaces) { articles in
+            print("articlesPlaces: \(articles)")
+            
+            self.articlesPlaces = articles
             self.collectionView.reloadData()
         }
         
@@ -97,12 +107,14 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleImageRightCellId", for: indexPath) as! ArticleImageRightCell
             cell.groupCellIndex = groupCellIndex
             cell.layoutCellIndex = indexPath.row
+            cell.article = articlesPlaces?[0]
             return cell
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleImageTopCellId", for: indexPath) as! ArticleImageTopCell
         cell.groupCellIndex = groupCellIndex
         cell.layoutCellIndex = indexPath.row
+        cell.article = articlesPlaces?[0]
         return cell
     }
     

@@ -29,9 +29,9 @@ class ArticleImageLeftCell:BaseCell {
             
             leadImageView.loadImageUsingUrlString(imageUrl: leadMedia)
             headlineLabel.text = headline
-//            let attributedText = NSMutableAttributedString(string: summary, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13), NSAttributedStringKey.foregroundColor: UIColor(hexString: "#333") as Any])
-//            textLabel.attributedText = attributedText
-//            detailsLabel.text = date.timeAgoDisplay()
+            detailsLabel.text = date.timeAgoDisplay()
+            let attributedText = NSMutableAttributedString(string: summary, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13), NSAttributedStringKey.foregroundColor: UIColor(hexString: "#333") as Any])
+            textLabel.attributedText = attributedText
         }
     }
     
@@ -54,12 +54,7 @@ class ArticleImageLeftCell:BaseCell {
         iv.layer.borderColor = UIColor(hexString: "#333")?.cgColor
         return iv
     }()
-    
-    let detailView:UIView = {
-        let view = UIView()
-        return view
-    }()
-    
+
     let headlineLabel:UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -69,18 +64,44 @@ class ArticleImageLeftCell:BaseCell {
         return label
     }()
     
+    let detailView:UIView = {
+        let view = UIView()
+        return view
+    }()
+    
+    let detailsLabel:UILabel = {
+        let label = UILabel()
+        label.font = .articleDetailsFont
+        label.textColor = UIColor(hexString: "#666")
+        label.numberOfLines = 3
+        return label
+    }()
+    
+    let textLabel:UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 2
+        label.font = .articleBodyFont
+        label.textColor = UIColor(hexString: "#222")
+        return label
+    }()
+    
     override func setupViews() {
         addSubview(leadImageView)
         addSubview(detailView)
         
         detailView.addSubview(headlineLabel)
+        detailView.addSubview(detailsLabel)
+        detailView.addSubview(textLabel)
         
         addConstraintsWithFormat(format: "H:|-12-[v0(\(frame.width / 3))]-12-[v1]-12-|", views: leadImageView, detailView)
         addConstraintsWithFormat(format: "V:|[v0]-12-|", views: leadImageView)
         addConstraintsWithFormat(format: "V:|[v0]-12-|", views: detailView)
         
         addConstraintsWithFormat(format: "H:|-2-[v0]-2-|", views: headlineLabel)
-        addConstraintsWithFormat(format: "V:|[v0]", views: headlineLabel)
+        addConstraintsWithFormat(format: "H:|-2-[v0]-2-|", views: detailsLabel)
+        addConstraintsWithFormat(format: "H:|-2-[v0]-2-|", views: textLabel)
+        addConstraintsWithFormat(format: "V:|[v0]-2-[v1]-2-[v2]", views: headlineLabel, detailsLabel, textLabel)
     }
 
 }

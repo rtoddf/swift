@@ -20,6 +20,22 @@ class ArticleImageTopCell:BaseCell {
         }
     }
     
+    var article:Article? {
+        didSet {
+            guard let leadMedia = article?.leadMedia?.path else { return }
+            guard let headline = article?.headline else { return }
+            guard let summary = article?.summary else { return }
+            guard let date = article?.date else { return }
+            
+            leadImageView.loadImageUsingUrlString(imageUrl: leadMedia)
+            headlineLabel.text = headline
+            detailsLabel.text = date.timeAgoDisplay()
+            let attributedText = NSMutableAttributedString(string: summary, attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13), NSAttributedStringKey.foregroundColor: UIColor(hexString: "#333") as Any])
+            textLabel.attributedText = attributedText
+            
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
@@ -46,6 +62,23 @@ class ArticleImageTopCell:BaseCell {
         return label
     }()
     
+    let detailsLabel:UILabel = {
+        let label = UILabel()
+        label.font = .articleDetailsFont
+        label.textColor = UIColor(hexString: "#666")
+        label.numberOfLines = 3
+        return label
+    }()
+    
+    let textLabel:UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 2
+        label.font = .articleBodyFont
+        label.textColor = UIColor(hexString: "#222")
+        return label
+    }()
+
 //    let dividerLine:UIView = {
 //        let view = UIView()
 //        view.backgroundColor = UIColor(hexString: "#999")
@@ -55,12 +88,16 @@ class ArticleImageTopCell:BaseCell {
     override func setupViews() {
         addSubview(leadImageView)
         addSubview(headlineLabel)
+        addSubview(detailsLabel)
+        addSubview(textLabel)
         
         let imageWidth = frame.width
         let imageHeight = (9 / 16) * imageWidth
         
         addConstraintsWithFormat(format: "H:|-12-[v0]-12-|", views: leadImageView)
         addConstraintsWithFormat(format: "H:|-12-[v0]-12-|", views: headlineLabel)
-        addConstraintsWithFormat(format: "V:|[v0(\(imageHeight))]-2-[v1]", views: leadImageView, headlineLabel)
+        addConstraintsWithFormat(format: "H:|-12-[v0]-12-|", views: textLabel)
+        addConstraintsWithFormat(format: "H:|-12-[v0]-12-|", views: detailsLabel)
+        addConstraintsWithFormat(format: "V:|[v0(\(imageHeight))]-2-[v1]-2-[v2]-2-[v3]", views: leadImageView, headlineLabel, textLabel, detailsLabel)
     }
 }
