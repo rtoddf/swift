@@ -1,7 +1,7 @@
 import UIKit
 
 class ArticleDetailController:UICollectionViewController, UICollectionViewDelegateFlowLayout {
-//    let cellId = "cellId"
+    let cellId = "cellId"
     let cellTextId = "cellTextid"
 //    let cellImagesId = "cellImagesId"
 //    let cellMapId = "cellMapId"
@@ -22,7 +22,7 @@ class ArticleDetailController:UICollectionViewController, UICollectionViewDelega
         
         collectionView?.backgroundColor = UIColor(hexString: "#fff")
         collectionView?.alwaysBounceVertical = true
-//        collectionView?.register(ArticleDetailCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView?.register(ArticleDetailCell.self, forCellWithReuseIdentifier: cellId)
         collectionView?.register(ArticleDetailTextCell.self, forCellWithReuseIdentifier: cellTextId)
 //        collectionView?.register(ArticleImagesCell.self, forCellWithReuseIdentifier: cellImagesId)
 //        collectionView?.register(ArticleDetailMapCell.self, forCellWithReuseIdentifier: cellMapId)
@@ -76,16 +76,16 @@ class ArticleDetailController:UICollectionViewController, UICollectionViewDelega
 //    }
 //
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        if indexPath.item == 0 {
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ArticleDetailCell
-//            cell.article = article
-//            return cell
-//        }
-//
+        if indexPath.item == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ArticleDetailCell
+            cell.article = article
+            return cell
+        }
+
 //        if indexPath.item == 2 {
 //            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellImagesId, for: indexPath) as! ArticleImagesCell
 //            cell.article = article
@@ -112,16 +112,16 @@ class ArticleDetailController:UICollectionViewController, UICollectionViewDelega
 //        }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellTextId, for: indexPath) as! ArticleDetailTextCell
-//        cell.article = article
+        cell.article = article
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        // lead image, headline, pubdate, and creator
-//        if indexPath.item == 0 {
-//            // we dynamically size the cell based on the image, returned captionheight, returned headlinelabelheight + spacing in between all items
-//            return CGSize(width: view.frame.width, height: ((9 / 16) * view.frame.width) + imageCaptionLabelHeight + headlineLabelHeight + 20)
-//        }
+        // lead image, headline, pubdate, and creator
+        if indexPath.item == 0 {
+            // we dynamically size the cell based on the image, returned captionheight, returned headlinelabelheight + spacing in between all items
+            return CGSize(width: view.frame.width, height: ((9 / 16) * view.frame.width) + 20)
+        }
 //
 //        if indexPath.item == 2 {
 //            let height = (9 / 16) * (view.frame.width * 0.40) + 28
@@ -146,10 +146,10 @@ class ArticleDetailController:UICollectionViewController, UICollectionViewDelega
         return CGSize(width: view.frame.width, height: 200)
     }
     
-//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-//        super.viewWillTransition(to: size, with: coordinator)
-//        collectionView?.collectionViewLayout.invalidateLayout()
-//    }
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        collectionView?.collectionViewLayout.invalidateLayout()
+    }
     
 //    let zoomedImageBackgroundView = UIView()
 //    let navCoverView = UIView()

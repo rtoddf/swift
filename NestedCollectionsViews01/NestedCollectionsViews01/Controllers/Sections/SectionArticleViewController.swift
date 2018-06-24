@@ -61,4 +61,16 @@ class SectionArticleViewController:UICollectionViewController, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: 345)
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let item = articles?[indexPath.item] else { return }
+        showArticleDetail(item: item)
+    }
+    
+    func showArticleDetail(item: Article){
+        let layout = UICollectionViewFlowLayout()
+        let articleDetailContoller = ArticleDetailController(collectionViewLayout: layout)
+        articleDetailContoller.article = item
+        navigationController?.pushViewController(articleDetailContoller, animated: true)
+    }
 }
