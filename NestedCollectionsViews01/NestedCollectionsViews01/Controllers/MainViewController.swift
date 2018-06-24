@@ -66,12 +66,19 @@ class MainViewController: UICollectionViewController, UICollectionViewDelegateFl
         }
     }
     
-    func showArticleDetail() {
-//        groupingCell.mainController = self
-        print("article cell here")
-//        let layout = UICollectionViewFlowLayout()
-//        let articleDetailController = ArticleDetailController(collectionViewLayout: layout)
-//        navigationController?.pushViewController(articleDetailController, animated: true)
+    func showArticleDetail(article: Article) {
+        let layout = UICollectionViewFlowLayout()
+        let articleDetailController = ArticleDetailController(collectionViewLayout: layout)
+        articleDetailController.article = article
+        navigationController?.pushViewController(articleDetailController, animated: true)
+
+        print("showArticleDetailn in MainController: \(article.headline)")
+        
+        handleSearch()
+    }
+    
+    func showEventDetail(event: Event) {
+        print("showEventDetail in MainController: \(event.headline)")
     }
     
     @objc func handleSearch(){
