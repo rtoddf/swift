@@ -158,7 +158,7 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if indexPath.item % 7 == 0 {
             guard let article = articlesMovies?[groupCellIndex] else { return }
-            mainController?.showArticleDetail(article: article)
+            self.mainController?.showArticleDetail(article: article)
         }
         
         if indexPath.item % 7 == 1 || indexPath.item % 7 == 2 {
@@ -170,19 +170,12 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
             guard let article = articlesPlaces?[getCellIndex(numItems: 2, group: groupCellIndex, item: indexPath.item)] else { return }
             mainController?.showArticleDetail(article: article)
         }
-
-        guard let event = events?[getCellIndex(numItems: 2, group: groupCellIndex, item: indexPath.item)] else { return }
-        mainController?.showEventDetail(event: event)
+        
+        if indexPath.item % 7 == 5 || indexPath.item % 7 == 5 {
+            guard let event = events?[getCellIndex(numItems: 2, group: groupCellIndex, item: indexPath.item)] else { return }
+            mainController?.showEventDetail(event: event)
+        }
     }
-    
-//    func showArticleDetail(article: Article){
-//        print("showArticleDetail: \(showArticleDetail)")
-//        mainController?.showArticleDetail(article: article)
-//        
-//        let layout = UICollectionViewFlowLayout()
-//        let articleDetailViewController = ArticleDetailController(collectionViewLayout: layout)
-//        articleDetailViewController.article = article
-//    }
     
     func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
 //        super.viewWillTransition(to: size, with: coordinator)

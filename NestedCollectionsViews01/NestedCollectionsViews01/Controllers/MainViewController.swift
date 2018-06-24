@@ -70,11 +70,11 @@ class MainViewController: UICollectionViewController, UICollectionViewDelegateFl
         let layout = UICollectionViewFlowLayout()
         let articleDetailController = ArticleDetailController(collectionViewLayout: layout)
         articleDetailController.article = article
-        navigationController?.pushViewController(articleDetailController, animated: true)
+        self.navigationController?.pushViewController(articleDetailController, animated: true)
 
         print("showArticleDetailn in MainController: \(article.headline)")
-        
-        handleSearch()
+        print("navigationController: \(self.navigationController)")
+        print("articleDetailController: \(articleDetailController)")
     }
     
     func showEventDetail(event: Event) {
