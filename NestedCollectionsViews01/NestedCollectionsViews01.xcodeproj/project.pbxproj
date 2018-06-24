@@ -115,8 +115,8 @@
 		0002210A20DEC8EA00FF4C39 /* Article */ = {
 			isa = PBXGroup;
 			children = (
-				0002210B20DEC90400FF4C39 /* ArticleDetailTextCell.swift */,
 				0000858020DF2795004BAC68 /* ArticleDetailCell.swift */,
+				0002210B20DEC90400FF4C39 /* ArticleDetailTextCell.swift */,
 			);
 			path = Article;
 			sourceTree = "<group>";

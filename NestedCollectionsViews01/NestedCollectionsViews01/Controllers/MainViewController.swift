@@ -13,7 +13,6 @@ class MainViewController: UICollectionViewController, UICollectionViewDelegateFl
         
         collectionView?.dataSource = self
         collectionView?.delegate = self
-        groupingCell.mainController = self
         
         let menuFeed = "http://rtodd.net/swift/data/menu-pointslocal.json"
         
@@ -68,9 +67,11 @@ class MainViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     func showArticleDetail() {
-        let layout = UICollectionViewFlowLayout()
-        let articleDetailController = ArticleDetailController(collectionViewLayout: layout)
-        navigationController?.pushViewController(articleDetailController, animated: true)
+        groupingCell.mainController = self
+        print("article cell here")
+//        let layout = UICollectionViewFlowLayout()
+//        let articleDetailController = ArticleDetailController(collectionViewLayout: layout)
+//        navigationController?.pushViewController(articleDetailController, animated: true)
     }
     
     @objc func handleSearch(){

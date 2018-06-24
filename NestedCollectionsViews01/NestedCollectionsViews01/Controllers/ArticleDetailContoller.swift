@@ -7,9 +7,9 @@ class ArticleDetailController:UICollectionViewController, UICollectionViewDelega
 //    let cellMapId = "cellMapId"
 //    let cellRelatedId = "cellRelatedId"
 //    // set a default var for headlineLabelHeight and detailTextCellHeight
-//    var headlineLabelHeight:CGFloat = 0.0
-//    var imageCaptionLabelHeight:CGFloat = 0.0
-//    var detailTextCellHeight:CGFloat = 22.0
+    var headlineLabelHeight:CGFloat = 0.0
+    var imageCaptionLabelHeight:CGFloat = 0.0
+    var detailTextCellHeight:CGFloat = 22.0
     
     var article:Article? {
         didSet {
@@ -35,46 +35,45 @@ class ArticleDetailController:UICollectionViewController, UICollectionViewDelega
 //        navigationItem.titleView = navigationItemImageView
         
         //        setupNavBarButtons()
-        
+
+        notificationCenter.addObserver(self,
+                                       selector: #selector(updateHeadlineHeight),
+                                       name: .UpdateHeadlineHeight,
+                                       object: nil)
         
         // notification for caption and headline - ArticleDetailCell
-//        notificationCenter.addObserver(self,
-//                                       selector: #selector(updateImageCaptionHeight),
-//                                       name: .UpdateImageCaptionHeight,
-//                                       object: nil)
-//
-//        notificationCenter.addObserver(self,
-//                                       selector: #selector(updateHeadlineHeight),
-//                                       name: .UpdateHeadlineHeight,
-//                                       object: nil)
-//
-//        notificationCenter.addObserver(self,
-//                                       selector: #selector(updateArticleHeight),
-//                                       name: .UpdateArticleHeight,
-//                                       object: nil)
+        notificationCenter.addObserver(self,
+                                       selector: #selector(updateImageCaptionHeight),
+                                       name: .UpdateImageCaptionHeight,
+                                       object: nil)
+
+        notificationCenter.addObserver(self,
+                                       selector: #selector(updateArticleHeight),
+                                       name: .UpdateArticleHeight,
+                                       object: nil)
     }
     
-//    @objc func updateImageCaptionHeight(notification: Notification) {
-//        guard let height = notification.object as? CGFloat else { return }
-//        imageCaptionLabelHeight = height
-//        collectionView?.collectionViewLayout.invalidateLayout()
-//        collectionView?.layoutIfNeeded()
-//    }
-//
-//    @objc func updateArticleHeight(notification: Notification) {
-//        guard let height = notification.object as? CGFloat else { return }
-//        detailTextCellHeight = height
-//        collectionView?.collectionViewLayout.invalidateLayout()
-//        collectionView?.layoutIfNeeded()
-//    }
-//
-//    @objc func updateHeadlineHeight(notification: Notification) {
-//        guard let height = notification.object as? CGFloat else { return }
-//        headlineLabelHeight = height
-//        collectionView?.collectionViewLayout.invalidateLayout()
-//        collectionView?.layoutIfNeeded()
-//    }
-//
+    @objc func updateHeadlineHeight(notification: Notification) {
+        guard let height = notification.object as? CGFloat else { return }
+        headlineLabelHeight = height
+        collectionView?.collectionViewLayout.invalidateLayout()
+        collectionView?.layoutIfNeeded()
+    }
+    
+    @objc func updateImageCaptionHeight(notification: Notification) {
+        guard let height = notification.object as? CGFloat else { return }
+        imageCaptionLabelHeight = height
+        collectionView?.collectionViewLayout.invalidateLayout()
+        collectionView?.layoutIfNeeded()
+    }
+
+    @objc func updateArticleHeight(notification: Notification) {
+        guard let height = notification.object as? CGFloat else { return }
+        detailTextCellHeight = height
+        collectionView?.collectionViewLayout.invalidateLayout()
+        collectionView?.layoutIfNeeded()
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 2
     }
@@ -120,7 +119,7 @@ class ArticleDetailController:UICollectionViewController, UICollectionViewDelega
         // lead image, headline, pubdate, and creator
         if indexPath.item == 0 {
             // we dynamically size the cell based on the image, returned captionheight, returned headlinelabelheight + spacing in between all items
-            return CGSize(width: view.frame.width, height: ((9 / 16) * view.frame.width) + 20)
+            return CGSize(width: view.frame.width, height: ((9 / 16) * view.frame.width) + headlineLabelHeight + imageCaptionLabelHeight + 20)
         }
 //
 //        if indexPath.item == 2 {
@@ -143,7 +142,7 @@ class ArticleDetailController:UICollectionViewController, UICollectionViewDelega
 //        }
         
         // use the var for the height to be set after notification sent
-        return CGSize(width: view.frame.width, height: 200)
+        return CGSize(width: view.frame.width, height: detailTextCellHeight)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
