@@ -67,7 +67,7 @@ class MainViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     func showArticleDetail() {
-        groupingCell.mainController = self
+//        groupingCell.mainController = self
         print("article cell here")
 //        let layout = UICollectionViewFlowLayout()
 //        let articleDetailController = ArticleDetailController(collectionViewLayout: layout)
@@ -87,6 +87,8 @@ class MainViewController: UICollectionViewController, UICollectionViewDelegateFl
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: groupingCellId, for: indexPath) as! GroupingCell
         cell.groupCellIndex = indexPath.item
+        // set maincontroller here!!! - https://stackoverflow.com/questions/31956495/uicollectionview-within-a-uicollectionviewcell-swift
+        cell.mainController = MainViewController()
         return cell
     }
     

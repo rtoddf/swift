@@ -34,6 +34,7 @@
 		000FFFFA20DC1E6D007599CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 000FFFF920DC1E6D007599CC /* Assets.xcassets */; };
 		000FFFFD20DC1E6D007599CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 000FFFFB20DC1E6D007599CC /* LaunchScreen.storyboard */; };
 		00C3209320DFFBBB006467FD /* ArticleImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C3209220DFFBBB006467FD /* ArticleImagesCell.swift */; };
+		00C3209520DFFEDA006467FD /* ArticleRelatedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C3209420DFFEDA006467FD /* ArticleRelatedCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		000FFFFC20DC1E6D007599CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		000FFFFE20DC1E6D007599CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00C3209220DFFBBB006467FD /* ArticleImagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleImagesCell.swift; sourceTree = "<group>"; };
+		00C3209420DFFEDA006467FD /* ArticleRelatedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRelatedCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				0000858020DF2795004BAC68 /* ArticleDetailCell.swift */,
 				0002210B20DEC90400FF4C39 /* ArticleDetailTextCell.swift */,
 				00C3209220DFFBBB006467FD /* ArticleImagesCell.swift */,
+				00C3209420DFFEDA006467FD /* ArticleRelatedCell.swift */,
 			);
 			path = Article;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				000F000620DC1F06007599CC /* Extensions.swift in Sources */,
 				000F000F20DC4E87007599CC /* ArticleImageLargeCell.swift in Sources */,
 				0000857B20DF172D004BAC68 /* DailyConditionsCell.swift in Sources */,
+				00C3209520DFFEDA006467FD /* ArticleRelatedCell.swift in Sources */,
 				000F001820DC6177007599CC /* Articles.swift in Sources */,
 				0000857D20DF1783004BAC68 /* HourlyConditionsCell.swift in Sources */,
 				0002210120DEBFB900FF4C39 /* Menu.swift in Sources */,

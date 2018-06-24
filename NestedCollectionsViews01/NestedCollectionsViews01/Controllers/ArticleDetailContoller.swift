@@ -5,8 +5,9 @@ class ArticleDetailController:UICollectionViewController, UICollectionViewDelega
     let cellTextId = "cellTextid"
     let cellImagesId = "cellImagesId"
 //    let cellMapId = "cellMapId"
-//    let cellRelatedId = "cellRelatedId"
-//    // set a default var for headlineLabelHeight and detailTextCellHeight
+    let cellRelatedId = "cellRelatedId"
+
+    // set a default var for headlineLabelHeight and detailTextCellHeight
     var headlineLabelHeight:CGFloat = 0.0
     var imageCaptionLabelHeight:CGFloat = 0.0
     var detailTextCellHeight:CGFloat = 22.0
@@ -26,7 +27,7 @@ class ArticleDetailController:UICollectionViewController, UICollectionViewDelega
         collectionView?.register(ArticleDetailTextCell.self, forCellWithReuseIdentifier: cellTextId)
         collectionView?.register(ArticleImagesCell.self, forCellWithReuseIdentifier: cellImagesId)
 //        collectionView?.register(ArticleDetailMapCell.self, forCellWithReuseIdentifier: cellMapId)
-//        collectionView?.register(ArticleRelatedCell.self, forCellWithReuseIdentifier: cellRelatedId)
+        collectionView?.register(ArticleRelatedCell.self, forCellWithReuseIdentifier: cellRelatedId)
         
         self.navigationController?.navigationBar.tintColor = .white
 //        let navigationItemImageView = UIImageView(frame: CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: view.frame.width, height: view.frame.height)))
@@ -75,7 +76,7 @@ class ArticleDetailController:UICollectionViewController, UICollectionViewDelega
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -97,18 +98,18 @@ class ArticleDetailController:UICollectionViewController, UICollectionViewDelega
 //            cell.article = article
 //            return cell
 //        }
-//
-//        if indexPath.item == 4 {
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellRelatedId, for: indexPath) as! ArticleRelatedCell
-//
-//            let count = article?.relatedContent?.items?.count
-//            if count == nil {
-//                cell.isHidden = true
-//            }
-//
-//            cell.article = article
-//            return cell
-//        }
+
+        if indexPath.item == 3 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellRelatedId, for: indexPath) as! ArticleRelatedCell
+
+            let count = article?.relatedContent?.items?.count
+            if count == nil {
+                cell.isHidden = true
+            }
+
+            cell.article = article
+            return cell
+        }
         
         // article text
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellTextId, for: indexPath) as! ArticleDetailTextCell
@@ -131,16 +132,16 @@ class ArticleDetailController:UICollectionViewController, UICollectionViewDelega
 //        if indexPath.item == 3 {
 //            return CGSize(width: view.frame.width, height: 200)
 //        }
-//
-//        if indexPath.item == 4 {
-//            if let count = article?.relatedContent?.items?.count {
-//                if count <= 4 {
-//                    return CGSize(width: view.frame.width, height: CGFloat(count) * CGFloat(100.0))
-//                }
-//            }
-//
-//            return CGSize(width: view.frame.width, height: 4 * CGFloat(100.0))
-//        }
+
+        if indexPath.item == 3 {
+            if let count = article?.relatedContent?.items?.count {
+                if count <= 4 {
+                    return CGSize(width: view.frame.width, height: CGFloat(count) * CGFloat(100.0))
+                }
+            }
+
+            return CGSize(width: view.frame.width, height: 4 * CGFloat(100.0))
+        }
         
         // article text
         // use the var for the height to be set after notification sent
