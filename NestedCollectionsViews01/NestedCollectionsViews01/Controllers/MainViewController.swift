@@ -54,8 +54,7 @@ class MainViewController: UICollectionViewController, UICollectionViewDelegateFl
     func showController(item: Menu){
         print("show controller")
         guard let menuTitle = item.title else { return }
-        
-//        var controllerToBePushed:Any
+
         let layout = UICollectionViewFlowLayout()
         
         if menuTitle == "Weather" {
@@ -63,11 +62,9 @@ class MainViewController: UICollectionViewController, UICollectionViewDelegateFl
             weatherViewController.menu = item
             navigationController?.pushViewController(weatherViewController, animated: true)
         } else {
-            //            let videoLauncher = VideoLauncher()
-            //            videoLauncher.showVideoPlayer()
-//            let whatToLoveViewController = WhatToLoveViewController(collectionViewLayout: layout)
-//            whatToLoveViewController.menu = item
-//            navigationController?.pushViewController(whatToLoveViewController, animated: true)
+            let whatToLoveViewController = WhatToLoveViewController(collectionViewLayout: layout)
+            whatToLoveViewController.menu = item
+            navigationController?.pushViewController(whatToLoveViewController, animated: true)
         }
     }
     
