@@ -14,7 +14,7 @@ class MainViewController: UICollectionViewController, UICollectionViewDelegateFl
         collectionView?.dataSource = self
         collectionView?.delegate = self
         
-        let menuFeed = "http://rtodd.net/swift/data/menu-pointslocal.json"
+        let menuFeed = "http://rtodd.net/swift/data/menu.json"
         
         MenuItems.downloadData(feedUrl: menuFeed) {  menu in
             self.menu = menu
@@ -58,6 +58,11 @@ class MainViewController: UICollectionViewController, UICollectionViewDelegateFl
             let weatherViewController = WeatherViewController(collectionViewLayout: layout)
             weatherViewController.menu = item
             navigationController?.pushViewController(weatherViewController, animated: true)
+        } else if menuTitle == "Events" {
+            let sectionEventsViewController = SectionEventsViewController(collectionViewLayout: layout)
+            sectionEventsViewController.menu = item
+            sectionEventsViewController.section = menuTitle
+            navigationController?.pushViewController(sectionEventsViewController, animated: true)
         } else {
             let sectionArticleViewController = SectionArticleViewController(collectionViewLayout: layout)
             sectionArticleViewController.menu = item

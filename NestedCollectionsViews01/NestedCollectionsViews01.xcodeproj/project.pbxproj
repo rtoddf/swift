@@ -35,6 +35,7 @@
 		000FFFFD20DC1E6D007599CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 000FFFFB20DC1E6D007599CC /* LaunchScreen.storyboard */; };
 		00C3209320DFFBBB006467FD /* ArticleImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C3209220DFFBBB006467FD /* ArticleImagesCell.swift */; };
 		00C3209520DFFEDA006467FD /* ArticleRelatedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C3209420DFFEDA006467FD /* ArticleRelatedCell.swift */; };
+		00C3209720E00E64006467FD /* SectionEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C3209620E00E64006467FD /* SectionEventsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		000FFFFE20DC1E6D007599CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00C3209220DFFBBB006467FD /* ArticleImagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleImagesCell.swift; sourceTree = "<group>"; };
 		00C3209420DFFEDA006467FD /* ArticleRelatedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRelatedCell.swift; sourceTree = "<group>"; };
+		00C3209620E00E64006467FD /* SectionEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionEventsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				0000857E20DF194C004BAC68 /* SectionArticleViewController.swift */,
+				00C3209620E00E64006467FD /* SectionEventsViewController.swift */,
 				0000857320DF13FE004BAC68 /* WeatherViewController.swift */,
 			);
 			path = Sections;
@@ -297,6 +300,7 @@
 				000FFFF520DC1E69007599CC /* MainViewController.swift in Sources */,
 				000F001120DC4EC9007599CC /* StringExtensions.swift in Sources */,
 				000F000620DC1F06007599CC /* Extensions.swift in Sources */,
+				00C3209720E00E64006467FD /* SectionEventsViewController.swift in Sources */,
 				000F000F20DC4E87007599CC /* ArticleImageLargeCell.swift in Sources */,
 				0000857B20DF172D004BAC68 /* DailyConditionsCell.swift in Sources */,
 				00C3209520DFFEDA006467FD /* ArticleRelatedCell.swift in Sources */,
