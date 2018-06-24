@@ -33,6 +33,7 @@
 		000FFFF520DC1E69007599CC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000FFFF420DC1E69007599CC /* MainViewController.swift */; };
 		000FFFFA20DC1E6D007599CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 000FFFF920DC1E6D007599CC /* Assets.xcassets */; };
 		000FFFFD20DC1E6D007599CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 000FFFFB20DC1E6D007599CC /* LaunchScreen.storyboard */; };
+		00C3209320DFFBBB006467FD /* ArticleImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C3209220DFFBBB006467FD /* ArticleImagesCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		000FFFF920DC1E6D007599CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		000FFFFC20DC1E6D007599CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		000FFFFE20DC1E6D007599CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00C3209220DFFBBB006467FD /* ArticleImagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleImagesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			children = (
 				0000858020DF2795004BAC68 /* ArticleDetailCell.swift */,
 				0002210B20DEC90400FF4C39 /* ArticleDetailTextCell.swift */,
+				00C3209220DFFBBB006467FD /* ArticleImagesCell.swift */,
 			);
 			path = Article;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				000F000C20DC3EDB007599CC /* ArticleImageTopCell.swift in Sources */,
 				000F000A20DC20D8007599CC /* GroupingCell.swift in Sources */,
 				0002210720DEC29C00FF4C39 /* MenuItemCell.swift in Sources */,
+				00C3209320DFFBBB006467FD /* ArticleImagesCell.swift in Sources */,
 				000F001B20DC6532007599CC /* Utilities.swift in Sources */,
 				0000857F20DF194C004BAC68 /* SectionArticleViewController.swift in Sources */,
 				0000858120DF2795004BAC68 /* ArticleDetailCell.swift in Sources */,
