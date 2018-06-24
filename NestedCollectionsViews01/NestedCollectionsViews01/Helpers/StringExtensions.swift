@@ -161,9 +161,45 @@ extension UIFont {
         return font
     }
     
+    // events stuff
+    static var eventHeadlineFont:UIFont {
+        guard let font = UIFont(name: "Helvetica-Bold", size: 16) else { return UIFont.boldSystemFont(ofSize: 16) }
+        return font
+    }
+    
+    static var eventDetailsFont:UIFont {
+        guard let font = UIFont(name: "Helvetica", size: 13) else { return UIFont.systemFont(ofSize: 13) }
+        return font
+    }
+    
+    static var eventBodyFont:UIFont {
+        guard let font = UIFont(name: "Helvetica", size: 15) else { return UIFont.systemFont(ofSize: 15) }
+        return font
+    }
+    
     // weather stuff
     static var weatherTempFont:UIFont {
-        guard let font = UIFont(name: "Helvetica-Bold", size: 96) else { return UIFont.boldSystemFont(ofSize: 96) }
+        guard let font = UIFont(name: "Helvetica-Bold", size: 36) else { return UIFont.boldSystemFont(ofSize: 36) }
+        return font
+    }
+    
+    static var weatherDailyDateFont:UIFont {
+        guard let font = UIFont(name: "Helvetica", size: 12) else { return UIFont.systemFont(ofSize: 12) }
+        return font
+    }
+    
+    static var weatherDailyTextFont:UIFont {
+        guard let font = UIFont(name: "Helvetica", size: 14) else { return UIFont.systemFont(ofSize: 14) }
+        return font
+    }
+    
+    static var weatherDailyTempFont:UIFont {
+        guard let font = UIFont(name: "Helvetica-Bold", size: 32) else { return UIFont.boldSystemFont(ofSize: 32) }
+        return font
+    }
+    
+    static var weatherHourlyTempFont:UIFont {
+        guard let font = UIFont(name: "Helvetica-Bold", size: 24) else { return UIFont.boldSystemFont(ofSize: 24) }
         return font
     }
 }

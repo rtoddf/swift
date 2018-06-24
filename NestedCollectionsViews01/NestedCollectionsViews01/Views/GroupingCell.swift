@@ -1,6 +1,8 @@
 import UIKit
 
 class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    var pointsLocalController: MainViewController?
+    
     let feedMusicSource = "reviews-music"
     let feedMoviesSource = "reviews-movies"
     let feedPlacesSource = "reviews-places"
@@ -154,6 +156,10 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("self.pointsLocalController: \(self.pointsLocalController)")
+        
+        self.pointsLocalController?.showArticleDetail()
+        
         if indexPath.item % 7 == 0 {
             guard let article = articlesMovies?[groupCellIndex] else { return }
             showArticleDetail(article: article)

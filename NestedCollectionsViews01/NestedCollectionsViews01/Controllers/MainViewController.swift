@@ -40,21 +40,28 @@ class MainViewController: UICollectionViewController, UICollectionViewDelegateFl
         return launcher
     }()
     
+    lazy var groupingCell: GroupingCell = {
+        let controller = GroupingCell()
+        controller.pointsLocalController = self
+        return controller
+    }()
+    
     @objc func showMenu(){
         menuLauncher.showMenu()
         menuLauncher.pointsLocalController = self
     }
     
     func showController(item: Menu){
+        print("show controller")
         guard let menuTitle = item.title else { return }
         
 //        var controllerToBePushed:Any
-//        let layout = UICollectionViewFlowLayout()
+        let layout = UICollectionViewFlowLayout()
         
         if menuTitle == "Weather" {
-//            let weatherViewController = WeatherViewController(collectionViewLayout: layout)
-//            weatherViewController.menu = item
-//            navigationController?.pushViewController(weatherViewController, animated: true)
+            let weatherViewController = WeatherViewController(collectionViewLayout: layout)
+            weatherViewController.menu = item
+            navigationController?.pushViewController(weatherViewController, animated: true)
         } else {
             //            let videoLauncher = VideoLauncher()
             //            videoLauncher.showVideoPlayer()
@@ -62,6 +69,10 @@ class MainViewController: UICollectionViewController, UICollectionViewDelegateFl
 //            whatToLoveViewController.menu = item
 //            navigationController?.pushViewController(whatToLoveViewController, animated: true)
         }
+    }
+    
+    func showArticleDetail() {
+        print("maincontroller showarticledetail")
     }
     
     @objc func handleSearch(){
