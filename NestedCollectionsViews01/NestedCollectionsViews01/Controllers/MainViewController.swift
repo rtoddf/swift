@@ -13,6 +13,7 @@ class MainViewController: UICollectionViewController, UICollectionViewDelegateFl
         
         collectionView?.dataSource = self
         collectionView?.delegate = self
+        groupingCell.mainController = self
         
         let menuFeed = "http://rtodd.net/swift/data/menu-pointslocal.json"
         
@@ -21,8 +22,6 @@ class MainViewController: UICollectionViewController, UICollectionViewDelegateFl
             guard let menuItems = self.menu else { return }
             self.menuLauncher.items = menuItems
             self.setupNavBarButtons()
-            
-            print("menu: \(menu)")
         }
     }
     
@@ -36,23 +35,22 @@ class MainViewController: UICollectionViewController, UICollectionViewDelegateFl
     
     lazy var menuLauncher: MenuLauncher = {
         let launcher = MenuLauncher()
-        launcher.pointsLocalController = self
+        launcher.mainController = self
         return launcher
     }()
     
     lazy var groupingCell: GroupingCell = {
         let controller = GroupingCell()
-        controller.pointsLocalController = self
+        controller.mainController = self
         return controller
     }()
     
     @objc func showMenu(){
         menuLauncher.showMenu()
-        menuLauncher.pointsLocalController = self
+        menuLauncher.mainController = self
     }
     
     func showController(item: Menu){
-        print("show controller")
         guard let menuTitle = item.title else { return }
 
         let layout = UICollectionViewFlowLayout()
@@ -62,18 +60,23 @@ class MainViewController: UICollectionViewController, UICollectionViewDelegateFl
             weatherViewController.menu = item
             navigationController?.pushViewController(weatherViewController, animated: true)
         } else {
-            let whatToLoveViewController = WhatToLoveViewController(collectionViewLayout: layout)
-            whatToLoveViewController.menu = item
-            navigationController?.pushViewController(whatToLoveViewController, animated: true)
+            let sectionArticleViewController = SectionArticleViewController(collectionViewLayout: layout)
+            sectionArticleViewController.menu = item
+            sectionArticleViewController.section = menuTitle
+            navigationController?.pushViewController(sectionArticleViewController, animated: true)
         }
     }
     
     func showArticleDetail() {
-        print("maincontroller showarticledetail")
+        let layout = UICollectionViewFlowLayout()
+        let articleDetailController = ArticleDetailController(collectionViewLayout: layout)
+        navigationController?.pushViewController(articleDetailController, animated: true)
     }
     
     @objc func handleSearch(){
-        print("search")
+        let layout = UICollectionViewFlowLayout()
+        let articleDetailController = ArticleDetailController(collectionViewLayout: layout)
+        navigationController?.pushViewController(articleDetailController, animated: true)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

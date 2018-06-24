@@ -1,7 +1,7 @@
 import UIKit
 
 class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    var pointsLocalController: MainViewController?
+    var mainController: MainViewController?
     
     let feedMusicSource = "reviews-music"
     let feedMoviesSource = "reviews-movies"
@@ -156,10 +156,6 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("self.pointsLocalController: \(self.pointsLocalController)")
-        
-        self.pointsLocalController?.showArticleDetail()
-        
         if indexPath.item % 7 == 0 {
             guard let article = articlesMovies?[groupCellIndex] else { return }
             showArticleDetail(article: article)
@@ -181,15 +177,17 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
     
     func showArticleDetail(article: Article){
         
-        let layout = UICollectionViewFlowLayout()
-        let articleDetailViewController = ArticleDetailController(collectionViewLayout: layout)
-        articleDetailViewController.article = article
+//        let layout = UICollectionViewFlowLayout()
+//        let articleDetailViewController = ArticleDetailController(collectionViewLayout: layout)
+//        articleDetailViewController.article = article
         
-        print("showArticleDetail: \(article)")
+        mainController?.showArticleDetail()
+        
+//        print("showArticleDetail: \(article)")
 //        print("\(MainViewController().navigationController)")
 //        let navigationController = UINavigationController(rootViewController: UICollectionViewController())
         
-        MainViewController().navigationController?.pushViewController(articleDetailViewController, animated: true)
+//        MainViewController().navigationController?.pushViewController(articleDetailViewController, animated: true)
 //        MainViewController().navigationController?.pushViewController(articleDetailViewController, animated: true)
     }
     
