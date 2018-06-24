@@ -22,11 +22,9 @@ class WeatherViewController:UICollectionViewController, UICollectionViewDelegate
         collectionView?.alwaysBounceVertical = true
         self.navigationController?.navigationBar.tintColor = .white
         
-        collectionView?.backgroundColor = .orange
-        
         collectionView?.register(CurrentConditionsCell.self, forCellWithReuseIdentifier: currentConditionsCellId)
-//        collectionView?.register(DailyConditionsCell.self, forCellWithReuseIdentifier: dailyConditionsCellId)
-//        collectionView?.register(HourlyConditionsCell.self, forCellWithReuseIdentifier: hourlyConditionsCellId)
+        collectionView?.register(DailyConditionsCell.self, forCellWithReuseIdentifier: dailyConditionsCellId)
+        collectionView?.register(HourlyConditionsCell.self, forCellWithReuseIdentifier: hourlyConditionsCellId)
         
         let weatherFeed = "http://weather.cmgdigital.com/USOH0245/"
         Weather.downloadData(feedUrl: weatherFeed) { (city, currentConditions) in
@@ -44,16 +42,16 @@ class WeatherViewController:UICollectionViewController, UICollectionViewDelegate
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        if indexPath.item == 2 {
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: dailyConditionsCellId, for: indexPath) as! DailyConditionsCell
-//            return cell
-//        }
-//
-//        if indexPath.item == 1 {
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: hourlyConditionsCellId, for: indexPath) as! HourlyConditionsCell
-//            return cell
-//        }
-//
+        if indexPath.item == 2 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: dailyConditionsCellId, for: indexPath) as! DailyConditionsCell
+            return cell
+        }
+
+        if indexPath.item == 1 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: hourlyConditionsCellId, for: indexPath) as! HourlyConditionsCell
+            return cell
+        }
+
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: currentConditionsCellId, for: indexPath) as! CurrentConditionsCell
         cell.city = city
         cell.currentConditions = currentConditions
