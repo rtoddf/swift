@@ -73,15 +73,15 @@ class SectionEventsViewController:UICollectionViewController, UICollectionViewDe
         return 0
     }
     
-//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        guard let item = articles?[indexPath.item] else { return }
-//        showArticleDetail(item: item)
-//    }
-//
-//    func showArticleDetail(item: Article){
-//        let layout = UICollectionViewFlowLayout()
-//        let articleDetailContoller = ArticleDetailController(collectionViewLayout: layout)
-//        articleDetailContoller.article = item
-//        navigationController?.pushViewController(articleDetailContoller, animated: true)
-//    }
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let item = events?[indexPath.item] else { return }
+        showArticleDetail(item: item)
+    }
+
+    func showArticleDetail(item: Event){
+        let layout = UICollectionViewFlowLayout()
+        let eventDetailContoller = EventDetailController(collectionViewLayout: layout)
+        eventDetailContoller.event = item
+        navigationController?.pushViewController(eventDetailContoller, animated: true)
+    }
 }
