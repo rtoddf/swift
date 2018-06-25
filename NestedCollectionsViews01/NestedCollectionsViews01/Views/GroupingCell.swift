@@ -1,7 +1,7 @@
 import UIKit
 
 class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    var pointsLocalController: MainViewController?
+    var mainController: MainViewController?
     
     let feedMusicSource = "reviews-music"
     let feedMoviesSource = "reviews-movies"
@@ -156,41 +156,25 @@ class GroupingCell:BaseCell, UICollectionViewDataSource, UICollectionViewDelegat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("self.pointsLocalController: \(self.pointsLocalController)")
-        
-        self.pointsLocalController?.showArticleDetail()
-        
         if indexPath.item % 7 == 0 {
             guard let article = articlesMovies?[groupCellIndex] else { return }
-            showArticleDetail(article: article)
+            self.mainController?.showArticleDetail(article: article)
         }
         
         if indexPath.item % 7 == 1 || indexPath.item % 7 == 2 {
-            guard let article = articlesMusic?[indexPath.item] else { return }
-            showArticleDetail(article: article)
+            guard let article = articlesMusic?[getCellIndex(numItems: 2, group: groupCellIndex, item: indexPath.item)] else { return }
+            mainController?.showArticleDetail(article: article)
         }
         
         if indexPath.item % 7 == 3 || indexPath.item % 7 == 4 {
-            guard let article = articlesMusic?[indexPath.item] else { return }
-            showArticleDetail(article: article)
+            guard let article = articlesPlaces?[getCellIndex(numItems: 2, group: groupCellIndex, item: indexPath.item)] else { return }
+            mainController?.showArticleDetail(article: article)
         }
         
-        guard let article = articlesMusic?[indexPath.item] else { return }
-        showArticleDetail(article: article)
-    }
-    
-    func showArticleDetail(article: Article){
-        
-        let layout = UICollectionViewFlowLayout()
-        let articleDetailViewController = ArticleDetailController(collectionViewLayout: layout)
-        articleDetailViewController.article = article
-        
-        print("showArticleDetail: \(article)")
-//        print("\(MainViewController().navigationController)")
-//        let navigationController = UINavigationController(rootViewController: UICollectionViewController())
-        
-        MainViewController().navigationController?.pushViewController(articleDetailViewController, animated: true)
-//        MainViewController().navigationController?.pushViewController(articleDetailViewController, animated: true)
+        if indexPath.item % 7 == 5 || indexPath.item % 7 == 5 {
+            guard let event = events?[getCellIndex(numItems: 2, group: groupCellIndex, item: indexPath.item)] else { return }
+            mainController?.showEventDetail(event: event)
+        }
     }
     
     func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {

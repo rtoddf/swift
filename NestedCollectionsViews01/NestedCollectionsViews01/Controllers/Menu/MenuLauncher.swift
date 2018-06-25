@@ -14,7 +14,7 @@ class MenuItem:NSObject {
 
 class MenuLauncher:NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     let blackView = UIView()
-    var pointsLocalController: MainViewController?
+    var mainController: MainViewController?
     
     var items:[Menu]? {
         didSet {
@@ -99,7 +99,7 @@ class MenuLauncher:NSObject, UICollectionViewDataSource, UICollectionViewDelegat
             self.collectionView.frame = CGRect(x: (window.frame.width/2) * -1, y: 20, width: window.frame.width * 0.40, height: window.frame.height)
         }) { (completed:Bool) in
             guard let item = self.items?[indexPath.item] else { return }
-            self.pointsLocalController?.showController(item: item)
+            self.mainController?.showController(item: item)
         }
     }
     //    https://www.youtube.com/watch?v=DYsfAD01fYk&index=9&list=PL0dzCUj1L5JGKdVUtA5xds1zcyzsz7HLj @ about 5:00 and stopped at 19:47
